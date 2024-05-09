@@ -28,5 +28,9 @@ class MainActivity : AppCompatActivity() {
             count++
             binding.tvCount!!.text = count.toString()
         }
+        binding.btnMinus!!.setOnClickListener {
+            count--
+            binding.tvCount!!.text = count.toString()
+        }
     }
 }
