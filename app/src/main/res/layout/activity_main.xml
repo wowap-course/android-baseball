@@ -10,9 +10,8 @@
         layout="@layout/toolbar"
         android:id="@+id/toolbar"/>
 
-
     <TextView
-        android:id="@+id/tvCount"
+        android:id="@+id/tv_life"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
@@ -79,9 +78,9 @@
         android:textStyle="bold"
         android:background="@drawable/buttonshape"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@id/tvCount"
-        app:layout_constraintStart_toEndOf="@id/tvCount"
-        app:layout_constraintTop_toTopOf="@id/tvCount" />
+        app:layout_constraintBottom_toBottomOf="@id/tv_life"
+        app:layout_constraintStart_toEndOf="@id/tv_life"
+        app:layout_constraintTop_toTopOf="@id/tv_life" />
 
     <Button
         android:id="@+id/btnMinus"
@@ -94,9 +93,9 @@
         android:textStyle="bold"
         android:background="@drawable/buttonshape"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@id/tvCount"
-        app:layout_constraintEnd_toStartOf="@id/tvCount"
-        app:layout_constraintTop_toTopOf="@id/tvCount" />
+        app:layout_constraintBottom_toBottomOf="@id/tv_life"
+        app:layout_constraintEnd_toStartOf="@id/tv_life"
+        app:layout_constraintTop_toTopOf="@id/tv_life" />
 
     <Button
         android:layout_width="320dp"
