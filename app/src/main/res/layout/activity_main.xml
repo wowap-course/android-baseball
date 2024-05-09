@@ -98,6 +98,7 @@
         app:layout_constraintTop_toTopOf="@id/tv_life" />
 
     <Button
+        android:id="@+id/btnStart"
         android:layout_width="320dp"
         android:layout_height="48dp"
         android:layout_marginBottom="24dp"
