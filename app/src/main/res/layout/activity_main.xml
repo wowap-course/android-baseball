@@ -41,6 +41,7 @@
         />
 
     <TextView
+        android:id="@+id/tvText"
         android:layout_width="332dp"
         android:layout_height="38dp"
         android:text="목숨을 입력하세요"
