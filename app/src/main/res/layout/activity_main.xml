@@ -40,6 +40,16 @@
         app:layout_constraintStart_toStartOf="parent"
         />
 
+    <ImageView
+        android:layout_width="296dp"
+        android:layout_height="240dp"
+        android:src="@drawable/main"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvText"
+        />
+
     <TextView
         android:id="@+id/tvText"
         android:layout_width="332dp"
