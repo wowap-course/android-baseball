@@ -1,5 +1,6 @@
 package com.example.baseball
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.baseball.databinding.ActivityMainBinding
@@ -32,6 +33,10 @@ class MainActivity : AppCompatActivity() {
             if(life == 1) return@setOnClickListener
             life--
             binding.tvLife!!.text = life.toString()
+        }
+        binding.btnStart!!.setOnClickListener{
+            val intent = Intent(this, GameActivity::class.java)
+            startActivity(intent)
         }
     }
 
