@@ -20,4 +20,17 @@
         app:layout_constraintLeft_toLeftOf="parent"
         />
 
+    <Button
+        android:id="@+id/btnPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="20dp"
+        android:text="+"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvCount"
+        app:layout_constraintStart_toEndOf="@id/tvCount"
+        app:layout_constraintTop_toTopOf="@id/tvCount" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

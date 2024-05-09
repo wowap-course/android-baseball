@@ -16,9 +16,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initCount()
+        initBtn()
     }
 
     private fun initCount() {
         binding.tvCount!!.text = count.toString()
         }
+
+    private fun initBtn() {
+        binding.btnPlus!!.setOnClickListener {
+            count++
+            binding.tvCount!!.text = count.toString()
+        }
+    }
 }
