@@ -55,6 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
+
     <Button
         android:id="@+id/btnPlus"
         android:layout_width="wrap_content"
@@ -84,5 +85,19 @@
         app:layout_constraintBottom_toBottomOf="@id/tvCount"
         app:layout_constraintEnd_toStartOf="@id/tvCount"
         app:layout_constraintTop_toTopOf="@id/tvCount" />
+
+    <Button
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/buttonshape"
+        android:textColor="@color/white"
+        android:text="게임 시작!"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
