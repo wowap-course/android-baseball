@@ -24,6 +24,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         />
+    
     <TextView
         android:layout_width="245dp"
         android:layout_height="40dp"
@@ -38,6 +39,22 @@
         app:layout_constraintStart_toStartOf="parent"
         />
 
+    <TextView
+        android:layout_width="332dp"
+        android:layout_height="38dp"
+        android:text="목숨을 입력하세요"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="262dp"
+        android:gravity="center"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
     <Button
         android:id="@+id/btnPlus"
         android:layout_width="wrap_content"
