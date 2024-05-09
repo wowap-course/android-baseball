@@ -26,6 +26,7 @@
         />
     
     <TextView
+        android:id="@+id/tvTitle"
         android:layout_width="245dp"
         android:layout_height="40dp"
         android:text="숫자 야구 게임"
