@@ -3,6 +3,7 @@ package com.example.baseball
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.example.baseball.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -34,10 +35,12 @@ class MainActivity : AppCompatActivity() {
             life--
             binding.tvLife!!.text = life.toString()
         }
-        binding.btnStart!!.setOnClickListener{
-            val intent = Intent(this, GameActivity::class.java)
-            startActivity(intent)
-        }
+    }
+
+    fun onClick(view: View) {
+        val intent = Intent(this, GameActivity::class.java)
+        intent.putExtra("life", life.toString())
+        startActivity(intent)
     }
 
 
