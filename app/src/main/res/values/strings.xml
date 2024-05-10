@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Baseball</string>
+    <string name="mainTitle">숫자 야구 게임</string>
+    <string name="lifeTitle">목숨을 입력하세요</string>
+    <string name="txtPlus">+</string>
+    <string name="txtMinus">-</string>
+    <string name="txtGameStart">게임 시작!</string>
 </resources>
