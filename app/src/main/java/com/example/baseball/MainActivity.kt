@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
     fun onClick(view: View) {
         val intent = Intent(this, GameActivity::class.java)
-        intent.putExtra("life", life.toString())
+        intent.putExtra("life", life)
         startActivity(intent)
     }
 
