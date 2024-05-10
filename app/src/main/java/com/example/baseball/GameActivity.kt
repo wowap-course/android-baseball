@@ -10,11 +10,11 @@ import com.example.baseball.databinding.ActivityGameBinding
 
 class GameActivity : AppCompatActivity() {
     private var lifeCount: Int? = null
-    private lateinit var binding : ActivityGameBinding
+    private lateinit var binding: ActivityGameBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        lifeCount = intent.getIntExtra("life",1)
+        lifeCount = intent.getIntExtra("life", 1)
         setContentView(R.layout.activity_game)
         binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -25,7 +25,7 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun onImageClick() {
-            finish()
+        finish()
     }
 
     private fun initCount() {
