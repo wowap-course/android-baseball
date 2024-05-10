@@ -29,7 +29,6 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun initCount() {
-        val textView = findViewById<TextView>(R.id.tvLifeCount)
-        textView.text = lifeCount.toString()
+        binding.tvLifeCount.text = lifeCount.toString()
     }
 }
