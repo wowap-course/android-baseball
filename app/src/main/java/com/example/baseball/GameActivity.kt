@@ -1,24 +1,31 @@
 package com.example.baseball
 
-import android.app.Activity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import com.example.baseball.databinding.ActivityGameBinding
 
-class GameActivity: Activity() {
+class GameActivity : AppCompatActivity() {
     private var lifeCount: Int? = null
-
+    private lateinit var binding : ActivityGameBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         lifeCount = intent.getIntExtra("life",1)
-        setContentView(R.layout.activity_game_main)
+        setContentView(R.layout.activity_game)
+        binding = ActivityGameBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         val imageView = findViewById<ImageView>(R.id.backBtn)
-        imageView.setOnClickListener {onImageClick()}
+        imageView.setOnClickListener { onImageClick() }
         initCount()
     }
 
     private fun onImageClick() {
-        finish()
+            finish()
     }
 
     private fun initCount() {
