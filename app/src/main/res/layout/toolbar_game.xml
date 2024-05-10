@@ -16,6 +16,7 @@
         android:src="@drawable/back"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:onClick="onImageClick"
         app:layout_constraintTop_toTopOf="@+id/toolbar_game"
         app:layout_constraintBottom_toBottomOf="@id/toolbar_game"
         app:layout_constraintStart_toStartOf="@+id/toolbar_game"/>
