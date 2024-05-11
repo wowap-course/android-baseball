@@ -1,5 +1,6 @@
 package com.example.baseball
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.baseball.databinding.ActivityMainBinding
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         initCount()
         initBtn()
+        initStartButton()
     }
 
     private fun initCount() {
@@ -34,6 +36,14 @@ class MainActivity : AppCompatActivity() {
                 count--
                 binding.txCount.text = count.toString()
             }
+        }
+    }
+
+    private fun initStartButton() {
+        binding.btnStart.setOnClickListener {
+            val intent = Intent(this, GetCount::class.java)
+            intent.putExtra("count", count)
+            startActivity(intent)
         }
     }
 }
