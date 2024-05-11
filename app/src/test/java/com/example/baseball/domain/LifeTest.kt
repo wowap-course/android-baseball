@@ -10,4 +10,9 @@ class LifeTest {
     fun `life는 1 밑으로 내려가면 안된다`() {
         assertThrows<IllegalArgumentException> { Life(0) }
     }
+    @Test
+    fun `life는 10 위로 올라가면 안된다`() {
+        assertThrows<IllegalArgumentException>{ Life(11) }
+    }
+
 }
