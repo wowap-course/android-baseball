@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initCount() {
-        binding.tvLife!!.text = life.toString()
+        binding.tvLife!!.text = getString(R.string.life_count, life)
         }
 
 
@@ -28,12 +28,12 @@ class MainActivity : AppCompatActivity() {
         binding.btnPlus!!.setOnClickListener {
             if(life == 10) return@setOnClickListener
             life++
-            binding.tvLife!!.text = life.toString()
+            binding.tvLife!!.text = getString(R.string.life_count, life)
         }
         binding.btnMinus!!.setOnClickListener {
             if(life == 1) return@setOnClickListener
             life--
-            binding.tvLife!!.text = life.toString()
+            binding.tvLife!!.text = getString(R.string.life_count, life)
         }
     }
 
