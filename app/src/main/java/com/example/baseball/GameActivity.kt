@@ -18,17 +18,14 @@ class GameActivity : AppCompatActivity() {
         setContentView(R.layout.activity_game)
         binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val imageView = findViewById<ImageView>(R.id.backBtn)
-        imageView.setOnClickListener { onImageClick() }
         initCount()
-    }
-
-    private fun onImageClick() {
-        finish()
     }
 
     private fun initCount() {
         binding.tvLifeCount.text = lifeCount.toString()
+    }
+
+    fun onImageClick(view: View) {
+        finish()
     }
 }
