@@ -7,7 +7,9 @@ data class Life(val life:Int) {
     fun increase():Life{
         return Life(life+1)
     }
-
+    fun decrease():Life{
+        return Life(life - 1)
+    }
     companion object{
         private val MIN_LIFE_COUNT = 1
         private val MAX_LIFE_COUNT = 10
