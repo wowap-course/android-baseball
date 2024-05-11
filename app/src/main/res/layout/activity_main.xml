@@ -27,7 +27,7 @@
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="245dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:text="@string/game_title"
         android:textSize="26sp"
         android:textColor="@color/black"
@@ -52,7 +52,7 @@
     <TextView
         android:id="@+id/tvText"
         android:layout_width="332dp"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:text="@string/game_sub_title"
         android:textSize="20sp"
         android:textStyle="bold"
