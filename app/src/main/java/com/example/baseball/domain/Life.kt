@@ -5,6 +5,7 @@ data class Life(val life:Int) {
         require(life in MIN_LIFE_COUNT..MAX_LIFE_COUNT)
     }
     fun increase():Life{
+        if(life == 10) return this
         return Life(life+1)
     }
     fun decrease():Life{

@@ -36,4 +36,16 @@ class LifeTest {
         // then
         assertThat(actual).isEqualTo(Life(2))
     }
+    @Test
+    fun `life가 10 일때 증가시키면 10이 된다`() {
+        // given
+        val life = Life(10)
+
+        // when
+        val actual = life.increase()
+
+        // then
+        assertThat(actual).isEqualTo(Life(10))
+    }
+
 }
