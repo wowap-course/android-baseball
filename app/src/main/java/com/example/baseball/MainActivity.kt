@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initStartButton() {
         binding.btnStart.setOnClickListener {
-            val intent = Intent(this, GetCount::class.java)
+            val intent = Intent(this, GetCountActivity::class.java)
             intent.putExtra("count", count)
             startActivity(intent)
         }
