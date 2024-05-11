@@ -22,7 +22,7 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun initCount() {
-        binding.tvLifeCount.text = lifeCount.toString()
+        binding.tvLifeTitle.text = getString(R.string.remain_life, lifeCount)
     }
 
     fun onImageClick(view: View) {

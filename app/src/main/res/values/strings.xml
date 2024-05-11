@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Baseball</string>
     <string name="title_activity_game">GameActivity</string>
+    <string name="remain_life">남은 목숨 : %d</string>
 </resources>
