@@ -1,6 +1,7 @@
 package com.example.baseball
 
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.baseball.databinding.ActivityGetCountBinding
 
@@ -10,6 +11,7 @@ class GetCountActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         binding = ActivityGetCountBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
