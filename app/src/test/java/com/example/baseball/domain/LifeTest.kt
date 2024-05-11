@@ -48,4 +48,16 @@ class LifeTest {
         assertThat(actual).isEqualTo(Life(10))
     }
 
+    @Test
+    fun `life가 1 일때 감소시키면 1이 된다`() {
+        // given
+        val life = Life(1)
+
+        // when
+        val actual = life.decrease()
+
+        // then
+        assertThat(actual).isEqualTo(Life(1))
+    }
+
 }

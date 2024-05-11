@@ -9,6 +9,7 @@ data class Life(val life:Int) {
         return Life(life+1)
     }
     fun decrease():Life{
+        if(life == 1) return this
         return Life(life - 1)
     }
     companion object{
