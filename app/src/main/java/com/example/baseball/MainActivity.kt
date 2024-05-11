@@ -28,11 +28,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun initBtn() {
         binding.btnPlus!!.setOnClickListener {
-           var lifeIncrease = life.increase()
+           val lifeIncrease = life.increase()
             binding.tvLife!!.text = getString(R.string.life_count, lifeIncrease)
         }
         binding.btnMinus!!.setOnClickListener {
-            var lifeDecrease = life.decrease()
+            val lifeDecrease = life.decrease()
             binding.tvLife!!.text = getString(R.string.life_count, lifeDecrease)
         }
     }
