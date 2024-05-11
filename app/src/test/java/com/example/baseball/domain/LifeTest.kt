@@ -10,10 +10,12 @@ class LifeTest {
     fun `life는 1 밑으로 내려가면 안된다`() {
         assertThrows<IllegalArgumentException> { Life(0) }
     }
+
     @Test
     fun `life는 10 위로 올라가면 안된다`() {
-        assertThrows<IllegalArgumentException>{ Life(11) }
+        assertThrows<IllegalArgumentException> { Life(11) }
     }
+
     @Test
     fun `life가 5 일때 증가시키면 6이 된다`() {
         // given
@@ -25,6 +27,7 @@ class LifeTest {
         // then
         assertThat(actual).isEqualTo(Life(6))
     }
+
     @Test
     fun `life가 3 일때 감소시키면 2이 된다`() {
         // given
@@ -36,6 +39,7 @@ class LifeTest {
         // then
         assertThat(actual).isEqualTo(Life(2))
     }
+
     @Test
     fun `life가 10 일때 증가시키면 10이 된다`() {
         // given
