@@ -1,8 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Baseball" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Baseball" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@android:color/holo_blue_dark</item>
+        <item name="android:textColor">#000000</item>
     </style>
 
     <style name="Theme.Baseball" parent="Base.Theme.Baseball" />
