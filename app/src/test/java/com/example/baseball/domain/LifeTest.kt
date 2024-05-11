@@ -14,5 +14,16 @@ class LifeTest {
     fun `life는 10 위로 올라가면 안된다`() {
         assertThrows<IllegalArgumentException>{ Life(11) }
     }
+    @Test
+    fun `life가 5 일때 증가시키면 6이 된다`() {
+        // given
+        val life = Life(5)
+
+        // when
+        val actual = life.increase()
+
+        // then
+        assertThat(actual).isEqualTo(Life(6))
+    }
 
 }
