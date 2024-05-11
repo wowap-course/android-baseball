@@ -1,18 +1,18 @@
 package com.example.baseball.domain
 
-data class Life(val life: Int) {
+data class Life(var life: Int) {
     init {
         require(life in MIN_LIFE_COUNT..MAX_LIFE_COUNT)
     }
 
-    fun increase(): Life {
-        if (life == 10) return this
-        return Life(life + 1)
+    fun increase(): Int {
+        if (life == 10) return life
+        return life++
     }
 
-    fun decrease(): Life {
-        if (life == 1) return this
-        return Life(life - 1)
+    fun decrease(): Int {
+        if (life == 1) return life
+        return life--
     }
 
     companion object {
