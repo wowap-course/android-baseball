@@ -22,18 +22,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initCount() {
-        binding.tvLife!!.text = getString(R.string.life_count, life.life)
+        binding.tvLife.text = getString(R.string.life_count, life.life)
         }
 
 
     private fun initBtn() {
-        binding.btnPlus!!.setOnClickListener {
+        binding.btnPlus.setOnClickListener {
            val lifeIncrease = life.increase()
-            binding.tvLife!!.text = getString(R.string.life_count, lifeIncrease)
+            binding.tvLife.text = getString(R.string.life_count, lifeIncrease)
         }
-        binding.btnMinus!!.setOnClickListener {
+        binding.btnMinus.setOnClickListener {
             val lifeDecrease = life.decrease()
-            binding.tvLife!!.text = getString(R.string.life_count, lifeDecrease)
+            binding.tvLife.text = getString(R.string.life_count, lifeDecrease)
         }
     }
 
