@@ -33,12 +33,11 @@ class MainActivity : AppCompatActivity() {
         binding.btnMinus.setOnClickListener {
             binding.tvLife.text = getString(R.string.life_count, life.decrease())
         }
-    }
-
-    fun onClick(view: View) {
-        val intent = Intent(this, GameActivity::class.java)
-        intent.putExtra("life", life.life)
-        startActivity(intent)
+        binding.btnStart.setOnClickListener{
+            val intent = Intent(this, GameActivity::class.java)
+            intent.putExtra("life", life.life)
+            startActivity(intent)
+        }
     }
 
 
