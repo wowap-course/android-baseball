@@ -10,7 +10,7 @@ import com.example.baseball.domain.LifeCount
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private var lives = 0
+    private val lifeCount = LifeCount()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -22,21 +22,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initLives() {
-        binding.tvLives.text = lives.toString()
+        binding.tvLives.text = lifeCount.lifeCount
     }
 
     private fun initBtn() {
         binding.btnPlus.setOnClickListener {
-            lives++
-            binding.tvLives.text = lives.toString()
+            lifeCount.increase()
+            binding.tvLives.text = lifeCount.lifeCount
         }
         binding.btnMinus.setOnClickListener {
-            lives--
-            binding.tvLives.text = lives.toString()
+            lifeCount.decrease()
+            binding.tvLives.text = lifeCount.lifeCount
         }
 
         binding.btnStart.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
+            intent.putExtra("lifeCount", lifeCount.lifeCount)
             startActivity(intent)
         }
     }
