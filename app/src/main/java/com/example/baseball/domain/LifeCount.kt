@@ -1,23 +1,23 @@
 package com.example.baseball.domain
 
-data class LifeCount(private var _lifeCount : Int = 1) {
+data class LifeCount(private var _count : Int = 1) {
     init {
-        require(_lifeCount in MIN_LIFE_COUNT..MAX_LIFE_COUNT)
+        require(_count in MIN_LIFE_COUNT..MAX_LIFE_COUNT)
     }
-    val lifeCount : String
-        get() = _lifeCount.toString()
+    val count : Int
+        get() = _count
 
-    fun increase() : String {
-        if(_lifeCount < 99) _lifeCount++
-        return lifeCount
+    fun increase() : Int {
+        if(_count < MAX_LIFE_COUNT) _count++
+        return count
     }
 
-    fun decrease() : String {
-        if(_lifeCount > 1) _lifeCount--
-        return lifeCount
+    fun decrease() : Int {
+        if(_count > MIN_LIFE_COUNT) _count--
+        return count
     }
     companion object {
         private const val MIN_LIFE_COUNT = 1
-        private const val MAX_LIFE_COUNT = 99
+        private const val MAX_LIFE_COUNT = 19
     }
 }

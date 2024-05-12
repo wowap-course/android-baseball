@@ -22,7 +22,7 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun initTextView(){
-        val lifeCount = intent.getStringExtra("lifeCount")
-        binding.tvRemainingLives.text = "남은 목숨 : $lifeCount"
+        val lifeCount = intent.getIntExtra("lifeCount", 0)
+        binding.tvRemainingLives.text = String.format(getString(R.string.remaining_life), lifeCount)
     }
 }

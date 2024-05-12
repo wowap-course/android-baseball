@@ -22,22 +22,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initLives() {
-        binding.tvLives.text = lifeCount.lifeCount
+        binding.tvLives.text = lifeCount.count.toString()
     }
 
     private fun initBtn() {
         binding.btnPlus.setOnClickListener {
             lifeCount.increase()
-            binding.tvLives.text = lifeCount.lifeCount
+            binding.tvLives.text = lifeCount.count.toString()
         }
         binding.btnMinus.setOnClickListener {
             lifeCount.decrease()
-            binding.tvLives.text = lifeCount.lifeCount
+            binding.tvLives.text = lifeCount.count.toString()
         }
 
         binding.btnStart.setOnClickListener {
             val intent = Intent(this, GameActivity::class.java)
-            intent.putExtra("lifeCount", lifeCount.lifeCount)
+            intent.putExtra("lifeCount", lifeCount.count)
             startActivity(intent)
         }
     }
