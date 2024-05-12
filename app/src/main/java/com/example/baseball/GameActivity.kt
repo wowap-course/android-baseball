@@ -19,13 +19,18 @@ class GameActivity : AppCompatActivity() {
         binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initCount()
+        initBackBtn()
+
+    }
+
+    private fun initBackBtn() {
+         binding.toolbarGame.backBtn.setOnClickListener {
+             finish()
+         }
     }
 
     private fun initCount() {
         binding.tvLifeTitle.text = getString(R.string.remain_life, lifeCount)
     }
 
-    fun onImageClick(view: View) {
-        finish()
-    }
 }
