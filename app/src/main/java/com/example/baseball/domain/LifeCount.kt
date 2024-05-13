@@ -7,14 +7,16 @@ data class LifeCount(private var _count : Int = 1) {
     val count : Int
         get() = _count
 
-    fun increase() : Int {
-        if(_count < MAX_LIFE_COUNT) _count++
-        return count
+    fun increase() : Boolean {
+        if(_count >= MAX_LIFE_COUNT) return false
+        _count++
+        return true
     }
 
-    fun decrease() : Int {
-        if(_count > MIN_LIFE_COUNT) _count--
-        return count
+    fun decrease() : Boolean {
+        if(_count <= MIN_LIFE_COUNT) return false
+        _count--
+        return true
     }
     companion object {
         private const val MIN_LIFE_COUNT = 1

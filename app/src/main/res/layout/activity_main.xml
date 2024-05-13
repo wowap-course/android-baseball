@@ -53,7 +53,7 @@
         app:layout_constraintLeft_toLeftOf="@id/btnStart" />
 
     <TextView
-        android:id="@+id/tvLives"
+        android:id="@+id/tvLifeCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"

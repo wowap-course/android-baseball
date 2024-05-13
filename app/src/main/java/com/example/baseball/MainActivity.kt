@@ -3,13 +3,13 @@ package com.example.baseball
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import android.widget.Toast
 import com.example.baseball.databinding.ActivityMainBinding
 import com.example.baseball.domain.LifeCount
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding : ActivityMainBinding
+    private var toast : Toast? = null
     private val lifeCount = LifeCount()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,22 +17,22 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initLives()
+        initLifeCount()
         initBtn()
     }
 
-    private fun initLives() {
-        binding.tvLives.text = lifeCount.count.toString()
+    private fun initLifeCount() {
+        binding.tvLifeCount.text = lifeCount.count.toString()
     }
 
     private fun initBtn() {
         binding.btnPlus.setOnClickListener {
-            lifeCount.increase()
-            binding.tvLives.text = lifeCount.count.toString()
+            if(!lifeCount.increase()) showToast(getString(R.string.max_life_count_description))
+            else binding.tvLifeCount.text = lifeCount.count.toString()
         }
         binding.btnMinus.setOnClickListener {
-            lifeCount.decrease()
-            binding.tvLives.text = lifeCount.count.toString()
+            if(!lifeCount.decrease()) showToast(getString(R.string.min_life_count_description))
+            else binding.tvLifeCount.text = lifeCount.count.toString()
         }
 
         binding.btnStart.setOnClickListener {
@@ -40,5 +40,10 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("lifeCount", lifeCount.count)
             startActivity(intent)
         }
+    }
+    private fun showToast(msg : String){
+        toast?.cancel()
+        toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT)
+        toast?.show()
     }
 }
