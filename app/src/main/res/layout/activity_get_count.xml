@@ -18,12 +18,16 @@
             android:id="@+id/text_remaining_lives"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="남은목숨: " />
+            android:text="남은목숨: "
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtGetCount"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
