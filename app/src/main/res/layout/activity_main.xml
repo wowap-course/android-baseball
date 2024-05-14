@@ -7,41 +7,52 @@
     tools:context=".presentation.MainActivity">
 
     <TextView
-        android:id="@+id/tvCount"
+        android:id="@+id/tvLife"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="32dp"
         android:textColor="@color/black"
-        android:textSize="32sp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="44dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnStartGame"
+        app:layout_constraintEnd_toStartOf="@+id/btnPlus"
+        app:layout_constraintStart_toEndOf="@+id/btnMinus"
         tools:text="3" />
 
     <Button
         android:id="@+id/btnPlus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:text="+"
+        android:text="@string/main_plus"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/tvCount"
-        app:layout_constraintStart_toEndOf="@id/tvCount"
-        app:layout_constraintTop_toTopOf="@id/tvCount" />
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvLife"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvLife" />
 
     <Button
         android:id="@+id/btnMinus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
-        android:text="-"
+        android:text="@string/main_minus"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/tvCount"
-        app:layout_constraintEnd_toStartOf="@id/tvCount"
-        app:layout_constraintTop_toTopOf="@id/tvCount" />
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/tvLife"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvLife" />
+
+    <Button
+        android:id="@+id/btnStartGame"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/start_game"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
