@@ -8,10 +8,16 @@ value class Life(val value: Int) {
     }
 
     operator fun inc(): Life {
+        if (value == MAX_LIFE) {
+            return this
+        }
         return Life(value + 1)
     }
 
     operator fun dec(): Life {
+        if (value == MIN_LIFE) {
+            return this
+        }
         return Life(value - 1)
     }
 
