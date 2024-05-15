@@ -1,17 +1,19 @@
 package com.example.baseball.domain
 
-class Life(private var count: Int) {
+class Life(var count: Int) {
 
-    fun decrease() {
+    fun decrease(): Int {
         if (count > MIN_LIFE) {
             count--
         }
+        return count
     }
 
-    fun increase() {
+    fun increase(): Int {
         if (count < MAX_LIFE) {
             count++
         }
+        return count
     }
 
     companion object {
