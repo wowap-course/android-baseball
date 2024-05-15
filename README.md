@@ -1,6 +1,6 @@
 # android-baseball
 
-< Commit >
+< Step 1 Commit >
 
 - [x] TextView "숫자 야구 게임" 표시하기
 - [x] TextView "목숨을 입력하세요" 표시하기
@@ -29,3 +29,15 @@
 - [x] life가 3 일때 감소시키면 2이 된다
 - [x] life가 10 일때 증가시키면 10이 된다
 - [x] life가 1 일때 감소시키면 1이 된다
+
+--- 
+
+< Step2 Commit >
+- [x] MVP로 전환하기 위한 MainContract 만들기
+  - [] interface View 구현
+  - [] interface Presenter 구현
+- [] MainPresenter 만들기
+  - [] life increase 오버라이딩
+  - [] life decrease 오버라이딩
+  - [] initStartGame -> presenter.StartGame 리팩토링
+- [] MainActivity 리팩토링
