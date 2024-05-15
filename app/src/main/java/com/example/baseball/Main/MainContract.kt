@@ -7,6 +7,8 @@ interface MainContract {
     }
 
     interface Presenter{
+        fun increaseLife()
+        fun decreaseLife()
         fun startGame()
     }
 }

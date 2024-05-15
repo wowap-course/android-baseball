@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initPresenter()
+        initPlusBtn()
+        initMinusBtn()
         initStartBtn()
     }
 
@@ -35,6 +37,18 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         val intent = Intent(this, GameActivity::class.java)
         intent.putExtra("life", life)
         startActivity(intent)
+    }
+
+    private fun initMinusBtn() {
+        binding.btnMinus.setOnClickListener {
+            presenter.decreaseLife()
+        }
+    }
+
+    private fun initPlusBtn() {
+        binding.btnPlus.setOnClickListener {
+            presenter.increaseLife()
+        }
     }
 
     private fun initStartBtn() {

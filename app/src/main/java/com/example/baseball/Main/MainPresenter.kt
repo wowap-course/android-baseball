@@ -11,6 +11,16 @@ class MainPresenter(private val view: MainContract.View) : MainContract.Presente
         view.showLife(life.life)
     }
 
+    override fun decreaseLife() {
+        life --
+        view.showLife(life.life)
+    }
+
+    override fun increaseLife() {
+        life ++
+        view.showLife(life.life)
+    }
+
     override fun startGame() {
         view.startGamePage(life.life)
     }
