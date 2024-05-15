@@ -10,4 +10,8 @@ class MainPresenter(private val view: MainContract.View) : MainContract.Presente
     init {
         view.showLife(life.life)
     }
+
+    override fun startGame() {
+        view.startGamePage(life.life)
+    }
 }

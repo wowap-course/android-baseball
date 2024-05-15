@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initPresenter()
-
+        initStartBtn()
     }
 
     private fun initPresenter() {
@@ -31,4 +31,15 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         binding.tvLife.text = life.toString()
     }
 
+    override fun startGamePage(life: Int) {
+        val intent = Intent(this, GameActivity::class.java)
+        intent.putExtra("life", life)
+        startActivity(intent)
+    }
+
+    private fun initStartBtn() {
+        binding.btnStart.setOnClickListener {
+            presenter.startGame()
+        }
+    }
 }

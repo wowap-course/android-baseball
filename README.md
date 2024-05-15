@@ -40,5 +40,5 @@
   - [] life increase 오버라이딩
   - [] life decrease 오버라이딩
   - [x] showLife 리팩토링
-  - [] initStartGame -> presenter.StartGame 리팩토링
+  - [x] initStartGame -> presenter.StartGame 리팩토링
 - [] MainActivity 리팩토링
