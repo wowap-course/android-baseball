@@ -15,7 +15,11 @@ class GamePlayActivity : AppCompatActivity() {
         binding = ActivityGamePlayBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val count = intent.getIntExtra("count", 0)
+        initGetLifeState()
+    }
+
+    private fun initGetLifeState() {
+        val count = intent.getIntExtra("life", 0)
         binding.txtLifeState.text = count.toString()
     }
 }

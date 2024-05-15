@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         binding.btnStart.setOnClickListener {
             val txCountValue = binding.txLife.text.toString().toIntOrNull() ?: 0
             val intent = Intent(this, GamePlayActivity::class.java)
-            intent.putExtra("count", txCountValue)
+            intent.putExtra("life", txCountValue)
             startActivity(intent)
         }
     }
