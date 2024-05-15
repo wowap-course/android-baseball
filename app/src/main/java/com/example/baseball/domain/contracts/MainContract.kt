@@ -1,4 +1,4 @@
-package com.example.baseball.presentation
+package com.example.baseball.domain.contracts
 
 interface MainContract {
 

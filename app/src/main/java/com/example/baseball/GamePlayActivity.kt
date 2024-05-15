@@ -4,8 +4,9 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.baseball.databinding.ActivityGamePlayBinding
+import com.example.baseball.domain.contracts.GamePlayContract
 
-class GamePlayActivity : AppCompatActivity() {
+class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
 
     private lateinit var binding: ActivityGamePlayBinding
 
@@ -21,5 +22,9 @@ class GamePlayActivity : AppCompatActivity() {
     private fun initGetLifeState() {
         val count = intent.getIntExtra("life", 0)
         binding.txtLifeState.text = count.toString()
+    }
+
+    override fun showLife(life: Int) {
+        binding.txtLifeState.text = life.toString()
     }
 }

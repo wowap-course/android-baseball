@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.baseball.databinding.ActivityMainBinding
-import com.example.baseball.presentation.MainContract
+import com.example.baseball.domain.contracts.MainContract
 import com.example.baseball.presentation.MainPresenter
 
 class MainActivity : AppCompatActivity(), MainContract.View {
