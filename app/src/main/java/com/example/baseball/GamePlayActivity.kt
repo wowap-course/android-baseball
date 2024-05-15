@@ -16,6 +16,6 @@ class GamePlayActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val count = intent.getIntExtra("count", 0)
-        binding.txtGetCount.text = count.toString()
+        binding.txtLifeState.text = count.toString()
     }
 }
