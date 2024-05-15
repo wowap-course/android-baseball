@@ -5,14 +5,14 @@ data class Life(var life: Int) {
         require(life in MIN_LIFE_COUNT..MAX_LIFE_COUNT)
     }
 
-    fun increase(): Int {
-        if (life == 10) return life
-        return life++
+    operator fun inc(): Life {
+        if (life == MAX_LIFE_COUNT) return this
+        return Life(life + 1)
     }
 
-    fun decrease(): Int {
-        if (life == 1) return life
-        return life--
+    operator fun dec(): Life {
+        if (life == MIN_LIFE_COUNT) return this
+        return Life(life - 1)
     }
 
     companion object {
