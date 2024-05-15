@@ -36,9 +36,9 @@
 - [x] MVP로 전환하기 위한 MainContract 만들기
   - [x] interface View 구현
   - [x] interface Presenter 구현
-- [] MainPresenter 만들기
+- [x] MainPresenter 만들기
   - [] life increase 오버라이딩
   - [] life decrease 오버라이딩
-  - [] showLife 리팩토링
+  - [x] showLife 리팩토링
   - [] initStartGame -> presenter.StartGame 리팩토링
 - [] MainActivity 리팩토링
