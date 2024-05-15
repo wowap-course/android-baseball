@@ -1,6 +1,5 @@
 package com.example.baseball.domain
 
-import com.example.baseball.MainActivity
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.assertThrows
 import org.junit.Test
@@ -22,7 +21,7 @@ class LifeTest {
         val life = Life(5)
 
         // when
-        val actual = life.increase()
+        val actual = life.inc()
 
         // then
         assertThat(actual).isEqualTo(Life(6))
@@ -34,7 +33,7 @@ class LifeTest {
         val life = Life(3)
 
         // when
-        val actual = life.decrease()
+        val actual = life.dec()
 
         // then
         assertThat(actual).isEqualTo(Life(2))
@@ -46,7 +45,7 @@ class LifeTest {
         val life = Life(10)
 
         // when
-        val actual = life.increase()
+        val actual = life.inc()
 
         // then
         assertThat(actual).isEqualTo(Life(10))
@@ -58,7 +57,7 @@ class LifeTest {
         val life = Life(1)
 
         // when
-        val actual = life.decrease()
+        val actual = life.dec()
 
         // then
         assertThat(actual).isEqualTo(Life(1))
