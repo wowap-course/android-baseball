@@ -40,7 +40,7 @@
         app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
-        android:id="@+id/txCount"
+        android:id="@+id/txLife"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="113dp"
@@ -56,9 +56,9 @@
         android:text="@string/txtMinus"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/txCount"
+        app:layout_constraintBottom_toBottomOf="@id/txLife"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@id/txCount" />
+        app:layout_constraintTop_toTopOf="@id/txLife" />
 
     <Button
         android:id="@+id/btnPlus"
@@ -68,9 +68,9 @@
         android:text="@string/txtPlus"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/txCount"
+        app:layout_constraintBottom_toBottomOf="@id/txLife"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/txCount" />
+        app:layout_constraintTop_toTopOf="@id/txLife" />
 
     <Button
         android:id="@+id/btnStart"

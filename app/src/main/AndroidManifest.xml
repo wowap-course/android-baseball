@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Baseball"
         tools:targetApi="31">
         <activity
-            android:name=".GetCountActivity"
+            android:name=".GamePlayActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -4,8 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.baseball.databinding.ActivityMainBinding
-import com.example.baseball.domain.Life
-import com.example.baseball.domain.Life.Companion.MIN_LIFE
 import com.example.baseball.presentation.MainContract
 import com.example.baseball.presentation.MainPresenter
 
@@ -31,7 +29,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     }
 
     override fun showLife(life: Int) {
-        binding.txCount.text = life.toString()
+        binding.txLife.text = life.toString()
     }
 
     private fun initBtnPlus() {
@@ -44,8 +42,8 @@ class MainActivity : AppCompatActivity(), MainContract.View {
 
     private fun initStartButton() {
         binding.btnStart.setOnClickListener {
-            val txCountValue = binding.txCount.text.toString().toIntOrNull() ?: 0
-            val intent = Intent(this, GetCountActivity::class.java)
+            val txCountValue = binding.txLife.text.toString().toIntOrNull() ?: 0
+            val intent = Intent(this, GamePlayActivity::class.java)
             intent.putExtra("count", txCountValue)
             startActivity(intent)
         }
