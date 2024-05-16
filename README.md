@@ -43,4 +43,11 @@
   - [x] initStartGame -> presenter.StartGame 리팩토링
 - [x] MainActivity 리팩토링
 - [x] EditView "세 자리 숫자를 입력해주세요" 구현
-- 
+- [x] button "도전" 구현
+  - [] RandomNumber와 inputNumber가 같은지 비교해서 맞으면 성공창 띄우기
+    - [] Popup "성공창" 나가기 버튼과 재시작 버튼 구현
+    - [] 나가기 버튼을 눌렀을때 MainActivtiy로 이동
+  - [] RandomNumber와 inputNumber가 다르면 목숨 하나를 깎게 만든다.
+  - [] 목숨이 다깎이면 실패창을 띄우게 해야한다.
+    - [] Popup "실패창" 나가기 버튼과 재시작 버튼 구현
+    - [] 나가기 버튼을 눌렀을때 MainActivtiy로 이동

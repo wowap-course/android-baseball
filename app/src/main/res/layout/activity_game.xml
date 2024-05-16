@@ -38,5 +38,18 @@
         tools:ignore="RtlSymmetry" />
 
 
+    <Button
+        android:id="@+id/startGame"
+        android:layout_width="57.45dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="13dp"
+        android:background="@drawable/buttonshape"
+        android:text="@string/try_button"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/inputBox"
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
