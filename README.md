@@ -42,3 +42,5 @@
   - [x] showLife 리팩토링
   - [x] initStartGame -> presenter.StartGame 리팩토링
 - [x] MainActivity 리팩토링
+- [x] EditView "세 자리 숫자를 입력해주세요" 구현
+- 
