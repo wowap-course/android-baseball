@@ -24,17 +24,18 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar_game" />
 
     <EditText
+        android:id="@+id/inputBox"
         android:layout_width="263dp"
         android:layout_height="32dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/inputbox"
-        android:paddingStart="10dp"
         android:hint="@string/input_baseball_Number"
+        android:paddingStart="10dp"
         android:textColorHint="#B0B0B0"
-        android:textSize="14dp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLifeTitle"
         tools:ignore="RtlSymmetry" />
 
 

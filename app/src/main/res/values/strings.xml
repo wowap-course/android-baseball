@@ -10,4 +10,7 @@
     <string name="life_count">%d</string>
     <string name="toolbar_game">Baseball</string>
     <string name="toolbar">Baseball</string>
+    <string name="input_baseball_Number">  세 자리 숫자를 입력해주세요.</string>
+    <string name="try_button">도전</string>
+
 </resources>
