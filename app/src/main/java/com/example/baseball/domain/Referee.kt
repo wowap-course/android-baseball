@@ -17,10 +17,8 @@ class Referee {
     }
 
     fun reset() {
-        if (score.strike != THREE_STRIKE) {
-            score.strike = RESET_NUMBER
-            score.ball = RESET_NUMBER
-        }
+        score.strike = RESET_NUMBER
+        score.ball = RESET_NUMBER
     }
 
     fun isThreeStrike(): Boolean {
