@@ -45,8 +45,8 @@
 - [x] EditView "세 자리 숫자를 입력해주세요" 구현
 - [x] GameContract 만들기
   - [x] interface View 구현
-  - [] interface Presenter 구현
-- [] MainPresenter 만들기 
+  - [x] interface Presenter 구현
+- [] GamePresenter 만들기 
   - [] domain inputnumber 받아서 게임시작하기 
 - [x] button "도전" 구현
   - [] Domain Baseball Game 연동
