@@ -19,16 +19,14 @@ class GamePlayPresenter(private val view: GamePlayContract.View): GamePlayContra
         playHandler(computer, playerNumber)
     }
 
-    private fun playHandler(computer: List<Int>, player: List<Int>): Boolean {
-        return try {
+    private fun playHandler(computer: List<Int>, player: List<Int>) {
+        try {
             val validPlayerNumber = checkNumner(player)
             val (strike, ball) = referee.call(computer, validPlayerNumber)
             referee.reset()
             view.showGameStatus(strike, ball)
-            true
         } catch (e: IllegalArgumentException) {
             println(e.message)
-            false
         }
     }
 
