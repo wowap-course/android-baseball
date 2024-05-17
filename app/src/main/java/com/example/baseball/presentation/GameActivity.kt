@@ -15,7 +15,6 @@ class GameActivity : AppCompatActivity() {
 
         life = intent.getIntExtra("life", 1)
         binding.tvLife.text = life.toString()
-
         setContentView(binding.root)
     }
 }

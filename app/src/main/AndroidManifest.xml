@@ -16,7 +16,7 @@
             android:exported="false"
             android:theme="@style/Base.Theme.Baseball" />
         <activity
-            android:name=".presentation.MainActivity"
+            android:name=".presentation.main.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

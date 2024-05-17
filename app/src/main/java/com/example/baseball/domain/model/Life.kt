@@ -21,9 +21,12 @@ value class Life(val value: Int) {
         return Life(value - 1)
     }
 
+    operator fun plus(other: Int): Life {
+        return Life(value + other)
+    }
+
     companion object {
         private const val MAX_LIFE = 10
         private const val MIN_LIFE = 1
     }
 }
-
