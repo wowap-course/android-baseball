@@ -20,8 +20,8 @@ class LifeCountTest {
     }
 
     @Test
-    fun `목숨의 개수는 19를 넘을 수 없다`() {
-        assertThrows<IllegalArgumentException> { LifeCount(20) }
+    fun `목숨의 개수는 10를 넘을 수 없다`() {
+        assertThrows<IllegalArgumentException> { LifeCount(11) }
     }
 
     @Test
@@ -51,15 +51,15 @@ class LifeCountTest {
     }
 
     @Test
-    fun `19개의 목숩에서는 개수를 늘여도 19개이다`() {
+    fun `10개의 목숩에서는 개수를 늘여도 10개이다`() {
         //given
-        val maximumLifeCount = LifeCount(99)
+        val maximumLifeCount = LifeCount(10)
 
         //when
         maximumLifeCount.increase()
 
         //then
-        assertTrue(maximumLifeCount.count == 19)
+        assertTrue(maximumLifeCount.count == 10)
     }
 
     @Test

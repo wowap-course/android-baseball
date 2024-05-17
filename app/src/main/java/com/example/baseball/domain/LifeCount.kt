@@ -20,6 +20,6 @@ data class LifeCount(private var _count : Int = 1) {
     }
     companion object {
         private const val MIN_LIFE_COUNT = 1
-        private const val MAX_LIFE_COUNT = 19
+        private const val MAX_LIFE_COUNT = 10
     }
 }
