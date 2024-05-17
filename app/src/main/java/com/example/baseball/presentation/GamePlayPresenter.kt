@@ -10,16 +10,13 @@ class GamePlayPresenter(private val view: GamePlayContract.View): GamePlayContra
     private var life = Life(MIN_LIFE)
     private val referee = Referee()
     private val gameSetup = ThreeRandomNumberGenerator()
+    private val computer = gameSetup.generateNumber()
     override fun decreaseLife() {
         view.showLife(life.decrease())
     }
 
     override fun playgame(playerNumber: List<Int>) {
-        val computer = gameSetup.generateNumber()
-
-        while (!referee.isThreeStrike()) {
-            playHandler(computer, playerNumber)
-        }
+        playHandler(computer, playerNumber)
     }
 
     private fun playHandler(computer: List<Int>, player: List<Int>): Boolean {
