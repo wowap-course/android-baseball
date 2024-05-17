@@ -36,8 +36,6 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
     private fun initBtnStart() {
         binding.btnCheck.setOnClickListener {
             val inputText = binding.inputNumber.text.toString()
-
-            // 입력된 문자열을 개별 문자로 분리하고 각 문자를 Int로 변환
             val numberList: List<Int> = inputText.mapNotNull {
                 it.toString().toIntOrNull()
             }
@@ -46,12 +44,10 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
                 // Controller에게 numberList를 전달하는 함수가 구현 되어야 함
                 presenter.playgame(numberList)
             } else {
-                // 유효한 숫자가 입력되지 않은 경우 사용자에게 알림을 표시
                 Toast.makeText(this, "유효한 숫자를 입력해주세요", Toast.LENGTH_SHORT).show()
             }
         }
     }
-
 
     override fun showLife(life: Int) {
         binding.txtLifeState.text = life.toString()
@@ -59,5 +55,9 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
 
     override fun showGameStatus(strike: Int, ball: Int) {
         Toast.makeText(this, "strike: $strike, ball: $ball", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun showThreeStrike() {
+        Toast.makeText(this, "성공", Toast.LENGTH_SHORT).show()
     }
 }

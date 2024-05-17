@@ -16,10 +16,18 @@ class Referee {
         return score.strike to score.ball
     }
 
+    fun isThreeStrike(strike: Int): Boolean {
+        return if (strike == THREE_STRIKE) {
+            true
+        } else
+            false
+    }
+
     fun reset() {
         score.strike = RESET_NUMBER
         score.ball = RESET_NUMBER
     }
+
     companion object {
         const val MIN_RANDOM_NUMBER = 1
         const val MAX_RANDOM_NUMBER = 9

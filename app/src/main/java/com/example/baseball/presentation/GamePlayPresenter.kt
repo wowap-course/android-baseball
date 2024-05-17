@@ -25,6 +25,10 @@ class GamePlayPresenter(private val view: GamePlayContract.View): GamePlayContra
             val (strike, ball) = referee.call(computer, validPlayerNumber)
             referee.reset()
             view.showGameStatus(strike, ball)
+            val isThreeStrike = referee.isThreeStrike(strike)
+            if (isThreeStrike) {
+                view.showThreeStrike()
+            }
         } catch (e: IllegalArgumentException) {
             println(e.message)
         }
