@@ -47,11 +47,11 @@
   - [x] interface View 구현
   - [x] interface Presenter 구현
 - [x] GamePresenter 만들기 
-  - [] domain input number 받아서 게임시작하기 
+  - [x] domain input number 받아서 게임시작하기 
 - [x] button "도전" 구현
-  - [] Domain Baseball Game 연동
-  - [] EditView Text를 받아서 (= inputnumber)로 Game 시작하기
-  - [] StrikeCount BallCount를 Toast로 띄우기 
+  - [x] Domain Baseball Game 연동
+  - [x] EditView Text를 받아서 (= inputnumber)로 Game 시작하기
+  - [x] StrikeCount BallCount를 Toast로 띄우기 
   - [] 성공창, 실패창에서 나가기 버튼 구현 -> finish() 
   - [] 성공창, 실패창에서 재시작 버튼 구현 
   - [] Strike = 3일때 성공창 띄우기 
