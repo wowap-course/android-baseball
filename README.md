@@ -46,8 +46,8 @@
 - [x] GameContract 만들기
   - [x] interface View 구현
   - [x] interface Presenter 구현
-- [] GamePresenter 만들기 
-  - [] domain inputnumber 받아서 게임시작하기 
+- [x] GamePresenter 만들기 
+  - [] domain input number 받아서 게임시작하기 
 - [x] button "도전" 구현
   - [] Domain Baseball Game 연동
   - [] EditView Text를 받아서 (= inputnumber)로 Game 시작하기

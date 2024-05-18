@@ -5,4 +5,8 @@ interface GameContract {
         fun showResult(strikeCount: Int, ballCount: Int)
 
     }
+
+    interface Presenter{
+        fun game(inputNumber: List<Int>)
+    }
 }
