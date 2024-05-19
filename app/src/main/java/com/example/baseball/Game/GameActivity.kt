@@ -8,31 +8,33 @@ import com.example.baseball.R
 import com.example.baseball.databinding.ActivityGameBinding
 
 class GameActivity : AppCompatActivity(), GameContract.View {
-    private var lifeCount: Int? = null
+    private var life: Int? = null
     private lateinit var binding: ActivityGameBinding
     private lateinit var presenter: GameContract.Presenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        lifeCount = intent.getIntExtra("life", 1)
+        life = intent.getIntExtra("life", 1)
         setContentView(R.layout.activity_game)
         binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initPresenter()
+        val randomNumber = presenter.randomNumberGenerator()
         initCount()
         initBackBtn()
-        initBtn()
+        initBtn(randomNumber)
     }
 
     private fun initPresenter() {
         presenter = GamePresenter(this)
     }
 
-    private fun initBtn() {
+
+    private fun initBtn(randomNumber:List<Int>) {
         binding.startGame.setOnClickListener {
             val inputNumber =
                 binding.inputBox.text.toString().toList().map { it.toString().toInt() }
-            presenter.game(inputNumber)
+            presenter.game(randomNumber, inputNumber, life)
         }
     }
 
@@ -44,10 +46,12 @@ class GameActivity : AppCompatActivity(), GameContract.View {
     }
 
     private fun initCount() {
-        binding.tvLifeTitle.text = getString(R.string.remain_life, lifeCount)
+        binding.tvLifeTitle.text = getString(R.string.remain_life, life)
     }
 
-    override fun showResult(strikeCount: Int, ballCount: Int) {
+    override fun showResult(strikeCount: Int, ballCount: Int, lifeCount: Int) {
+        life = lifeCount
+        binding.tvLifeTitle.text = getString(R.string.remain_life, life)
         Toast.makeText(
             this@GameActivity,
             "스트라이크 : ${strikeCount}, 볼 : $ballCount",
