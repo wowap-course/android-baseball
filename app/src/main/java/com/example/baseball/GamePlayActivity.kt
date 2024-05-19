@@ -11,7 +11,6 @@ import com.example.baseball.presentation.GamePlayPresenter
 class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
 
     private lateinit var binding: ActivityGamePlayBinding
-
     private lateinit var presenter: GamePlayContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +24,8 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
     }
 
     private fun initPresenter() {
-        presenter = GamePlayPresenter(this)
+        val count = intent.getIntExtra("life", 0)
+        presenter = GamePlayPresenter(this, count)
     }
 
     private fun initGetLifeState() {
@@ -41,7 +41,6 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
             }
 
             if (numberList.isNotEmpty()) {
-                // Controller에게 numberList를 전달하는 함수가 구현 되어야 함
                 presenter.playgame(numberList)
             } else {
                 Toast.makeText(this, "유효한 숫자를 입력해주세요", Toast.LENGTH_SHORT).show()

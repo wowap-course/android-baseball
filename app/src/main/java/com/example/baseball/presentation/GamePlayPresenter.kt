@@ -6,11 +6,12 @@ import com.example.baseball.domain.Life
 import com.example.baseball.domain.Life.Companion.MIN_LIFE
 import com.example.baseball.domain.contracts.GamePlayContract
 
-class GamePlayPresenter(private val view: GamePlayContract.View): GamePlayContract.Presenter {
-    private var life = Life(MIN_LIFE)
+class GamePlayPresenter(private val view: GamePlayContract.View, initialLife: Int) : GamePlayContract.Presenter {
+    private var life = Life(initialLife)
     private val referee = Referee()
     private val gameSetup = ThreeRandomNumberGenerator()
     private val computer = gameSetup.generateNumber()
+
     override fun decreaseLife() {
         view.showLife(life.decrease())
     }
@@ -28,6 +29,8 @@ class GamePlayPresenter(private val view: GamePlayContract.View): GamePlayContra
             val isThreeStrike = referee.isThreeStrike(strike)
             if (isThreeStrike) {
                 view.showThreeStrike()
+            } else {
+                decreaseLife()
             }
         } catch (e: IllegalArgumentException) {
             println(e.message)
