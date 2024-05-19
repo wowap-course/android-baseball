@@ -13,7 +13,7 @@ class GamePlayPresenter(private val view: GamePlayContract.View, initialLife: In
     private val computer = gameSetup.generateNumber()
 
     override fun decreaseLife() {
-        view.showLife(life.decrease())
+        view.showLife(life.decreaseToZero())
     }
 
     override fun playgame(playerNumber: List<Int>) {
