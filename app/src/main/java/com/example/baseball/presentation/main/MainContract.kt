@@ -5,9 +5,11 @@ interface MainContract {
         fun showLife(life : Int)
         fun showMaxLife()
         fun showMinLife()
+        fun navigateToGameActivity(life : Int)
     }
     interface Presenter {
         fun increaseLife()
         fun decreaseLife()
+        fun onGameStartBtnClicked()
     }
 }

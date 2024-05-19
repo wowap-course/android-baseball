@@ -1,4 +1,4 @@
-package baseball.domain
+package com.example.baseball.domain
 
 class Judgement() {
     fun judgeNumber(opponentNumber : List<BaseballNumber>, answer : List<BaseballNumber>) : Pair<Int, Int> {

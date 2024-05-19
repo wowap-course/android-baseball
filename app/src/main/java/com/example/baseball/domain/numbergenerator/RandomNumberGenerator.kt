@@ -1,6 +1,6 @@
-package baseball.domain.numbergenerator
+package com.example.baseball.domain.numbergenerator
 
-class RandomNumberGenerator : NumberGenerator  {
+class RandomNumberGenerator : NumberGenerator {
     override fun generateNumber(): List<Int> {
         val number = mutableSetOf<Int>()
         while(number.size < NUMBER_DIGITS) {

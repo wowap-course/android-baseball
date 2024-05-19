@@ -1,4 +1,4 @@
-package baseball.domain
+package com.example.baseball.domain
 
 @JvmInline
 value class BaseballNumber(private val number : Int) {

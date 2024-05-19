@@ -16,4 +16,8 @@ class MainPresenter(private val view : MainContract.View) : MainContract.Present
         if (lifeCount.decrease()) view.showLife(lifeCount.count)
         else view.showMinLife()
     }
+
+    override fun onGameStartBtnClicked() {
+        view.navigateToGameActivity(lifeCount.count)
+    }
 }

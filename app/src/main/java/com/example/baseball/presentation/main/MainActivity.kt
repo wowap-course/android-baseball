@@ -7,45 +7,57 @@ import android.widget.Toast
 import com.example.baseball.GameActivity
 import com.example.baseball.R
 import com.example.baseball.databinding.ActivityMainBinding
-import com.example.baseball.domain.LifeCount
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MainContract.View {
     private lateinit var binding : ActivityMainBinding
+    private lateinit var presenter: MainContract.Presenter
     private var toast : Toast? = null
-    private val lifeCount = LifeCount()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initLifeCount()
+        initPresenter()
         initBtn()
     }
 
-    private fun initLifeCount() {
-        binding.tvLifeCount.text = lifeCount.count.toString()
+    private fun initPresenter() {
+        presenter = MainPresenter(this)
     }
 
     private fun initBtn() {
         binding.btnPlus.setOnClickListener {
-            if(!lifeCount.increase()) showToast(getString(R.string.max_life_count_description))
-            else binding.tvLifeCount.text = lifeCount.count.toString()
+            presenter.increaseLife()
         }
         binding.btnMinus.setOnClickListener {
-            if(!lifeCount.decrease()) showToast(getString(R.string.min_life_count_description))
-            else binding.tvLifeCount.text = lifeCount.count.toString()
+            presenter.decreaseLife()
         }
 
         binding.btnStart.setOnClickListener {
-            val intent = Intent(this, GameActivity::class.java)
-            intent.putExtra("lifeCount", lifeCount.count)
-            startActivity(intent)
+            presenter.onGameStartBtnClicked()
         }
     }
-    private fun showToast(msg : String){
+
+    override fun showLife(life: Int) {
+        binding.tvLifeCount.text = life.toString()
+    }
+
+    override fun showMaxLife() {
         toast?.cancel()
-        toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT)
+        toast = Toast.makeText(this, getString(R.string.max_life_count_description), Toast.LENGTH_SHORT)
         toast?.show()
+    }
+
+    override fun showMinLife() {
+        toast?.cancel()
+        toast = Toast.makeText(this, getString(R.string.min_life_count_description), Toast.LENGTH_SHORT)
+        toast?.show()
+    }
+
+    override fun navigateToGameActivity(life : Int) {
+        val intent = Intent(this, GameActivity::class.java)
+        intent.putExtra("lifeCount", life)
+        startActivity(intent)
     }
 }

@@ -1,4 +1,4 @@
-package baseball.domain
+package com.example.baseball.domain
 
 data class BaseballNumbers(private val _baseballNumbers : List<Int>) {
     init {
