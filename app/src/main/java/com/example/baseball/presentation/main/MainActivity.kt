@@ -1,9 +1,11 @@
-package com.example.baseball
+package com.example.baseball.presentation.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.baseball.GameActivity
+import com.example.baseball.R
 import com.example.baseball.databinding.ActivityMainBinding
 import com.example.baseball.domain.LifeCount
 
