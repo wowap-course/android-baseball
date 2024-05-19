@@ -3,7 +3,7 @@ package com.example.baseball.Main
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.baseball.GameActivity
+import com.example.baseball.Game.GameActivity
 import com.example.baseball.R
 import com.example.baseball.databinding.ActivityMainBinding
 import com.example.baseball.domain.Life
