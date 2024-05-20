@@ -12,5 +12,11 @@
     <string name="toolbar">Baseball</string>
     <string name="input_baseball_Number">  세 자리 숫자를 입력해주세요.</string>
     <string name="try_button">도전</string>
+    <string name="win">성공</string>
+    <string name="restart">재시작</string>
+    <string name="quit">나가기</string>
+    <string name="lose">실패</string>
+    <string name="strike">스트라이크 : %d, 볼 : %d</string>
+    <string name="answer">정답 : %d</string>
 
 </resources>

@@ -63,23 +63,23 @@ class GameActivity : AppCompatActivity(), GameContract.View {
         binding.tvLifeTitle.text = getString(R.string.remain_life, life)
         Toast.makeText(
             this@GameActivity,
-            "스트라이크 : ${strikeCount}, 볼 : $ballCount",
+            getString(R.string.strike, strikeCount, ballCount),
             Toast.LENGTH_SHORT
         ).show()
     }
 
     override fun showWinDialog(randomNumber: List<Int>) {
-        val answer = randomNumber.joinToString("") { it.toString() }
+        val answer = randomNumber.joinToString("") { it.toString() }.toInt()
         AlertDialog.Builder(this)
-            .setTitle("성공")
-            .setMessage("정답 : $answer")
-            .setPositiveButton("재시작", object : DialogInterface.OnClickListener {
+            .setTitle(getString(R.string.win))
+            .setMessage(getString(R.string.answer, answer))
+            .setPositiveButton(getString(R.string.restart), object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface, which: Int) {
                     finish()
                     startActivity(intent)
                 }
             })
-            .setNegativeButton("나가기", object : DialogInterface.OnClickListener {
+            .setNegativeButton(getString(R.string.quit), object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface, which: Int) {
                     finish()
                 }
@@ -89,17 +89,17 @@ class GameActivity : AppCompatActivity(), GameContract.View {
     }
 
     override fun showLoseDialog(randomNumber: List<Int>) {
-        val answer = randomNumber.joinToString("") { it.toString() }
+        val answer = randomNumber.joinToString("") { it.toString() }.toInt()
         AlertDialog.Builder(this)
-            .setTitle("실패")
-            .setMessage("정답 : $answer")
-            .setPositiveButton("재시작", object : DialogInterface.OnClickListener {
+            .setTitle(getString(R.string.lose))
+            .setMessage(getString(R.string.answer, answer))
+            .setPositiveButton(getString(R.string.restart), object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface, which: Int) {
                     finish()
                     startActivity(intent)
                 }
             })
-            .setNegativeButton("나가기", object : DialogInterface.OnClickListener {
+            .setNegativeButton(getString(R.string.quit), object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface, which: Int) {
                     finish()
                 }
