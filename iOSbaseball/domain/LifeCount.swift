@@ -20,17 +20,12 @@ class LifeCount{
         }
     }
     
-    func increase() {
-        if lifes < MAX_LIFE_COUNT {
-            lifes += 1
-        }
-        
+    func increase() -> Bool{
+        return lifes < MAX_LIFE_COUNT ? { lifes += 1; return true }() : false
     }
     
-    func decrease() {
-        if lifes > MIN_LIFE_COUNT {
-            lifes -= 1
-        }
+    func decrease() -> Bool{
+        return lifes > MIN_LIFE_COUNT ? { lifes -= 1; return true }() : false
     }
     
     private let MIN_LIFE_COUNT = 1

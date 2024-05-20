@@ -37,13 +37,15 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func btnMinus(_ sender: Any) {
-        lifeCount.decrease()
-        lifeLabel.text = String(lifeCount.lifes)
+        if lifeCount.decrease() {
+            lifeLabel.text = String(lifeCount.lifes)
+        }
     }
     
     @IBAction func btnPlus(_ sender: Any) {
-        lifeCount.increase()
-        lifeLabel.text = String(lifeCount.lifes)
+        if lifeCount.increase() {
+            lifeLabel.text = String(lifeCount.lifes)
+        }
     }
 }
 
