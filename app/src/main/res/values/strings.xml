@@ -5,4 +5,6 @@
     <string name="txtPlus">+</string>
     <string name="txtMinus">-</string>
     <string name="txtGameStart">게임 시작!</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
