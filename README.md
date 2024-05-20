@@ -52,8 +52,8 @@
   - [x] Domain Baseball Game 연동
   - [x] EditView Text를 받아서 (= inputnumber)로 Game 시작하기
   - [x] StrikeCount BallCount를 Toast로 띄우기 
-  - [] 성공창, 실패창에서 나가기 버튼 구현 -> finish() 
-  - [] 성공창, 실패창에서 재시작 버튼 구현 
+  - [x] 성공창, 실패창에서 나가기 버튼 구현 -> finish() 
+  - [x] 성공창, 실패창에서 재시작 버튼 구현 
   - [x] Strike = 3일때 성공창 띄우기 
   - [x] Strike != 3일때 실패창 띄우기 
     - [x] life 하나 깎기 
