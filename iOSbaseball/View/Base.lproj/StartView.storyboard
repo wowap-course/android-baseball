@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Start View Controller-->
+        <!--StartViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="StartViewController" id="BYZ-38-t0r" customClass="StartViewController" sceneMemberID="viewController">
+                <viewController restorationIdentifier="StartViewController" storyboardIdentifier="StartViewController" title="StartViewController" id="BYZ-38-t0r" customClass="StartViewController" customModule="iOSbaseball" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,10 +64,13 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="-"/>
+                                                <connections>
+                                                    <action selector="btnMinus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dEE-Ey-7B6"/>
+                                                </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ium-R9-Z6X">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="lifeLabel" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HU-fi-CEP">
                                                 <rect key="frame" x="65" y="0.0" width="171" height="41"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -78,6 +81,9 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="+"/>
+                                                <connections>
+                                                    <action selector="btnPlus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G1r-Le-Nm0"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -119,6 +125,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IT0-CU-JNJ" secondAttribute="bottom" id="kFE-Kf-Otb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lifeLabel" destination="3HU-fi-CEP" id="qcX-O8-GTN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
