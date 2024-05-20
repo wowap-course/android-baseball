@@ -1,5 +1,6 @@
 package com.example.baseball
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
@@ -75,7 +76,10 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
                 finishAffinity()
             }
             .setPositiveButton("재시작") { dialog, which ->
-                // Respond to positive button press
+                val intent = Intent(this, MainActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+                finish()
             }
             .show()
     }
