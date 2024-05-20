@@ -1,8 +1,8 @@
 package baseball.domain
 
-class Game{
-    fun start(randomBaseballNumber:List<Int>, inputBaseballNumber: List<Int>, life:Int):Referee {
-        val count = Judgement().correctCount(randomBaseballNumber,inputBaseballNumber, life)
+class Game(val answerNumbers: List<Int>) {
+    fun start(inputBaseballNumber: List<Int>, life: Int): Referee {
+        val count = Judgement().correctCount(answerNumbers, inputBaseballNumber, life)
         return count
     }
 }

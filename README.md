@@ -54,6 +54,6 @@
   - [x] StrikeCount BallCount를 Toast로 띄우기 
   - [] 성공창, 실패창에서 나가기 버튼 구현 -> finish() 
   - [] 성공창, 실패창에서 재시작 버튼 구현 
-  - [] Strike = 3일때 성공창 띄우기 
-  - [] Strike != 3일때 실패창 띄우기 
-    - [] life 하나 깎기 
+  - [x] Strike = 3일때 성공창 띄우기 
+  - [x] Strike != 3일때 실패창 띄우기 
+    - [x] life 하나 깎기 

@@ -1,11 +1,17 @@
 package com.example.baseball.Game
 
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.baseball.Main.MainActivity
 import com.example.baseball.R
 import com.example.baseball.databinding.ActivityGameBinding
+
 
 class GameActivity : AppCompatActivity(), GameContract.View {
     private var life: Int? = null
@@ -20,21 +26,24 @@ class GameActivity : AppCompatActivity(), GameContract.View {
         setContentView(binding.root)
         initPresenter()
         val randomNumber = presenter.randomNumberGenerator()
+//        initdialog(randomNumber)
         initCount()
         initBackBtn()
         initBtn(randomNumber)
+
     }
+
 
     private fun initPresenter() {
         presenter = GamePresenter(this)
     }
 
 
-    private fun initBtn(randomNumber:List<Int>) {
+    private fun initBtn(randomNumber: List<Int>) {
         binding.startGame.setOnClickListener {
             val inputNumber =
                 binding.inputBox.text.toString().toList().map { it.toString().toInt() }
-            presenter.game(randomNumber, inputNumber, life)
+            presenter.game(inputNumber, life)
         }
     }
 
@@ -57,6 +66,46 @@ class GameActivity : AppCompatActivity(), GameContract.View {
             "스트라이크 : ${strikeCount}, 볼 : $ballCount",
             Toast.LENGTH_SHORT
         ).show()
+    }
+
+    override fun showWinDialog(randomNumber: List<Int>) {
+        val answer = randomNumber.joinToString("") { it.toString() }
+        AlertDialog.Builder(this)
+            .setTitle("성공")
+            .setMessage("정답 : $answer")
+            .setPositiveButton("재시작", object : DialogInterface.OnClickListener {
+                override fun onClick(dialog: DialogInterface, which: Int) {
+                    finish()
+                    startActivity(intent)
+                }
+            })
+            .setNegativeButton("나가기", object : DialogInterface.OnClickListener {
+                override fun onClick(dialog: DialogInterface, which: Int) {
+                    finish()
+                }
+            })
+            .create()
+            .show()
+    }
+
+    override fun showLoseDialog(randomNumber: List<Int>) {
+        val answer = randomNumber.joinToString("") { it.toString() }
+        AlertDialog.Builder(this)
+            .setTitle("실패")
+            .setMessage("정답 : $answer")
+            .setPositiveButton("재시작", object : DialogInterface.OnClickListener {
+                override fun onClick(dialog: DialogInterface, which: Int) {
+                    finish()
+                    startActivity(intent)
+                }
+            })
+            .setNegativeButton("나가기", object : DialogInterface.OnClickListener {
+                override fun onClick(dialog: DialogInterface, which: Int) {
+                    finish()
+                }
+            })
+            .create()
+            .show()
     }
 
 }
