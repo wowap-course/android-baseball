@@ -23,6 +23,13 @@ class Referee {
             false
     }
 
+    fun callGameOver(life: Int): Boolean {
+        return if (life == 0) {
+            true
+        } else
+            false
+    }
+
     fun reset() {
         score.strike = RESET_NUMBER
         score.ball = RESET_NUMBER

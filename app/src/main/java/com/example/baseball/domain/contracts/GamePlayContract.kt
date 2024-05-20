@@ -5,7 +5,7 @@ interface GamePlayContract {
     interface View {
         fun showLife(life: Int)
         fun showGameStatus(strike: Int, ball: Int)
-        fun showThreeStrike()
+        fun showGameResult(ameResult: String, answer: List<Int>)
     }
 
     interface Presenter {

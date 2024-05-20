@@ -23,7 +23,6 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
         initPresenter()
         initGetLifeState()
         initBtnStart()
-        materialNegativePositiveDialog("성공", 123)
     }
 
     private fun initPresenter() {
@@ -59,25 +58,17 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
         Toast.makeText(this, "strike: $strike, ball: $ball", Toast.LENGTH_SHORT).show()
     }
 
-    override fun showThreeStrike() {
-        Toast.makeText(this, "성공", Toast.LENGTH_SHORT).show()
-    }
-
-    private fun materialNegativePositiveDialog(gameResult: String, answer: Int) {
+    override fun showGameResult(gameResult: String, answer: List<Int>) {
         val finalAnswer = answer.toString()
 
-        // 커스텀 뷰를 인플레이트합니다.
         val dialogView = layoutInflater.inflate(R.layout.game_result_layout, null)
 
-        // 커스텀 뷰 내의 텍스트뷰를 초기화합니다.
         val gameResultTextView: TextView = dialogView.findViewById(R.id.game_result)
         val answerTextView: TextView = dialogView.findViewById(R.id.answer)
 
-        // 텍스트뷰에 텍스트를 설정합니다.
         gameResultTextView.text = gameResult
         answerTextView.text = finalAnswer
 
-        // 다이얼로그 빌더에 커스텀 뷰를 설정합니다.
         MaterialAlertDialogBuilder(this)
             .setView(dialogView)
             .setNegativeButton("나가기") { dialog, which ->

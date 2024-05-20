@@ -28,9 +28,13 @@ class GamePlayPresenter(private val view: GamePlayContract.View, initialLife: In
             view.showGameStatus(strike, ball)
             val isThreeStrike = referee.isThreeStrike(strike)
             if (isThreeStrike) {
-                view.showThreeStrike()
+                view.showGameResult("성공", computer)
             } else {
                 decreaseLife()
+                val isGameOver = referee.callGameOver(life.count)
+                if (isGameOver) {
+                    view.showGameResult("실패", computer)
+                }
             }
         } catch (e: IllegalArgumentException) {
             println(e.message)
