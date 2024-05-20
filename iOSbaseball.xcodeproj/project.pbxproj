@@ -13,7 +13,7 @@
 		1202A66B2BF8BAC300219204 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1202A66A2BF8BAC300219204 /* Base */; };
 		1202A66D2BF8BAC400219204 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1202A66C2BF8BAC400219204 /* Assets.xcassets */; };
 		1202A6702BF8BAC400219204 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1202A66F2BF8BAC400219204 /* Base */; };
-		1202A67B2BF8BAC500219204 /* iOSbaseballTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202A67A2BF8BAC500219204 /* iOSbaseballTests.swift */; };
+		1202A67B2BF8BAC500219204 /* LifeCountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202A67A2BF8BAC500219204 /* LifeCountTests.swift */; };
 		1202A6852BF8BAC500219204 /* iOSbaseballUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202A6842BF8BAC500219204 /* iOSbaseballUITests.swift */; };
 		1202A6872BF8BAC500219204 /* iOSbaseballUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202A6862BF8BAC500219204 /* iOSbaseballUITestsLaunchTests.swift */; };
 		12C955AF2BF8BBF100C83000 /* LifeCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C955AE2BF8BBF100C83000 /* LifeCount.swift */; };
@@ -48,7 +48,7 @@
 		1202A66F2BF8BAC400219204 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1202A6712BF8BAC400219204 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1202A6762BF8BAC500219204 /* iOSbaseballTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSbaseballTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1202A67A2BF8BAC500219204 /* iOSbaseballTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSbaseballTests.swift; sourceTree = "<group>"; };
+		1202A67A2BF8BAC500219204 /* LifeCountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeCountTests.swift; sourceTree = "<group>"; };
 		1202A6802BF8BAC500219204 /* iOSbaseballUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSbaseballUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1202A6842BF8BAC500219204 /* iOSbaseballUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSbaseballUITests.swift; sourceTree = "<group>"; };
 		1202A6862BF8BAC500219204 /* iOSbaseballUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSbaseballUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		1202A6792BF8BAC500219204 /* iOSbaseballTests */ = {
 			isa = PBXGroup;
 			children = (
-				1202A67A2BF8BAC500219204 /* iOSbaseballTests.swift */,
+				1202A67A2BF8BAC500219204 /* LifeCountTests.swift */,
 			);
 			path = iOSbaseballTests;
 			sourceTree = "<group>";
@@ -304,7 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1202A67B2BF8BAC500219204 /* iOSbaseballTests.swift in Sources */,
+				1202A67B2BF8BAC500219204 /* LifeCountTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
