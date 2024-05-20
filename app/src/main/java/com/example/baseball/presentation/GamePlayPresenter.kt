@@ -26,13 +26,11 @@ class GamePlayPresenter(private val view: GamePlayContract.View, initialLife: In
             val (strike, ball) = referee.call(computer, validPlayerNumber)
             referee.reset()
             view.showGameStatus(strike, ball)
-            val isThreeStrike = referee.isThreeStrike(strike)
-            if (isThreeStrike) {
+            if (referee.isThreeStrike(strike)) {
                 view.showGameResult("성공", computer)
             } else {
                 decreaseLife()
-                val isGameOver = referee.callGameOver(life.count)
-                if (isGameOver) {
+                if (referee.callGameOver(life.count)) {
                     view.showGameResult("실패", computer)
                 }
             }
