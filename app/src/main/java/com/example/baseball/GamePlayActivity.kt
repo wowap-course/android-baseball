@@ -72,7 +72,7 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
         MaterialAlertDialogBuilder(this)
             .setView(dialogView)
             .setNegativeButton("나가기") { dialog, which ->
-                // Respond to negative button press
+                finishAffinity()
             }
             .setPositiveButton("재시작") { dialog, which ->
                 // Respond to positive button press

@@ -1,5 +1,7 @@
 package baseball.domain
 
+import com.example.baseball.domain.Life.Companion.ZERO_LIFE
+
 class Referee {
     private val score = Score(RESET_NUMBER, RESET_NUMBER)
 
@@ -24,7 +26,7 @@ class Referee {
     }
 
     fun callGameOver(life: Int): Boolean {
-        return if (life == 0) {
+        return if (life == ZERO_LIFE) {
             true
         } else
             false
