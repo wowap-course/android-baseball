@@ -16,14 +16,22 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initBall()
         initBtn()
         initLifeLabel()
         
     }
     @IBAction func challengeBtn(_ sender: Any) {
         
-        inputBall.text = ""
+        let inputText = inputBall.text
+        do {
+            var userNumbers = try UserBall(numbers: (inputText?.compactMap { Int(String($0)) })!)
+        } catch {
+            print("잘못 입려하셨습니다.")
+        }
         
+        
+        inputBall.text = ""
         if lifeCount!.decrease() {
             initLifeLabel()
         } else {
@@ -31,6 +39,10 @@ class MainViewController: UIViewController {
             makeAlertDialog(title: "실패", message: "정답\(123)")
         }
         
+    }
+    
+    private func initBall(){
+        let opponentBall = OpponentBall(numberGenerator: ran)
     }
     
     private func initBtn(){
