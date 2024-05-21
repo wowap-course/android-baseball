@@ -1,12 +1,14 @@
 package com.example.baseball.presentation.game
 
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.baseball.R
 import com.example.baseball.databinding.ActivityGameBinding
+import com.example.baseball.presentation.main.MainActivity
 
 class GameActivity : AppCompatActivity(), GameContract.View {
     private lateinit var binding: ActivityGameBinding
@@ -55,12 +57,12 @@ class GameActivity : AppCompatActivity(), GameContract.View {
             .setPositiveButton(
                 getString(R.string.restart),
                 DialogInterface.OnClickListener { dialog, which ->
-                    Log.d("dialog", "positive")
+                    presenter.onRestartBtnClicked()
                 })
             .setNegativeButton(
                 getString(R.string.exit),
                 DialogInterface.OnClickListener { dialog, which ->
-                    Log.d("dialog", "negative")
+                    presenter.onExitBtnClicked()
                 })
         resultDialog.create()
         resultDialog.show()
@@ -68,6 +70,17 @@ class GameActivity : AppCompatActivity(), GameContract.View {
 
     override fun showLifeCount(lifeCount: Int) {
         binding.tvRemainingLives.text = String.format(getString(R.string.remaining_life), lifeCount)
+    }
+
+    override fun navigateToMainActivity() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+
+    override fun restartGameActivity(life : Int) {
+        val intent = Intent(this, GameActivity::class.java)
+        intent.putExtra("lifeCount", life)
+        startActivity(intent)
     }
 }
 

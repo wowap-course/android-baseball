@@ -11,7 +11,6 @@ import com.example.baseball.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(), MainContract.View {
     private lateinit var binding: ActivityMainBinding
     private lateinit var presenter: MainContract.Presenter
-    private var toast: Toast? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
