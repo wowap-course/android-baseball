@@ -101,6 +101,9 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="게임 시작!"/>
+                                                <connections>
+                                                    <action selector="btnStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gEU-gI-tou"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

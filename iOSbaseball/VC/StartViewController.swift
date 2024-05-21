@@ -47,5 +47,16 @@ class StartViewController: UIViewController {
             lifeLabel.text = String(lifeCount.lifes)
         }
     }
+    @IBAction func btnStart(_ sender: Any) {
+        
+        // 띄어야할 부분 : FrameworkDetailViewController
+        let storyboard = UIStoryboard(name: "MainView", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+        
+        let navController = UINavigationController(rootViewController: vc) 
+        // 데이터 넘겨주기
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true)
+    }
 }
 
