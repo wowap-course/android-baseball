@@ -48,22 +48,21 @@ class GameActivity : AppCompatActivity(), GameContract.View {
         Log.d("ResultOfInning", "ball : $ball, strike : $strike")
     }
 
-    private fun showDialog() {
-        var resultDialog = AlertDialog.Builder(this)
-        resultDialog.setTitle(getString(R.string.success))
-        resultDialog.setMessage(String.format(getString(R.string.answer), ))
-
-        val listener = DialogInterface.OnClickListener { dialog, which ->
-            when(which) {
-                DialogInterface.BUTTON_POSITIVE ->
+    override fun showResultOfGame(resultOfGame: String, correctAnswer: Int) {
+        val resultDialog = AlertDialog.Builder(this)
+            .setTitle(resultOfGame)
+            .setMessage(String.format(getString(R.string.answer), correctAnswer))
+            .setPositiveButton(
+                getString(R.string.restart),
+                DialogInterface.OnClickListener { dialog, which ->
                     Log.d("dialog", "positive")
-
-                DialogInterface.BUTTON_NEGATIVE ->
+                })
+            .setNegativeButton(
+                getString(R.string.exit),
+                DialogInterface.OnClickListener { dialog, which ->
                     Log.d("dialog", "negative")
-            }
-        }
-        resultDialog.setPositiveButton(getString(R.string.restart), listener)
-        resultDialog.setNegativeButton(getString(R.string.exit), listener)
+                })
+        resultDialog.create()
         resultDialog.show()
     }
 
