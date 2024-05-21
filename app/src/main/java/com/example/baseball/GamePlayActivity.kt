@@ -48,6 +48,7 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
             } else {
                 Toast.makeText(this, "유효한 숫자를 입력해주세요", Toast.LENGTH_SHORT).show()
             }
+            binding.inputNumber.text.clear()
         }
     }
 
@@ -59,7 +60,7 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
         Toast.makeText(this, "strike: $strike, ball: $ball", Toast.LENGTH_SHORT).show()
     }
 
-    override fun showGameResult(gameResult: String, answer: List<Int>) {
+    override fun showGameResult(gameResults: String, answer: List<Int>) {
         val finalAnswer = answer.toString()
 
         val dialogView = layoutInflater.inflate(R.layout.game_result_layout, null)
@@ -67,7 +68,7 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
         val gameResultTextView: TextView = dialogView.findViewById(R.id.game_result)
         val answerTextView: TextView = dialogView.findViewById(R.id.answer)
 
-        gameResultTextView.text = gameResult
+        gameResultTextView.text = gameResults
         answerTextView.text = finalAnswer
 
         MaterialAlertDialogBuilder(this)
