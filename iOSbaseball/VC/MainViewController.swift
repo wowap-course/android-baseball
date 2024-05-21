@@ -12,11 +12,13 @@ class MainViewController: UIViewController {
     @IBOutlet weak var lifeLabel: UILabel!
     
     var lifeCount : LifeCount?
+    
+    let opponentBall = OpponentBall(numberGenerator: RandomNumberGenerator())
+    
     @IBOutlet weak var inputBall: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initBall()
         initBtn()
         initLifeLabel()
         
@@ -26,6 +28,13 @@ class MainViewController: UIViewController {
         let inputText = inputBall.text
         do {
             var userNumbers = try UserBall(numbers: (inputText?.compactMap { Int(String($0)) })!)
+            
+            let referee = Referee()
+            
+            let resultScore = referee.getGameScore(baseNumbers: userNumbers.numbers, targetNumbers: [1,2,3])
+            
+            print(resultScore)
+            
         } catch {
             print("잘못 입려하셨습니다.")
         }
@@ -41,9 +50,6 @@ class MainViewController: UIViewController {
         
     }
     
-    private func initBall(){
-        let opponentBall = OpponentBall(numberGenerator: ran)
-    }
     
     private func initBtn(){
         let backButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(backButtonTapped))
