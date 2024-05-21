@@ -1,14 +1,11 @@
 package com.example.baseball.Game
 
 import android.content.DialogInterface
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.baseball.Main.MainActivity
 import com.example.baseball.R
 import com.example.baseball.databinding.ActivityGameBinding
 
@@ -26,7 +23,6 @@ class GameActivity : AppCompatActivity(), GameContract.View {
         setContentView(binding.root)
         initPresenter()
         val randomNumber = presenter.randomNumberGenerator()
-//        initdialog(randomNumber)
         initCount()
         initBackBtn()
         initBtn(randomNumber)
@@ -73,12 +69,14 @@ class GameActivity : AppCompatActivity(), GameContract.View {
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.win))
             .setMessage(getString(R.string.answer, answer))
-            .setPositiveButton(getString(R.string.restart), object : DialogInterface.OnClickListener {
-                override fun onClick(dialog: DialogInterface, which: Int) {
-                    finish()
-                    startActivity(intent)
-                }
-            })
+            .setPositiveButton(
+                getString(R.string.restart),
+                object : DialogInterface.OnClickListener {
+                    override fun onClick(dialog: DialogInterface, which: Int) {
+                        finish()
+                        startActivity(intent)
+                    }
+                })
             .setNegativeButton(getString(R.string.quit), object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface, which: Int) {
                     finish()
@@ -93,12 +91,14 @@ class GameActivity : AppCompatActivity(), GameContract.View {
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.lose))
             .setMessage(getString(R.string.answer, answer))
-            .setPositiveButton(getString(R.string.restart), object : DialogInterface.OnClickListener {
-                override fun onClick(dialog: DialogInterface, which: Int) {
-                    finish()
-                    startActivity(intent)
-                }
-            })
+            .setPositiveButton(
+                getString(R.string.restart),
+                object : DialogInterface.OnClickListener {
+                    override fun onClick(dialog: DialogInterface, which: Int) {
+                        finish()
+                        startActivity(intent)
+                    }
+                })
             .setNegativeButton(getString(R.string.quit), object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface, which: Int) {
                     finish()
@@ -109,3 +109,4 @@ class GameActivity : AppCompatActivity(), GameContract.View {
     }
 
 }
+

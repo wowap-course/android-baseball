@@ -12,7 +12,7 @@ class GamePresenter(private val view: GameContract.View) : GameContract.Presente
     }
 
     override fun game( inputNumber: List<Int>, lifeCount: Int?) {
-        val count = game.start(inputNumber, lifeCount!!.toInt())
+        val count = game.resultCount(inputNumber, lifeCount!!.toInt())
         when{
             count.strikeCount == 3 -> view.showWinDialog(game.answerNumbers)
             count.lifeCount == 0 -> view.showLoseDialog(game.answerNumbers)
