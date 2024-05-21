@@ -16,21 +16,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEf-GJ-vXj">
-                                <rect key="frame" x="175" y="416" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="O6Q-Sc-VeF">
+                                <rect key="frame" x="0.0" y="59" width="397" height="759"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남은 목숨 : 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdl-8d-8Cd">
+                                        <rect key="frame" x="0.0" y="0.0" width="397" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="LV6-vT-cBe"/>
+                                            <constraint firstAttribute="width" constant="245" id="qdK-yI-mju"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="oWY-ik-cjW">
+                                        <rect key="frame" x="0.0" y="54" width="397" height="32"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZJ-ZD-1um">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="32"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="세 자리 숫자를 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JLZ-Ks-RNY">
+                                                <rect key="frame" x="30" y="0.0" width="280" height="32"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="230" id="qQF-Ge-jw7"/>
+                                                    <constraint firstAttribute="height" constant="32" id="wH9-bR-JZx"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgD-SD-xWG">
+                                                <rect key="frame" x="340" y="0.0" width="57" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="GbL-4A-4ys"/>
+                                                    <constraint firstAttribute="width" constant="57" id="KbD-cT-DrJ"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="도전"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="JLZ-Ks-RNY" firstAttribute="leading" secondItem="oWY-ik-cjW" secondAttribute="leading" constant="30" id="ae1-SQ-Ih0"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="45i-qA-G2i">
+                                        <rect key="frame" x="0.0" y="116" width="397" height="643"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="45i-qA-G2i" secondAttribute="trailing" id="BAw-NG-e93"/>
+                                    <constraint firstAttribute="bottom" secondItem="45i-qA-G2i" secondAttribute="bottom" id="nTb-am-xDn"/>
+                                    <constraint firstItem="45i-qA-G2i" firstAttribute="leading" secondItem="O6Q-Sc-VeF" secondAttribute="leading" id="oVi-4d-Z8O"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="O6Q-Sc-VeF" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="CK5-6u-IZw"/>
+                            <constraint firstItem="O6Q-Sc-VeF" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="X4Z-9d-u6t"/>
+                            <constraint firstItem="O6Q-Sc-VeF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="bWW-Pu-dST"/>
+                            <constraint firstItem="O6Q-Sc-VeF" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="mF9-DQ-joT"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-34"/>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
     </scenes>
     <resources>
