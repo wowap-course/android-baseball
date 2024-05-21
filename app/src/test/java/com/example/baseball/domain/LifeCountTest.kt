@@ -27,50 +27,48 @@ class LifeCountTest {
     @Test
     fun `1개의 목숨을 늘리면 2개의 목숨이 된다`() {
         //given: 목숨의 개수를 1로 설정한다
-        val lifeCount = LifeCount()
-        val moreLIfeCount = LifeCount(2)
+        var lifeCount = LifeCount()
 
         //when
-        lifeCount.increase()
+        lifeCount++
 
         //then
-        assertThat(lifeCount).isEqualTo(moreLIfeCount)
+        assertThat(lifeCount).isEqualTo(LifeCount(2))
     }
 
     @Test
     fun `10개의 목숨을 줄이면 9개의 목숨이 된다`() {
         //given: 목숨의 개수를 10으로 설정한다
-        val lifeCount = LifeCount(10)
-        val lessLifeCount = LifeCount(9)
+        var lifeCount = LifeCount(10)
 
         //when
-        lifeCount.decrease()
+        lifeCount--
 
         //then
-        assertThat(lifeCount).isEqualTo(lessLifeCount)
+        assertThat(lifeCount).isEqualTo(LifeCount(9))
     }
 
     @Test
     fun `10개의 목숩에서는 개수를 늘여도 10개이다`() {
         //given
-        val maximumLifeCount = LifeCount(10)
+        var maximumLifeCount = LifeCount(10)
 
         //when
-        maximumLifeCount.increase()
+        maximumLifeCount++
 
         //then
-        assertTrue(maximumLifeCount.count == 10)
+        assertTrue(maximumLifeCount == LifeCount(10))
     }
 
     @Test
     fun `1개의 목숨에서는 개수를 줄여도 1개이다`() {
         //given
-        val minimumLifeCount = LifeCount()
+        var minimumLifeCount = LifeCount()
 
         //when
-        minimumLifeCount.decrease()
+        minimumLifeCount--
 
         //then
-        assertTrue(minimumLifeCount.count == 1)
+        assertTrue(minimumLifeCount == LifeCount(1))
     }
 }
