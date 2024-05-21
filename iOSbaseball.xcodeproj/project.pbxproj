@@ -16,6 +16,17 @@
 		1202A67B2BF8BAC500219204 /* LifeCountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202A67A2BF8BAC500219204 /* LifeCountTests.swift */; };
 		1202A6852BF8BAC500219204 /* iOSbaseballUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202A6842BF8BAC500219204 /* iOSbaseballUITests.swift */; };
 		1202A6872BF8BAC500219204 /* iOSbaseballUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202A6862BF8BAC500219204 /* iOSbaseballUITestsLaunchTests.swift */; };
+		1270B3252BFC953800172446 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270B3242BFC953800172446 /* Ball.swift */; };
+		1270B3272BFC954E00172446 /* UserBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270B3262BFC954E00172446 /* UserBall.swift */; };
+		1270B3292BFC956800172446 /* OpponentBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270B3282BFC956800172446 /* OpponentBall.swift */; };
+		1270B32B2BFC958B00172446 /* NumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270B32A2BFC958B00172446 /* NumberGenerator.swift */; };
+		1270B32D2BFC959600172446 /* RandomNumberGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270B32C2BFC959600172446 /* RandomNumberGenerator.swift */; };
+		1270B32F2BFC95AC00172446 /* Referee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270B32E2BFC95AC00172446 /* Referee.swift */; };
+		1270B3312BFC95C200172446 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270B3302BFC95C200172446 /* Score.swift */; };
+		1270B3342BFC95E100172446 /* OpponentBallTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270B3332BFC95E100172446 /* OpponentBallTest.swift */; };
+		1270B3362BFC961300172446 /* UserBallTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270B3352BFC961300172446 /* UserBallTest.swift */; };
+		1270B3382BFC962900172446 /* RefereeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270B3372BFC962900172446 /* RefereeTest.swift */; };
+		1270B33A2BFC964500172446 /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270B3392BFC964500172446 /* ScoreTest.swift */; };
 		12C955AF2BF8BBF100C83000 /* LifeCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C955AE2BF8BBF100C83000 /* LifeCount.swift */; };
 		12C955B42BF8C1EC00C83000 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12C955B32BF8C1EC00C83000 /* MainView.storyboard */; };
 		12C955B62BF8C21000C83000 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C955B52BF8C21000C83000 /* MainViewController.swift */; };
@@ -52,6 +63,17 @@
 		1202A6802BF8BAC500219204 /* iOSbaseballUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSbaseballUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1202A6842BF8BAC500219204 /* iOSbaseballUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSbaseballUITests.swift; sourceTree = "<group>"; };
 		1202A6862BF8BAC500219204 /* iOSbaseballUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSbaseballUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1270B3242BFC953800172446 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
+		1270B3262BFC954E00172446 /* UserBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBall.swift; sourceTree = "<group>"; };
+		1270B3282BFC956800172446 /* OpponentBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentBall.swift; sourceTree = "<group>"; };
+		1270B32A2BFC958B00172446 /* NumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberGenerator.swift; sourceTree = "<group>"; };
+		1270B32C2BFC959600172446 /* RandomNumberGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumberGenerator.swift; sourceTree = "<group>"; };
+		1270B32E2BFC95AC00172446 /* Referee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Referee.swift; sourceTree = "<group>"; };
+		1270B3302BFC95C200172446 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		1270B3332BFC95E100172446 /* OpponentBallTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentBallTest.swift; sourceTree = "<group>"; };
+		1270B3352BFC961300172446 /* UserBallTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBallTest.swift; sourceTree = "<group>"; };
+		1270B3372BFC962900172446 /* RefereeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefereeTest.swift; sourceTree = "<group>"; };
+		1270B3392BFC964500172446 /* ScoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTest.swift; sourceTree = "<group>"; };
 		12C955AE2BF8BBF100C83000 /* LifeCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeCount.swift; sourceTree = "<group>"; };
 		12C955B32BF8C1EC00C83000 /* MainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainView.storyboard; sourceTree = "<group>"; };
 		12C955B52BF8C21000C83000 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -120,7 +142,7 @@
 		1202A6792BF8BAC500219204 /* iOSbaseballTests */ = {
 			isa = PBXGroup;
 			children = (
-				1202A67A2BF8BAC500219204 /* LifeCountTests.swift */,
+				1270B3322BFC95D400172446 /* domain */,
 			);
 			path = iOSbaseballTests;
 			sourceTree = "<group>";
@@ -134,10 +156,53 @@
 			path = iOSbaseballUITests;
 			sourceTree = "<group>";
 		};
+		1270B3222BFC951200172446 /* Ball */ = {
+			isa = PBXGroup;
+			children = (
+				1270B3242BFC953800172446 /* Ball.swift */,
+				1270B3262BFC954E00172446 /* UserBall.swift */,
+				1270B3282BFC956800172446 /* OpponentBall.swift */,
+			);
+			path = Ball;
+			sourceTree = "<group>";
+		};
+		1270B3232BFC951C00172446 /* NumberGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				1270B32A2BFC958B00172446 /* NumberGenerator.swift */,
+				1270B32C2BFC959600172446 /* RandomNumberGenerator.swift */,
+			);
+			path = NumberGenerator;
+			sourceTree = "<group>";
+		};
+		1270B3322BFC95D400172446 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				1270B33B2BFC965A00172446 /* Ball */,
+				1202A67A2BF8BAC500219204 /* LifeCountTests.swift */,
+				1270B3372BFC962900172446 /* RefereeTest.swift */,
+				1270B3392BFC964500172446 /* ScoreTest.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		1270B33B2BFC965A00172446 /* Ball */ = {
+			isa = PBXGroup;
+			children = (
+				1270B3352BFC961300172446 /* UserBallTest.swift */,
+				1270B3332BFC95E100172446 /* OpponentBallTest.swift */,
+			);
+			path = Ball;
+			sourceTree = "<group>";
+		};
 		12C955AD2BF8BBE100C83000 /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				1270B3232BFC951C00172446 /* NumberGenerator */,
+				1270B3222BFC951200172446 /* Ball */,
 				12C955AE2BF8BBF100C83000 /* LifeCount.swift */,
+				1270B32E2BFC95AC00172446 /* Referee.swift */,
+				1270B3302BFC95C200172446 /* Score.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -292,10 +357,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1270B3272BFC954E00172446 /* UserBall.swift in Sources */,
+				1270B3252BFC953800172446 /* Ball.swift in Sources */,
 				1202A6682BF8BAC300219204 /* StartViewController.swift in Sources */,
+				1270B32F2BFC95AC00172446 /* Referee.swift in Sources */,
+				1270B3292BFC956800172446 /* OpponentBall.swift in Sources */,
+				1270B32B2BFC958B00172446 /* NumberGenerator.swift in Sources */,
 				1202A6642BF8BAC300219204 /* AppDelegate.swift in Sources */,
 				1202A6662BF8BAC300219204 /* SceneDelegate.swift in Sources */,
+				1270B32D2BFC959600172446 /* RandomNumberGenerator.swift in Sources */,
 				12C955AF2BF8BBF100C83000 /* LifeCount.swift in Sources */,
+				1270B3312BFC95C200172446 /* Score.swift in Sources */,
 				12C955B62BF8C21000C83000 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,7 +376,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1270B33A2BFC964500172446 /* ScoreTest.swift in Sources */,
+				1270B3362BFC961300172446 /* UserBallTest.swift in Sources */,
 				1202A67B2BF8BAC500219204 /* LifeCountTests.swift in Sources */,
+				1270B3382BFC962900172446 /* RefereeTest.swift in Sources */,
+				1270B3342BFC95E100172446 /* OpponentBallTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
