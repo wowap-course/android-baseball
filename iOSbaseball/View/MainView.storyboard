@@ -80,6 +80,9 @@
                             <constraint firstItem="O6Q-Sc-VeF" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="mF9-DQ-joT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lifeLabel" destination="pdl-8d-8Cd" id="JeT-ca-byt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

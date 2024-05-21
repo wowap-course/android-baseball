@@ -49,12 +49,15 @@ class StartViewController: UIViewController {
     }
     @IBAction func btnStart(_ sender: Any) {
         
-        // 띄어야할 부분 : FrameworkDetailViewController
         let storyboard = UIStoryboard(name: "MainView", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
         
-        let navController = UINavigationController(rootViewController: vc) 
         // 데이터 넘겨주기
+        vc.lifeCount = lifeCount
+        
+        // nav 컨트롤러
+        let navController = UINavigationController(rootViewController: vc)
+        
         navController.modalPresentationStyle = .fullScreen
         present(navController, animated: true)
     }
