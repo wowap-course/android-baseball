@@ -2,19 +2,21 @@ package com.example.baseball.presentation.main
 
 import com.example.baseball.domain.LifeCount
 
-class MainPresenter(private val view : MainContract.View) : MainContract.Presenter {
-    private var lifeCount = LifeCount()
+class MainPresenter(private val view: MainContract.View) : MainContract.Presenter {
+    private var lifeCount = LifeCount(1)
+
     init {
         view.showLife(lifeCount.count)
     }
+
     override fun increaseLife() {
-        if (lifeCount.increase()) view.showLife(lifeCount.count)
-        else view.showMaxLife()
+        lifeCount++
+        view.showLife(lifeCount.count)
     }
 
     override fun decreaseLife() {
-        if (lifeCount.decrease()) view.showLife(lifeCount.count)
-        else view.showMinLife()
+        lifeCount--
+        view.showLife(lifeCount.count)
     }
 
     override fun onGameStartBtnClicked() {

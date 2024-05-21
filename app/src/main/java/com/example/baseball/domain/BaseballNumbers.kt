@@ -1,12 +1,13 @@
 package com.example.baseball.domain
 
-data class BaseballNumbers(private val _baseballNumbers : List<Int>) {
+data class BaseballNumbers(private val _baseballNumbers: List<Int>) {
     init {
         require(!_baseballNumbers.contains(0)) { CONTAINS_ZERO_ERROR }
         require(_baseballNumbers.toSet().size == _baseballNumbers.size) { DUPLICATE_ERROR }
         require(_baseballNumbers.size == 3) { NUM_DIGITS_ERROR }
     }
-    val baseballNumbers : List<BaseballNumber>
+
+    val baseballNumbers: List<BaseballNumber>
         get() = _baseballNumbers.map { BaseballNumber(it) }
 
     companion object {
