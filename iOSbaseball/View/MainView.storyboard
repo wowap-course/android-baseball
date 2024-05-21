@@ -54,6 +54,9 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="도전"/>
+                                                <connections>
+                                                    <action selector="challengeBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3CD-oT-y1h"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -81,6 +84,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="inputBall" destination="JLZ-Ks-RNY" id="ngU-Ct-iWz"/>
                         <outlet property="lifeLabel" destination="pdl-8d-8Cd" id="JeT-ca-byt"/>
                     </connections>
                 </viewController>
