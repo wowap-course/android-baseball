@@ -1,10 +1,9 @@
-package baseball.domain
+package com.example.baseball.domain
 
 import com.example.baseball.domain.Life.Companion.ZERO_LIFE
 
 class Referee {
     private val score = Score(RESET_NUMBER, RESET_NUMBER)
-
 
     fun call(computerNumbers: List<Int>, playerNumbers: List<Int>): Pair<Int, Int> {
         for (i in computerNumbers.indices) {
@@ -19,17 +18,11 @@ class Referee {
     }
 
     fun isThreeStrike(strike: Int): Boolean {
-        return if (strike == THREE_STRIKE) {
-            true
-        } else
-            false
+        return strike == THREE_STRIKE
     }
 
     fun callGameOver(life: Int): Boolean {
-        return if (life == ZERO_LIFE) {
-            true
-        } else
-            false
+        return life == ZERO_LIFE
     }
 
     fun reset() {
@@ -45,7 +38,3 @@ class Referee {
         const val MAX_COM_NUMBER_SIZE = 3
     }
 }
-
-//fun isThreeStrike(): Boolean {
-//    return score.strike == Referee.THREE_STRIKE
-//}

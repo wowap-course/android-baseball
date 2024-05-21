@@ -1,4 +1,4 @@
-package baseball.domain.numberRules
+package com.example.baseball.domain.numberRules
 
 import com.example.baseball.domain.contracts.PlayerSelectNumberRule
 

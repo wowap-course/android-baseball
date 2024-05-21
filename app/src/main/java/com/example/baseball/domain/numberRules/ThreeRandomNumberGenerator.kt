@@ -1,8 +1,8 @@
-package baseball.domain.numberRules
+package com.example.baseball.domain.numberRules
 
-import baseball.domain.Referee.Companion.MAX_COM_NUMBER_SIZE
-import baseball.domain.Referee.Companion.MAX_RANDOM_NUMBER
-import baseball.domain.Referee.Companion.MIN_RANDOM_NUMBER
+import com.example.baseball.domain.Referee.Companion.MAX_COM_NUMBER_SIZE
+import com.example.baseball.domain.Referee.Companion.MAX_RANDOM_NUMBER
+import com.example.baseball.domain.Referee.Companion.MIN_RANDOM_NUMBER
 import com.example.baseball.domain.contracts.ComputerGenerateNumberRule
 
 class ThreeRandomNumberGenerator : ComputerGenerateNumberRule {

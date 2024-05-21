@@ -27,29 +27,13 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
     }
 
     private fun initPresenter() {
-        val count = intent.getIntExtra("life", 0)
-        presenter = GamePlayPresenter(this, count)
+        val life = intent.getIntExtra("life", 0)
+        presenter = GamePlayPresenter(this, life)
     }
 
     private fun initGetLifeState() {
         val count = intent.getIntExtra("life", 0)
         binding.txtLifeState.text = count.toString()
-    }
-
-    private fun initBtnStart() {
-        binding.btnCheck.setOnClickListener {
-            val inputText = binding.inputNumber.text.toString()
-            val numberList: List<Int> = inputText.mapNotNull {
-                it.toString().toIntOrNull()
-            }
-
-            if (numberList.isNotEmpty()) {
-                presenter.playgame(numberList)
-            } else {
-                Toast.makeText(this, "유효한 숫자를 입력해주세요", Toast.LENGTH_SHORT).show()
-            }
-            binding.inputNumber.text.clear()
-        }
     }
 
     override fun showLife(life: Int) {
@@ -73,16 +57,32 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
 
         MaterialAlertDialogBuilder(this)
             .setView(dialogView)
-            .setNegativeButton("나가기") { dialog, which ->
+            .setNegativeButton("나가기") { _, _ ->
                 finishAffinity()
             }
-            .setPositiveButton("재시작") { dialog, which ->
+            .setPositiveButton("재시작") { _, _ ->
                 val intent = Intent(this, MainActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
                 finish()
             }
             .show()
+    }
+
+    private fun initBtnStart() {
+        binding.btnCheck.setOnClickListener {
+            val inputText = binding.inputNumber.text.toString()
+            val numberList: List<Int> = inputText.mapNotNull {
+                it.toString().toIntOrNull()
+            }
+
+            if (numberList.isNotEmpty()) {
+                presenter.playgame(numberList)
+            } else {
+                Toast.makeText(this, "유효한 숫자를 입력해주세요", Toast.LENGTH_SHORT).show()
+            }
+            binding.inputNumber.text.clear()
+        }
     }
 
 }

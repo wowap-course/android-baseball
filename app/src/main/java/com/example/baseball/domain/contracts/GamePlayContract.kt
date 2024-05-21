@@ -11,5 +11,7 @@ interface GamePlayContract {
     interface Presenter {
         fun decreaseLife()
         fun playgame(playerNumber: List<Int>)
+        fun playHandler(computer: List<Int>, player: List<Int>)
+        fun checkNumber(answer: List<Int>): List<Int>
     }
 }
