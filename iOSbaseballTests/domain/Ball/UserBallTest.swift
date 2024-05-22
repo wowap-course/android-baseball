@@ -40,6 +40,14 @@ final class UserBallTest: XCTestCase {
         XCTAssertThrowsError(try UserBall(numbers: numbers))
     }
     
+    func test_3자리의_수가_들어와야_한다2() throws {
+        // Given
+        let numbers = [4, 1, 2, 4, 2]
+        
+        // Then
+        XCTAssertThrowsError(try UserBall(numbers: numbers))
+    }
+    
     func test_숫자는_같은_수가_입력되면_안된다() throws {
         // Given
         let numbers = [3, 3, 1]
