@@ -21,7 +21,7 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         do {
             try initLifeCount() // lifeCount 초기화 추가
-            try initLifeLabel()
+            initLifeLabel()
         } catch {
             print("에러 발생: \(error)")
         }
@@ -32,21 +32,18 @@ class StartViewController: UIViewController {
         lifeCount = try LifeCount()
     }
 
-    private func initLifeLabel() throws {
+    private func initLifeLabel() {
         lifeLabel.text = String(lifeCount.lifes)
     }
     
     @IBAction func btnMinus(_ sender: Any) {
-        if lifeCount.decrease() {
-            lifeLabel.text = String(lifeCount.lifes)
-        }
+        if lifeCount.decrease() { initLifeLabel() }
     }
     
     @IBAction func btnPlus(_ sender: Any) {
-        if lifeCount.increase() {
-            lifeLabel.text = String(lifeCount.lifes)
-        }
+        if lifeCount.increase() { initLifeLabel() }
     }
+    
     @IBAction func btnStart(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "MainView", bundle: nil)

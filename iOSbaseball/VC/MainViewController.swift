@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
         
         let inputText = inputBall.text
         do {
-            var userNumbers = try UserBall(numbers: (inputText?.compactMap { Int(String($0)) })!)
+            let userNumbers = try UserBall(numbers: (inputText?.compactMap { Int(String($0)) })!)
             
             let referee = Referee()
             
