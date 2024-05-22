@@ -11,11 +11,11 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var lifeLabel: UILabel!
     
-    var lifeCount : LifeCount?
+    var lifeCount : Int?
     
     let opponentBall = OpponentBall(numberGenerator: RandomNumberGenerator())
     
-    @IBOutlet weak var inputBall: UITextField!
+    @IBOutlet weak var inputBall: UITextField!  
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,12 +41,12 @@ class MainViewController: UIViewController {
         
         
         inputBall.text = ""
-        if lifeCount!.decrease() {
-            initLifeLabel()
-        } else {
-            lifeLabel.text = "남은 목숨 : \(0)"
-            makeAlertDialog(title: "실패", message: "정답\(123)")
-        }
+//        if lifeCount!.decrease() {
+//            initLifeLabel()
+//        } else {
+//            lifeLabel.text = "남은 목숨 : \(0)"
+//            makeAlertDialog(title: "실패", message: "정답\(123)")
+//        }
         
     }
     
@@ -59,10 +59,10 @@ class MainViewController: UIViewController {
     
     @objc func backButtonTapped() {
         dismiss(animated: true, completion: nil)
-    }
+    } 
     
     private func initLifeLabel(){
-        lifeLabel.text = "남은 목숨 : \(lifeCount!.lifes)"
+//        lifeLabel.text = "남은 목숨 : \(String(lifeCount!.lifes))"
     }
 
     // Alert Dialog 생성

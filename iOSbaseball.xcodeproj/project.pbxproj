@@ -16,6 +16,8 @@
 		1202A67B2BF8BAC500219204 /* LifeCountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202A67A2BF8BAC500219204 /* LifeCountTests.swift */; };
 		1202A6852BF8BAC500219204 /* iOSbaseballUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202A6842BF8BAC500219204 /* iOSbaseballUITests.swift */; };
 		1202A6872BF8BAC500219204 /* iOSbaseballUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202A6862BF8BAC500219204 /* iOSbaseballUITestsLaunchTests.swift */; };
+		12267FFC2BFDC08B0074F0EC /* StartContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12267FFB2BFDC08B0074F0EC /* StartContract.swift */; };
+		12706F4B2BFDC77F005FA937 /* StartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12706F4A2BFDC77F005FA937 /* StartPresenter.swift */; };
 		1270B3252BFC953800172446 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270B3242BFC953800172446 /* Ball.swift */; };
 		1270B3272BFC954E00172446 /* UserBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270B3262BFC954E00172446 /* UserBall.swift */; };
 		1270B3292BFC956800172446 /* OpponentBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270B3282BFC956800172446 /* OpponentBall.swift */; };
@@ -63,6 +65,8 @@
 		1202A6802BF8BAC500219204 /* iOSbaseballUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSbaseballUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1202A6842BF8BAC500219204 /* iOSbaseballUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSbaseballUITests.swift; sourceTree = "<group>"; };
 		1202A6862BF8BAC500219204 /* iOSbaseballUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSbaseballUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		12267FFB2BFDC08B0074F0EC /* StartContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartContract.swift; sourceTree = "<group>"; };
+		12706F4A2BFDC77F005FA937 /* StartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPresenter.swift; sourceTree = "<group>"; };
 		1270B3242BFC953800172446 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		1270B3262BFC954E00172446 /* UserBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBall.swift; sourceTree = "<group>"; };
 		1270B3282BFC956800172446 /* OpponentBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentBall.swift; sourceTree = "<group>"; };
@@ -127,7 +131,9 @@
 		1202A6622BF8BAC300219204 /* iOSbaseball */ = {
 			isa = PBXGroup;
 			children = (
-				12C955B72BF8C22700C83000 /* VC */,
+				12267FFD2BFDC4D10074F0EC /* VC */,
+				12267FFA2BFDC02D0074F0EC /* Start */,
+				12267FF92BFDC01D0074F0EC /* Main */,
 				12C955B02BF8BFDB00C83000 /* View */,
 				12C955AD2BF8BBE100C83000 /* domain */,
 				1202A6632BF8BAC300219204 /* AppDelegate.swift */,
@@ -154,6 +160,31 @@
 				1202A6862BF8BAC500219204 /* iOSbaseballUITestsLaunchTests.swift */,
 			);
 			path = iOSbaseballUITests;
+			sourceTree = "<group>";
+		};
+		12267FF92BFDC01D0074F0EC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				12C955B52BF8C21000C83000 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		12267FFA2BFDC02D0074F0EC /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				1202A6672BF8BAC300219204 /* StartViewController.swift */,
+				12267FFB2BFDC08B0074F0EC /* StartContract.swift */,
+				12706F4A2BFDC77F005FA937 /* StartPresenter.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		12267FFD2BFDC4D10074F0EC /* VC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		1270B3222BFC951200172446 /* Ball */ = {
@@ -214,15 +245,6 @@
 				12C955B32BF8C1EC00C83000 /* MainView.storyboard */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		12C955B72BF8C22700C83000 /* VC */ = {
-			isa = PBXGroup;
-			children = (
-				1202A6672BF8BAC300219204 /* StartViewController.swift */,
-				12C955B52BF8C21000C83000 /* MainViewController.swift */,
-			);
-			path = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,7 +382,9 @@
 				1270B3272BFC954E00172446 /* UserBall.swift in Sources */,
 				1270B3252BFC953800172446 /* Ball.swift in Sources */,
 				1202A6682BF8BAC300219204 /* StartViewController.swift in Sources */,
+				12706F4B2BFDC77F005FA937 /* StartPresenter.swift in Sources */,
 				1270B32F2BFC95AC00172446 /* Referee.swift in Sources */,
+				12267FFC2BFDC08B0074F0EC /* StartContract.swift in Sources */,
 				1270B3292BFC956800172446 /* OpponentBall.swift in Sources */,
 				1270B32B2BFC958B00172446 /* NumberGenerator.swift in Sources */,
 				1202A6642BF8BAC300219204 /* AppDelegate.swift in Sources */,
