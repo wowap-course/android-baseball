@@ -18,6 +18,8 @@
 		1202A6872BF8BAC500219204 /* iOSbaseballUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1202A6862BF8BAC500219204 /* iOSbaseballUITestsLaunchTests.swift */; };
 		12267FFC2BFDC08B0074F0EC /* StartContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12267FFB2BFDC08B0074F0EC /* StartContract.swift */; };
 		12706F4B2BFDC77F005FA937 /* StartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12706F4A2BFDC77F005FA937 /* StartPresenter.swift */; };
+		12706F4D2BFDCF31005FA937 /* MainContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12706F4C2BFDCF31005FA937 /* MainContract.swift */; };
+		12706F4F2BFDCF3C005FA937 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12706F4E2BFDCF3C005FA937 /* MainPresenter.swift */; };
 		1270B3252BFC953800172446 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270B3242BFC953800172446 /* Ball.swift */; };
 		1270B3272BFC954E00172446 /* UserBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270B3262BFC954E00172446 /* UserBall.swift */; };
 		1270B3292BFC956800172446 /* OpponentBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1270B3282BFC956800172446 /* OpponentBall.swift */; };
@@ -67,6 +69,8 @@
 		1202A6862BF8BAC500219204 /* iOSbaseballUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSbaseballUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		12267FFB2BFDC08B0074F0EC /* StartContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartContract.swift; sourceTree = "<group>"; };
 		12706F4A2BFDC77F005FA937 /* StartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPresenter.swift; sourceTree = "<group>"; };
+		12706F4C2BFDCF31005FA937 /* MainContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContract.swift; sourceTree = "<group>"; };
+		12706F4E2BFDCF3C005FA937 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		1270B3242BFC953800172446 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		1270B3262BFC954E00172446 /* UserBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBall.swift; sourceTree = "<group>"; };
 		1270B3282BFC956800172446 /* OpponentBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentBall.swift; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 			isa = PBXGroup;
 			children = (
 				12C955B52BF8C21000C83000 /* MainViewController.swift */,
+				12706F4C2BFDCF31005FA937 /* MainContract.swift */,
+				12706F4E2BFDCF3C005FA937 /* MainPresenter.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -389,6 +395,8 @@
 				1270B32B2BFC958B00172446 /* NumberGenerator.swift in Sources */,
 				1202A6642BF8BAC300219204 /* AppDelegate.swift in Sources */,
 				1202A6662BF8BAC300219204 /* SceneDelegate.swift in Sources */,
+				12706F4D2BFDCF31005FA937 /* MainContract.swift in Sources */,
+				12706F4F2BFDCF3C005FA937 /* MainPresenter.swift in Sources */,
 				1270B32D2BFC959600172446 /* RandomNumberGenerator.swift in Sources */,
 				12C955AF2BF8BBF100C83000 /* LifeCount.swift in Sources */,
 				1270B3312BFC95C200172446 /* Score.swift in Sources */,

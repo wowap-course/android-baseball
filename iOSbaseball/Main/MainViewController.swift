@@ -7,64 +7,75 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, MainView {
 
     @IBOutlet weak var lifeLabel: UILabel!
+    @IBOutlet weak var inputBall: UITextField!
+    @IBOutlet weak var resultLabel: UILabel!
     
-    var lifeCount : Int?
-    
-    let opponentBall = OpponentBall(numberGenerator: RandomNumberGenerator())
-    
-    @IBOutlet weak var inputBall: UITextField!  
+    var lifeCount : Int!
+    var presenter : MainPresenter!
+     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        initBtn()
-        initLifeLabel()
-        
-    }
-    @IBAction func challengeBtn(_ sender: Any) {
-        
-        let inputText = inputBall.text
         do {
-            let userNumbers = try UserBall(numbers: (inputText?.compactMap { Int(String($0)) })!)
-            
-            let referee = Referee()
-            
-            let resultScore = referee.getGameScore(baseNumbers: userNumbers.numbers, targetNumbers: [1,2,3])
-            
-            print(resultScore)
-            
+            self.presenter = try MainPresenter(view: self, initLifeCount: lifeCount)
         } catch {
-            print("잘못 입려하셨습니다.")
+            print("에러 발생: \(error)")
         }
         
+    }
+    
+    func showLife(lifeCount: Int) {
+        lifeLabel.text = "남은 목숨 : \(lifeCount)"
+    }
+    
+    func showInputError(inputText: String) {
+        resultLabel.text = "올바르지 않은 형식의 입력입니다."
+    }
+    
+    func showSuccess(opponentNumber: Int, lifeCount: Int) {
+        lifeLabel.text = "남은 목숨 : \(lifeCount)"
+        makeAlertDialog(title: "성공", message: "정답\(123)")
+    }
+    
+    func showFail(opponentNumber: Int) {
+        lifeLabel.text = "남은 목숨 : \(0)"
+        makeAlertDialog(title: "실패", message: "정답\(123)")
+    }
+    
+    func showResult(ball: Int, strike: Int){
+        if ball == 0 && strike == 0 {
+            resultLabel.text = "다틀림"
+        }
         
-        inputBall.text = ""
-//        if lifeCount!.decrease() {
-//            initLifeLabel()
-//        } else {
-//            lifeLabel.text = "남은 목숨 : \(0)"
-//            makeAlertDialog(title: "실패", message: "정답\(123)")
-//        }
-        
+        var output = ""
+        if ball > 0 {
+            output += "\(ball)볼 "
+        }
+        if strike > 0 {
+            output += "\(strike )스트라이크"
+        }
+            
+        resultLabel.text = output
     }
     
     
+    @IBAction func challengeBtn(_ sender: Any) {
+        presenter.game(userNumber: inputBall.text!)
+        inputBall.text = ""
+    }
+    
+    @objc func backButtonTapped() {
+        dismiss(animated: true, completion: nil)
+    } 
+
     private func initBtn(){
         let backButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(backButtonTapped))
         backButton.image = UIImage(systemName: "chevron.left") // iOS 기본 chevron 이미지를 사용
         navigationItem.leftBarButtonItem = backButton
     }
     
-    @objc func backButtonTapped() {
-        dismiss(animated: true, completion: nil)
-    } 
-    
-    private func initLifeLabel(){
-//        lifeLabel.text = "남은 목숨 : \(String(lifeCount!.lifes))"
-    }
-
     // Alert Dialog 생성
     func makeAlertDialog(title: String, message: String, _ isAlert : Bool = true) {
 
@@ -92,7 +103,6 @@ class MainViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
-    
 
 }
 

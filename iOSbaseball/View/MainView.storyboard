@@ -23,7 +23,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="397" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="LV6-vT-cBe"/>
-                                            <constraint firstAttribute="width" constant="245" id="qdK-yI-mju"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                         <nil key="textColor"/>
@@ -33,11 +32,11 @@
                                         <rect key="frame" x="0.0" y="54" width="397" height="32"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZJ-ZD-1um">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="32"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="세 자리 숫자를 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JLZ-Ks-RNY">
-                                                <rect key="frame" x="30" y="0.0" width="280" height="32"/>
+                                                <rect key="frame" x="80" y="0.0" width="230" height="32"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="230" id="qQF-Ge-jw7"/>
@@ -65,6 +64,14 @@
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="45i-qA-G2i">
                                         <rect key="frame" x="0.0" y="116" width="397" height="643"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-u8-FH1">
+                                                <rect key="frame" x="0.0" y="0.0" width="397" height="643"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -86,6 +93,7 @@
                     <connections>
                         <outlet property="inputBall" destination="JLZ-Ks-RNY" id="ngU-Ct-iWz"/>
                         <outlet property="lifeLabel" destination="pdl-8d-8Cd" id="JeT-ca-byt"/>
+                        <outlet property="resultLabel" destination="nQb-u8-FH1" id="pHi-qP-OyM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
