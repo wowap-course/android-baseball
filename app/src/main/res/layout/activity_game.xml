@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Game.GameActivity">
+
+    <include
+        android:id="@+id/toolbar_game"
+        layout="@layout/toolbar_game" />
+
+    <TextView
+        android:id="@+id/tvLifeTitle"
+        android:layout_width="245dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_game" />
+
+    <EditText
+        android:id="@+id/inputBox"
+        android:layout_width="263dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/inputbox"
+        android:hint="@string/input_baseball_Number"
+        android:maxLength="3"
+        android:paddingStart="10dp"
+        android:paddingEnd="0dp"
+        android:textColorHint="#B0B0B0"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLifeTitle" />
+
+
+    <Button
+        android:id="@+id/startGame"
+        android:layout_width="57.45dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="13dp"
+        android:background="@drawable/buttonshape"
+        android:text="@string/try_button"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/inputBox" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

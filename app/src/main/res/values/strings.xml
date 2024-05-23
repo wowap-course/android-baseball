@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Baseball</string>
+    <string name="title_activity_game">GameActivity</string>
+    <string name="remain_life">남은 목숨 : %d</string>
+    <string name="game_title">숫자 야구 게임</string>
+    <string name="game_sub_title">목숨을 입력하세요</string>
+    <string name="plus_button">+</string>
+    <string name="minus_button">-</string>
+    <string name="start_button">게임 시작!</string>
+    <string name="life_count">%d</string>
+    <string name="toolbar_game">Baseball</string>
+    <string name="toolbar">Baseball</string>
+    <string name="input_baseball_Number">세 자리 숫자를 입력해주세요.</string>
+    <string name="try_button">도전</string>
+    <string name="win">성공</string>
+    <string name="restart">재시작</string>
+    <string name="quit">나가기</string>
+    <string name="lose">실패</string>
+    <string name="strike">스트라이크 : %d, 볼 : %d</string>
+    <string name="answer">정답 : %d</string>
+
 </resources>
