@@ -1,7 +1,8 @@
-package com.example.baseball.domain.numbergenerator
+package domain.numbergenerator
 
-import junit.framework.TestCase.assertTrue
-import org.junit.Test
+import com.example.baseball.domain.numbergenerator.RandomNumberGenerator
+import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Test
 
 class RandomNumberGeneratorTest {
     @Test

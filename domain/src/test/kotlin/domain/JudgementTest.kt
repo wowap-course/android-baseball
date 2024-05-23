@@ -1,8 +1,10 @@
-package com.example.baseball.domain
+package domain
 
+import com.example.baseball.domain.BaseballNumbers
+import com.example.baseball.domain.Judgement
 import com.example.baseball.domain.numbergenerator.NumberGenerator
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class JudgementTest() {
     inner class FixedNumberGenerator : NumberGenerator {

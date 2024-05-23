@@ -1,6 +1,7 @@
-package com.example.baseball.domain
+package domain
 
-import org.junit.Test
+import com.example.baseball.domain.BaseballNumbers
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
 class BaseballNumbersTest() {

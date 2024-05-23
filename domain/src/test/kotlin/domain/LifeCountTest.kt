@@ -1,8 +1,9 @@
-package com.example.baseball.domain
+package domain
 
-import junit.framework.TestCase.assertTrue
+import com.example.baseball.domain.LifeCount
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
 class LifeCountTest {

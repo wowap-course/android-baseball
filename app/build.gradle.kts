@@ -42,6 +42,7 @@ android {
 
 dependencies {
 
+    implementation(project(":domain"))
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.12.0")
@@ -53,6 +54,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
     testImplementation("org.assertj:assertj-core:3.25.3")
     testImplementation ("io.mockk:mockk:1.13.10")
+    testImplementation(project(":domain"))
 
     androidTestImplementation("io.mockk:mockk-android:1.13.10")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
