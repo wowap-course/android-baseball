@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.game.GameActivity">
+
+    <TextView
+        android:id="@+id/tvRemainingLives"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/remaining_life" />
+
+    <EditText
+        android:id="@+id/etReadBaseballNumbers"
+        android:layout_width="264dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/gray"
+        android:hint="@string/etHint"
+        android:inputType="text"
+        android:padding="7dp"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnTry"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvRemainingLives" />
+
+    <Button
+        android:id="@+id/btnTry"
+        android:layout_width="58dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="20dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:padding="0dp"
+        android:text="@string/challenges"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etReadBaseballNumbers"
+        app:layout_constraintTop_toBottomOf="@id/tvRemainingLives" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
