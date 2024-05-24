@@ -97,9 +97,9 @@
 			isa = PBXGroup;
 			children = (
 				121CB71E2BFDF8E600843CD8 /* Ball */,
-				121CB7242BFDF8E600843CD8 /* LifeCount.swift */,
 				121CB7232BFDF8E600843CD8 /* NumberGenerator */,
 				121CB71F2BFDF8E600843CD8 /* Referee.swift */,
+				121CB7242BFDF8E600843CD8 /* LifeCount.swift */,
 				121CB7202BFDF8E600843CD8 /* Score.swift */,
 				121CB7042BFDF89800843CD8 /* domain.h */,
 				121CB7052BFDF89800843CD8 /* domain.docc */,

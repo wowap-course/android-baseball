@@ -15,9 +15,9 @@ final class iOSbaseballTests: XCTestCase {
         XCTAssertEqual(lifeCount, 1)
     }
     
-    func test_목숨은_1에서_10_사이의_숫자이다() throws {
+    func test_목숨은_1에서_20_사이의_숫자이다() throws {
         // Given
-        let lifes = 11
+        let lifes = 21
         
         // Then
         XCTAssertThrowsError(try LifeCount(lifes: lifes))
@@ -53,16 +53,16 @@ final class iOSbaseballTests: XCTestCase {
         XCTAssertEqual(lifeCount.lifes, 1)
     }
     
-    func test_9개의_목숨에서_추가는_되지_않는다() throws {
+    func test_20개의_목숨에서_추가는_되지_않는다() throws {
         // Given
-        let lifeCount = try LifeCount(lifes: 9)
+        let lifeCount = try LifeCount(lifes: 20)
         
         // When
         lifeCount.increase()
         
         // Then
-        XCTAssertEqual(lifeCount.lifes, 9)
-        XCTAssertNotEqual(lifeCount.lifes, 10)
+        XCTAssertEqual(lifeCount.lifes, 20)
+        XCTAssertNotEqual(lifeCount.lifes, 21)
         
     }
 
