@@ -19,6 +19,7 @@ class MainViewController: UIViewController, MainView {
     override func viewDidLoad() {
         super.viewDidLoad()
         do {
+            initBtn()
             self.presenter = try MainPresenter(view: self, initLifeCount: lifeCount)
         } catch {
             print("에러 발생: \(error)")

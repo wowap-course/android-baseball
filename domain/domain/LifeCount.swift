@@ -29,5 +29,5 @@ public class LifeCount{
     }
     
     private let MIN_LIFE_COUNT = 1
-    private let MAX_LIFE_COUNT = 9
+    private let MAX_LIFE_COUNT = 20
 }

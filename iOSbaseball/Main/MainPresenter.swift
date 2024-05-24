@@ -25,9 +25,9 @@ class MainPresenter : MainViewPresenter{
     
     func game(userNumber: String) {
         do {
-            let userNumbers = try UserBall(numbers: (userNumber.compactMap { Int(String($0)) }))
+            let userNumbers = try UserBall(numbers: (userNumber.compactMap { Int(String($0)) })).numbers
             
-            let resultScore = referee.getGameScore(baseNumbers: userNumbers.numbers, targetNumbers: [1,2,3])
+            let resultScore = referee.getGameScore(baseNumbers: userNumbers, targetNumbers: opponentBall.numbers)
             
             if resultScore.strike == 3 { view.showSuccess(opponentNumber: Int(opponentBall.numbers.map(String.init).joined())!, lifeCount: lifeCount.lifes)}
             view.showResult(ball: resultScore.ball, strike: resultScore.strike)
