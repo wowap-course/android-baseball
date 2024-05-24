@@ -7,11 +7,11 @@
 
 import Foundation
 
-class OpponentBall : Ball{
+public class OpponentBall : Ball{
     
-    private(set) var numbers : [Int]
+    public private(set) var numbers : [Int]
     
-    init(numberGenerator : NumberGenerator){
+    public init(numberGenerator : NumberGenerator){
         self.numbers = numberGenerator.getNumbers()
     }
     

@@ -10,9 +10,9 @@ enum BallCountError: Error {
 
 import Foundation
 
-class UserBall : Ball{
-    private(set) var numbers : [Int] = []
-    init(numbers: [Int]) throws {
+public class UserBall : Ball{
+    public private(set) var numbers : [Int] = []
+    public init(numbers: [Int]) throws {
         self.numbers = numbers
         
         guard hasduplication(numbers: numbers), hasCorrectNumber(numbers: numbers), hasCollectLength(numbers: numbers) else {
@@ -21,18 +21,18 @@ class UserBall : Ball{
 
     }
     
-    private func hasduplication(numbers: [Int]) -> Bool {
+    public func hasduplication(numbers: [Int]) -> Bool {
         let uniqueNumbers = Set(numbers)
         return uniqueNumbers.count == BALL_LENGTH
     }
     
-    private func hasCorrectNumber(numbers : [Int]) -> Bool{
+    public func hasCorrectNumber(numbers : [Int]) -> Bool{
         let TargetNumber = Set(numbers)
         let CorrectNumber = Set(CORRECT_NUMBER)
         return TargetNumber.isSubset(of: CorrectNumber)
     }
     
-    private func hasCollectLength(numbers : [Int]) -> Bool{
+    public func hasCollectLength(numbers : [Int]) -> Bool{
         return numbers.count == BALL_LENGTH
     }
     

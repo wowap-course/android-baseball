@@ -10,9 +10,9 @@ enum LifeCountError: Error {
 
 import Foundation
 
-class LifeCount{
-    private(set) var lifes : Int
-    init(lifes: Int = 1) throws {
+public class LifeCount{
+    public private(set) var lifes : Int
+    public init(lifes: Int = 1) throws {
         self.lifes = lifes
         
         guard (MIN_LIFE_COUNT...MAX_LIFE_COUNT).contains(self.lifes) else {
@@ -20,11 +20,11 @@ class LifeCount{
         }
     }
     
-    func increase() -> Bool{
+    public func increase() -> Bool{
         return lifes < MAX_LIFE_COUNT ? { lifes += 1; return true }() : false
     }
     
-    func decrease() -> Bool{
+    public func decrease() -> Bool{
         return lifes > MIN_LIFE_COUNT ? { lifes -= 1; return true }() : false
     }
     

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol NumberGenerator{
+public protocol NumberGenerator{
     func getNumbers() -> [Int]
 }

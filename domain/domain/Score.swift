@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Score : Equatable{
-    let strike : Int
-    let ball : Int
+public struct Score : Equatable{
+    public let strike : Int
+    public let ball : Int
     
-    init(ball: Int, strike: Int) {
+    public init(ball: Int, strike: Int) {
         self.strike = strike
         self.ball = ball
     }

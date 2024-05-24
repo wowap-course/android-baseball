@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol Ball {
+public protocol Ball {
     var numbers : [Int] { get }
 }

@@ -7,9 +7,11 @@
 
 import Foundation
 
-class RandomNumberGenerator : NumberGenerator{
+public class RandomNumberGenerator : NumberGenerator{
     
-    func getNumbers() -> [Int] {
+    public init() { }
+    
+    public func getNumbers() -> [Int] {
         let nums = Array(MIN_RANDOM_NUM...MAX_RANDOM_NUM)
         return Array(nums.shuffled().prefix(RANDOM_NUM_LENGTH))
     }
