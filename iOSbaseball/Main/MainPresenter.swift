@@ -5,8 +5,10 @@
 //  Created by KimMinSeok on 5/22/24.
 //
 
-class MainPresenter : MainViewPresenter{
+import domain
 
+class MainPresenter : MainViewPresenter{
+    
     let view : MainView!
     var lifeCount: LifeCount!
     var opponentBall : OpponentBall!

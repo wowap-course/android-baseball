@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import iOSbaseball
+@testable import domain
 
 final class UserBallTest: XCTestCase {
 

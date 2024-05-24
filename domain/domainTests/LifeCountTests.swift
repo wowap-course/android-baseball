@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import iOSbaseball
+@testable import domain
 
 final class iOSbaseballTests: XCTestCase {
     func test_처음_목숨의_개수는_1개이다() throws {

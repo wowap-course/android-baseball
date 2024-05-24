@@ -5,7 +5,7 @@
 //  Created by KimMinSeok on 5/22/24.
 //
 
-import Foundation
+import domain
 
 class StartPresenter : StartViewPresenter{
     let view : StartView!
