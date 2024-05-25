@@ -9,6 +9,7 @@ import XCTest
 @testable import domain
 
 final class iOSbaseballTests: XCTestCase {
+    
     func test_처음_목숨의_개수는_1개이다() throws {
         let lifeCount = try LifeCount().lifes
         
@@ -36,9 +37,10 @@ final class iOSbaseballTests: XCTestCase {
         let lifeCount = try LifeCount()
         
         // When
-        lifeCount.increase()
+        let result = lifeCount.increase()
         
         // Then
+        XCTAssertTrue(result)
         XCTAssertEqual(lifeCount.lifes, 2)
     }
     
@@ -47,9 +49,10 @@ final class iOSbaseballTests: XCTestCase {
         let lifeCount = try LifeCount(lifes: 2)
         
         // When
-        lifeCount.decrease()
+        let result = lifeCount.decrease()
         
         // Then
+        XCTAssertTrue(result)
         XCTAssertEqual(lifeCount.lifes, 1)
     }
     
@@ -58,26 +61,25 @@ final class iOSbaseballTests: XCTestCase {
         let lifeCount = try LifeCount(lifes: 20)
         
         // When
-        lifeCount.increase()
+        let result = lifeCount.increase()
         
         // Then
+        XCTAssertFalse(result)
         XCTAssertEqual(lifeCount.lifes, 20)
         XCTAssertNotEqual(lifeCount.lifes, 21)
-        
     }
-
+    
     func test_1개의_목숨에서_빼지지_않는다() throws {
         // Given
         let lifeCount = try LifeCount(lifes: 1)
         
         // When
-        lifeCount.decrease()
+        let result = lifeCount.decrease()
         
         // Then
+        XCTAssertFalse(result)
         XCTAssertEqual(lifeCount.lifes, 1)
         XCTAssertNotEqual(lifeCount.lifes, 0)
-        
     }
-
     
 }
