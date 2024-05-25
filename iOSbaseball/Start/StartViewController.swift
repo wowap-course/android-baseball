@@ -8,7 +8,7 @@
 import UIKit
 
 class StartViewController: UIViewController, StartView {
-
+    
     @IBOutlet weak var lifeLabel: UILabel!
     
     var presenter : StartPresenter!
@@ -37,7 +37,7 @@ class StartViewController: UIViewController, StartView {
         navController.modalPresentationStyle = .fullScreen
         present(navController, animated: true)
     }
-
+    
     @IBAction func btnMinus(_ sender: Any) {
         presenter.decreaseLifeCount()
     }

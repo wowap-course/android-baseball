@@ -11,7 +11,9 @@ enum LifeCountError: Error {
 import Foundation
 
 public class LifeCount{
+    
     public private(set) var lifes : Int
+    
     public init(lifes: Int = 1) throws {
         self.lifes = lifes
         

@@ -9,7 +9,7 @@ import XCTest
 @testable import domain
 
 final class RefereeTest: XCTestCase {
-
+    
     func test_Referee는_볼을_출력한다(){
         // Given
         let number1 = [1,2,3]
@@ -45,5 +45,5 @@ final class RefereeTest: XCTestCase {
         // Then
         XCTAssertEqual(actual, Score(ball: 2, strike: 1))
     }
-
+    
 }

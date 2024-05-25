@@ -11,7 +11,9 @@ enum BallCountError: Error {
 import Foundation
 
 public class UserBall : Ball{
+    
     public private(set) var numbers : [Int] = []
+    
     public init(numbers: [Int]) throws {
         self.numbers = numbers
         

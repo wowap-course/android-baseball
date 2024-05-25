@@ -8,6 +8,7 @@
 import Foundation
 
 public struct Score : Equatable{
+    
     public let strike : Int
     public let ball : Int
     
@@ -15,4 +16,5 @@ public struct Score : Equatable{
         self.strike = strike
         self.ball = ball
     }
+    
 }

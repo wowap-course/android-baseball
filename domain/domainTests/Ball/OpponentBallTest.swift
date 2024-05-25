@@ -10,7 +10,6 @@ import XCTest
 
 final class OpponentBallTest: XCTestCase {
 
-
     func test_상대방은_게임을_시작할때_3자리의_숫자를_가진다(){
         // Given
         let opponent = OpponentBall(numberGenerator: RandomNumberGenerator())

@@ -16,11 +16,10 @@ class MainPresenter : MainViewPresenter{
     
     init(view: MainView, initLifeCount:Int) throws {
         self.view = view
-        
         self.lifeCount = try LifeCount(lifes: initLifeCount)
-        view.showLife(lifeCount: lifeCount.lifes)
-        
         self.opponentBall = OpponentBall(numberGenerator: RandomNumberGenerator())
+        
+        view.showLife(lifeCount: lifeCount.lifes)
     }
     
     func game(userNumber: String) {
@@ -29,22 +28,29 @@ class MainPresenter : MainViewPresenter{
             
             let resultScore = referee.getGameScore(baseNumbers: userNumbers, targetNumbers: opponentBall.numbers)
             
-            if resultScore.strike == 3 { view.showSuccess(opponentNumber: Int(opponentBall.numbers.map(String.init).joined())!, lifeCount: lifeCount.lifes)}
+            if collectNumber(resultScore: resultScore) { view.showSuccess(opponentNumber: Int(opponentBall.numbers.map(String.init).joined())!, lifeCount: lifeCount.lifes) }
+            
             view.showResult(ball: resultScore.ball, strike: resultScore.strike)
             
-            if lifeCount.decrease() { view.showLife(lifeCount: lifeCount.lifes) }
+            if decreaseLife() { view.showLife(lifeCount: lifeCount.lifes) }
             else { endGame() }
             
         } catch {
             view.showInputError(inputText: userNumber)
         }
-
+    }
+    
+    func decreaseLife() -> Bool {
+        return lifeCount.decrease()
+    }
+    
+    func collectNumber(resultScore : Score) -> Bool {
+        return resultScore.strike == 3
     }
     
     func endGame(){
         view.showFail(opponentNumber: Int(opponentBall.numbers.map(String.init).joined())!)
     }
-    
     
     func resultGamePrint(){
         view.showSuccess(opponentNumber: Int(opponentBall.numbers.map(String.init).joined())!, lifeCount: lifeCount.lifes)

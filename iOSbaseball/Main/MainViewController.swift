@@ -18,8 +18,8 @@ class MainViewController: UIViewController, MainView {
      
     override func viewDidLoad() {
         super.viewDidLoad()
+        initBtn()
         do {
-            initBtn()
             self.presenter = try MainPresenter(view: self, initLifeCount: lifeCount)
         } catch {
             print("에러 발생: \(error)")
@@ -67,14 +67,14 @@ class MainViewController: UIViewController, MainView {
         inputBall.text = ""
     }
     
-    @objc func backButtonTapped() {
-        dismiss(animated: true, completion: nil)
-    } 
-
     private func initBtn(){
         let backButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(backButtonTapped))
         backButton.image = UIImage(systemName: "chevron.left") // iOS 기본 chevron 이미지를 사용
         navigationItem.leftBarButtonItem = backButton
+    }
+    
+    @objc func backButtonTapped() {
+        dismiss(animated: true, completion: nil)
     }
     
     // Alert Dialog 생성

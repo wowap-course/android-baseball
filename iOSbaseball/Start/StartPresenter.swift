@@ -8,14 +8,14 @@
 import domain
 
 class StartPresenter : StartViewPresenter{
-    let view : StartView!
     
+    let view : StartView!
     var lifeCount: LifeCount! // 옵셔널 제거
     
     init(view: StartView) throws {
         self.view = view
-        
         self.lifeCount = try LifeCount()
+        
         view.showLife(lifeCount: lifeCount.lifes)
     }
     

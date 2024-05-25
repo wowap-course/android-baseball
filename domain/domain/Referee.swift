@@ -24,4 +24,5 @@ public class Referee{
     public func getStrikeCount(baseNumbers: [Int], targetNumbers: [Int]) -> Int {
         return baseNumbers.enumerated().filter { $0.element == targetNumbers[$0.offset] }.count
     }
+    
 }
