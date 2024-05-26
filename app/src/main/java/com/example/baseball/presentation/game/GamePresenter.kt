@@ -13,7 +13,7 @@ class GamePresenter(private val view: GameContract.View, private val life: Int) 
     private val judgement = Judgement()
     private var remainingLife = life
 
-    fun isGameOver() = remainingLife == DEAD
+    private fun isGameOver() = remainingLife == DEAD
     override fun playOneRound(answer: String) {
         val baseballNumberAnswer = BaseballNumbers(
             answer.toList().map { it.toString().toInt() }).baseballNumbers // 올바른 값만 입력된다고 가정
