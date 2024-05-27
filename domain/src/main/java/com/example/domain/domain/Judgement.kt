@@ -2,17 +2,12 @@ package baseball.domain
 
 class Judgement() {
 
-    fun correctCount(answerNumbers: List<Int>, targetNumbers: List<Int>, life:Int): Referee {
+    fun correctCount(answerNumbers: List<Int>, targetNumbers: List<Int>): Referee {
         val strikeCount = getStrikeCount(answerNumbers, targetNumbers)
         val ballCount = getBallCount(answerNumbers, targetNumbers) - strikeCount
-        val lifeCount = getLifeCount(strikeCount, life)
-        return Referee(strikeCount,ballCount,lifeCount)
+        return Referee(strikeCount,ballCount)
     }
 
-    private fun getLifeCount(strikeCount: Int, life: Int): Int {
-        if(strikeCount != 3) return life-1
-        else return life
-    }
 
     private fun getStrikeCount(answerNumbers: List<Int>, targetNumbers: List<Int>): Int {
         var strikeCount = 0

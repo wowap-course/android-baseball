@@ -1,5 +1,5 @@
 data class Count(
-    val strikeCount : String,
-    val ballCount: String,
+    val strikeCount : Int,
+    val ballCount: Int,
     val inputNumber: List<Int>
 )

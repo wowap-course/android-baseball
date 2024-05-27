@@ -1,16 +1,19 @@
 package com.example.baseball.Game
 
-interface GameContract {
-    interface View{
+import Count
 
-        fun showResult(strikeCount: Int, ballCount: Int, lifeCount: Int)
+interface GameContract {
+    interface View {
+
+        fun showResult(counts: List<Count>)
+        fun showLife(lifeCount: Int)
         fun showWinDialog(randomNumber: List<Int>)
         fun showLoseDialog(randomNumber: List<Int>)
 
     }
 
-    interface Presenter{
-        fun randomNumberGenerator() : List<Int>
-        fun game(inputNumber: List<Int>, lifeCount: Int?)
+    interface Presenter {
+        fun randomNumberGenerator(): List<Int>
+        fun game(inputNumber: List<Int>)
     }
 }
