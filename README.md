@@ -57,3 +57,9 @@
   - [x] Strike = 3일때 성공창 띄우기 
   - [x] Strike != 3일때 실패창 띄우기 
     - [x] life 하나 깎기 
+
+--- 
+
+< Step3 Commit >
+- [] recyclerView_item.xml 만들기 
+- 

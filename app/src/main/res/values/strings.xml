@@ -18,5 +18,9 @@
     <string name="lose">실패</string>
     <string name="strike">스트라이크 : %d, 볼 : %d</string>
     <string name="answer">정답 : %d</string>
+    <string name="try_title">%d 번째 도전</string>
+    <string name="ball_count">볼 : %d</string>
+    <string name="strike_count">스트라이크 : %d</string>
+    <string name="input_number">입력 : %d</string>
 
 </resources>
