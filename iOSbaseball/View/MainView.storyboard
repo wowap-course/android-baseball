@@ -70,7 +70,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="NAy-C3-rEG">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GameResultCollectionViewCell" id="NAy-C3-rEG" customClass="GameResultCollectionViewCell" customModule="iOSbaseball" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="142"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xak-YO-wK7">
@@ -95,8 +95,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="입력 : 789 " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xe-Gm-4OQ">
-                                                            <rect key="frame" x="269" y="106" width="114" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="입력 : 789 " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xe-Gm-4OQ">
+                                                            <rect key="frame" x="306" y="105.66666666666667" width="77" height="20.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -114,6 +114,12 @@
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="393" height="142"/>
+                                                <connections>
+                                                    <outlet property="ballLabel" destination="jEe-JO-6v6" id="V1s-1y-mFV"/>
+                                                    <outlet property="countLabel" destination="WBb-ve-UP6" id="w7E-1H-hOH"/>
+                                                    <outlet property="inputLabel" destination="1xe-Gm-4OQ" id="wsH-kF-4Ie"/>
+                                                    <outlet property="strikeLabel" destination="OBN-cW-M9i" id="1hs-k3-rHh"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -130,6 +136,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="Ils-Sa-oxV" id="BGu-Yn-UTg"/>
                         <outlet property="inputBall" destination="JLZ-Ks-RNY" id="ngU-Ct-iWz"/>
                         <outlet property="lifeLabel" destination="pdl-8d-8Cd" id="JeT-ca-byt"/>
                     </connections>

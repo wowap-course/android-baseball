@@ -12,13 +12,25 @@ class MainViewController: UIViewController, MainView {
     @IBOutlet weak var lifeLabel: UILabel!
     @IBOutlet weak var inputBall: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var lifeCount : Int!
     var presenter : MainPresenter!
+    
+    
+    let list: [GameResult] = GameResult.list
+    
+    enum Section {
+        case main
+    }
+    typealias Item = GameResult
+    
+    var datasource: UICollectionViewDiffableDataSource<Section, Item>!
      
     override func viewDidLoad() {
         super.viewDidLoad()
         initBtn()
+        configureCell()
         do {
             self.presenter = try MainPresenter(view: self, initLifeCount: lifeCount)
         } catch {
@@ -103,6 +115,43 @@ class MainViewController: UIViewController, MainView {
         }
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func configureCell(){
+        // Presentation, Data, Layout
+        // Presentation
+        datasource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameResultCollectionViewCell", for: indexPath) as? GameResultCollectionViewCell else {
+                return nil
+            }
+            
+//            let data = datalist[indexPath.item]
+            cell.configure(itemIdentifier)
+            return cell
+        })
+        
+        // Data
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(list, toSection: .main)
+        datasource.apply(snapshot)
+        
+        // Layout
+        collectionView.collectionViewLayout = layout()
+    }
+    
+    //Layout
+    private func layout() -> UICollectionViewCompositionalLayout{
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.33), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(0.33))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
     }
 
 }
