@@ -21,8 +21,7 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
     private lateinit var binding: ActivityGamePlayBinding
     private lateinit var presenter: GamePlayContract.Presenter
 
-    private var mBinding: ActivityGamePlayBinding? = null
-    private val boardBinding get() = mBinding!!
+    private val boardBinding get() = binding
     // Test code ==================
     val BoardList = arrayListOf<BoardItems>(
         BoardItems(1, 1, 0),
@@ -35,7 +34,7 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
         setContentView(binding.root)
 
         // Test code ========================
-        mBinding = ActivityGamePlayBinding.inflate(layoutInflater)
+        binding = ActivityGamePlayBinding.inflate(layoutInflater)
         setContentView(boardBinding.root)
 
         val Adapter = BoardApdater(this, BoardList)
