@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="O6Q-Sc-VeF">
-                                <rect key="frame" x="0.0" y="59" width="397" height="759"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남은 목숨 : 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdl-8d-8Cd">
-                                        <rect key="frame" x="0.0" y="0.0" width="397" height="24"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="LV6-vT-cBe"/>
                                         </constraints>
@@ -29,14 +29,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="oWY-ik-cjW">
-                                        <rect key="frame" x="0.0" y="54" width="397" height="32"/>
+                                        <rect key="frame" x="0.0" y="54" width="393" height="32"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZJ-ZD-1um">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="46" height="32"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="세 자리 숫자를 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JLZ-Ks-RNY">
-                                                <rect key="frame" x="80" y="0.0" width="230" height="32"/>
+                                                <rect key="frame" x="76" y="0.0" width="230" height="32"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="230" id="qQF-Ge-jw7"/>
@@ -46,7 +46,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgD-SD-xWG">
-                                                <rect key="frame" x="340" y="0.0" width="57" height="32"/>
+                                                <rect key="frame" x="336" y="0.0" width="57" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="GbL-4A-4ys"/>
                                                     <constraint firstAttribute="width" constant="57" id="KbD-cT-DrJ"/>
@@ -58,15 +58,12 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="JLZ-Ks-RNY" firstAttribute="leading" secondItem="oWY-ik-cjW" secondAttribute="leading" constant="30" id="ae1-SQ-Ih0"/>
-                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="45i-qA-G2i">
-                                        <rect key="frame" x="0.0" y="116" width="397" height="643"/>
+                                        <rect key="frame" x="0.0" y="116" width="393" height="643"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQb-u8-FH1">
-                                                <rect key="frame" x="0.0" y="0.0" width="397" height="643"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="643"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
