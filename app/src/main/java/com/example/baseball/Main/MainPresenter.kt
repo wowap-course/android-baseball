@@ -8,20 +8,20 @@ class MainPresenter(private val view: MainContract.View) : MainContract.Presente
     private var life = Life(1)
 
     init {
-        view.showLife(life.life)
+        view.showLife(life.value)
     }
 
     override fun decreaseLife() {
         life --
-        view.showLife(life.life)
+        view.showLife(life.value)
     }
 
     override fun increaseLife() {
         life ++
-        view.showLife(life.life)
+        view.showLife(life.value)
     }
 
     override fun startGame() {
-        view.startGamePage(life.life)
+        view.startGamePage(life.value)
     }
 }

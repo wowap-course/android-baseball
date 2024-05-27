@@ -1,18 +1,18 @@
 package com.example.baseball.domain
 
-data class Life(var life: Int) {
+data class Life(val value: Int) {
     init {
-        require(life in MIN_LIFE_COUNT..MAX_LIFE_COUNT)
+        require(value in MIN_LIFE_COUNT..MAX_LIFE_COUNT)
     }
 
     operator fun inc(): Life {
-        if (life == MAX_LIFE_COUNT) return this
-        return Life(life + 1)
+        if (value == MAX_LIFE_COUNT) return this
+        return Life(value + 1)
     }
 
     operator fun dec(): Life {
-        if (life == MIN_LIFE_COUNT) return this
-        return Life(life - 1)
+        if (value == MIN_LIFE_COUNT) return this
+        return Life(value - 1)
     }
 
     companion object {
