@@ -16,7 +16,7 @@ data class Life(val value: Int) {
     }
 
     companion object {
-        private const val MIN_LIFE_COUNT = 1
+        private const val MIN_LIFE_COUNT = 0
         private const val MAX_LIFE_COUNT = 10
     }
 
