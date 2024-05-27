@@ -8,15 +8,16 @@
 import Foundation
 
 struct GameResult: Hashable{
+    let gameCount : Int
     let strike : Int
-    let Ball : Int
-    let Number : Int
+    let ball : Int
+    let number : Int
 }
 
 extension GameResult {
     static let list: [GameResult] = [
-        GameResult(strike: 1, Ball: 2, Number: 123),
-        GameResult(strike: 0, Ball: 0, Number: 456),
-        GameResult(strike: 0, Ball: 2, Number: 126)
+        GameResult(gameCount : 1, strike: 1, ball: 2, number: 123),
+        GameResult(gameCount : 2, strike: 0, ball: 0, number: 456),
+        GameResult(gameCount : 3, strike: 0, ball: 2, number: 126)
     ]
 }
