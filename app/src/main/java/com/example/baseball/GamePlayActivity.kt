@@ -2,11 +2,16 @@ package com.example.baseball
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Adapter
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.baseball.databinding.ActivityGamePlayBinding
+import com.example.baseball.displayBoard.BoardApdater
+import com.example.baseball.displayBoard.BoardItems
 import com.example.baseball.domain.contracts.GamePlayContract
 import com.example.baseball.presentation.GamePlayPresenter
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -16,10 +21,31 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
     private lateinit var binding: ActivityGamePlayBinding
     private lateinit var presenter: GamePlayContract.Presenter
 
+    private var mBinding: ActivityGamePlayBinding? = null
+    private val boardBinding get() = mBinding!!
+    // Test code ==================
+    val BoardList = arrayListOf<BoardItems>(
+        BoardItems(1, 1, 0),
+        BoardItems(2, 2, 0)
+    )
+    // Test code ==================
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGamePlayBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Test code ========================
+        mBinding = ActivityGamePlayBinding.inflate(layoutInflater)
+        setContentView(boardBinding.root)
+
+        val Adapter = BoardApdater(this, BoardList)
+        boardBinding.displayBoard.adapter = Adapter
+
+        boardBinding.displayBoard.onItemClickListener = AdapterView.OnItemClickListener {
+            parent, view, position, id -> val selectedItem = parent.getItemAtPosition(position) as BoardItems
+        }
+
+        // Test code ========================
 
         initPresenter()
         initGetLifeState()
@@ -67,6 +93,10 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
                 finish()
             }
             .show()
+    }
+
+    override fun showGameList(strike: Int, ball: Int, answer: List<Int>) {
+
     }
 
     private fun initBtnStart() {

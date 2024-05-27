@@ -25,6 +25,7 @@ class GamePlayPresenter(private val view: GamePlayContract.View, initialLife: In
             val (strike, ball) = referee.call(computer, validPlayerNumber)
             referee.reset()
             view.showGameStatus(strike, ball)
+            view.showGameList(strike, ball, validPlayerNumber)
             if (referee.isThreeStrike(strike)) {
                 view.showGameResult("성공", computer)
             } else {
