@@ -12,7 +12,7 @@ protocol MainView{
     func showInputError(inputText: String)
     func showSuccess(opponentNumber: Int, lifeCount:Int)
     func showFail(opponentNumber: Int)
-    func showResult(ball: Int, strike: Int)
+    func showResult(ball: Int, strike: Int, number: Int)
 }
 
 protocol MainViewPresenter {

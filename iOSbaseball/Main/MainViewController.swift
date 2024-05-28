@@ -57,7 +57,7 @@ class MainViewController: UIViewController, MainView {
         makeAlertDialog(title: "실패", message: "정답\(123)")
     }
     
-    func showResult(ball: Int, strike: Int){
+    func showResult(ball: Int, strike: Int, number: Int){
         if ball == 0 && strike == 0 {
             resultLabel.text = "다틀림"
         }
@@ -70,7 +70,11 @@ class MainViewController: UIViewController, MainView {
             output += "\(strike )스트라이크"
         }
             
-            resultLabel.text = output
+        let newGameCount = GameResult.list.count + 1
+        let newGameResult = GameResult(gameCount: newGameCount, strike: strike, ball: ball, number: number)
+        GameResult.list.append(newGameResult)
+        print(GameResult.list)
+        updateCollectionView()
     }
     
     
@@ -118,14 +122,12 @@ class MainViewController: UIViewController, MainView {
     }
     
     func configureCell(){
-        // Presentation, Data, Layout
         // Presentation
         datasource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameResultCollectionViewCell", for: indexPath) as? GameResultCollectionViewCell else {
                 return nil
             }
             
-//            let data = datalist[indexPath.item]
             cell.configure(itemIdentifier)
             return cell
         })
@@ -138,6 +140,13 @@ class MainViewController: UIViewController, MainView {
         
         // Layout
         collectionView.collectionViewLayout = layout()
+    }
+    
+    func updateCollectionView() {
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(GameResult.list, toSection: .main)
+        datasource.apply(snapshot, animatingDifferences: true)
     }
     
     //Layout

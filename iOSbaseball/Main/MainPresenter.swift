@@ -30,7 +30,7 @@ class MainPresenter : MainViewPresenter{
             
             if collectNumber(resultScore: resultScore) { view.showSuccess(opponentNumber: Int(opponentBall.numbers.map(String.init).joined())!, lifeCount: lifeCount.lifes) }
             
-            view.showResult(ball: resultScore.ball, strike: resultScore.strike)
+            view.showResult(ball: resultScore.ball, strike: resultScore.strike, number: Int(userNumber)!)
             
             if decreaseLife() { view.showLife(lifeCount: lifeCount.lifes) }
             else { endGame() }
