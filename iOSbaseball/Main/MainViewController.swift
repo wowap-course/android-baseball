@@ -78,6 +78,7 @@ class MainViewController: UIViewController, MainView {
     
     @objc func backButtonTapped() {
         dismiss(animated: true, completion: nil)
+        presenter.resultListInit()
     }
     
     // Alert Dialog 생성
