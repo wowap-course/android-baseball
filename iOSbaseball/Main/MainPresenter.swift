@@ -30,7 +30,7 @@ class MainPresenter : MainViewPresenter{
             
             if collectNumber(resultScore: resultScore) { view.showSuccess(opponentNumber: Int(opponentBall.numbers.map(String.init).joined())!, lifeCount: lifeCount.lifes) }
             
-            view.showResult(ball: resultScore.ball, strike: resultScore.strike, number: Int(userNumber)!)
+            resultListUpdate(ball: resultScore.ball, strike: resultScore.strike, number: Int(userNumber)!)
             
             if decreaseLife() { view.showLife(lifeCount: lifeCount.lifes) }
             else { endGame() }
@@ -54,6 +54,25 @@ class MainPresenter : MainViewPresenter{
     
     func resultGamePrint(){
         view.showSuccess(opponentNumber: Int(opponentBall.numbers.map(String.init).joined())!, lifeCount: lifeCount.lifes)
+    }
+    
+    func resultListUpdate(ball: Int, strike: Int, number: Int){
+        if ball == 0 && strike == 0 {
+        }
+        
+        var output = ""
+        if ball > 0 {
+            output += "\(ball)볼 "
+        }
+        if strike > 0 {
+            output += "\(strike )스트라이크"
+        }
+            
+        let newGameCount = GameResult.list.count + 1
+        let newGameResult = GameResult(gameCount: newGameCount, strike: strike, ball: ball, number: number)
+        GameResult.list.append(newGameResult)
+        
+        view.showResult()
     }
     
 }

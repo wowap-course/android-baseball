@@ -44,7 +44,7 @@ class MainViewController: UIViewController, MainView {
     }
     
     func showInputError(inputText: String) {
-        resultLabel.text = "올바르지 않은 형식의 입력입니다."
+        print("올바르지 않은 형식의 입력입니다.")
     }
     
     func showSuccess(opponentNumber: Int, lifeCount: Int) {
@@ -57,24 +57,11 @@ class MainViewController: UIViewController, MainView {
         makeAlertDialog(title: "실패", message: "정답\(123)")
     }
     
-    func showResult(ball: Int, strike: Int, number: Int){
-        if ball == 0 && strike == 0 {
-            resultLabel.text = "다틀림"
-        }
-        
-        var output = ""
-        if ball > 0 {
-            output += "\(ball)볼 "
-        }
-        if strike > 0 {
-            output += "\(strike )스트라이크"
-        }
-            
-        let newGameCount = GameResult.list.count + 1
-        let newGameResult = GameResult(gameCount: newGameCount, strike: strike, ball: ball, number: number)
-        GameResult.list.append(newGameResult)
-        print(GameResult.list)
-        updateCollectionView()
+    func showResult(){
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(GameResult.list, toSection: .main)
+        datasource.apply(snapshot, animatingDifferences: true)
     }
     
     
@@ -142,12 +129,6 @@ class MainViewController: UIViewController, MainView {
         collectionView.collectionViewLayout = layout()
     }
     
-    func updateCollectionView() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(GameResult.list, toSection: .main)
-        datasource.apply(snapshot, animatingDifferences: true)
-    }
     
     //Layout
     private func layout() -> UICollectionViewCompositionalLayout{
