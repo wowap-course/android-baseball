@@ -10,11 +10,12 @@ import Foundation
 protocol MainView{
     func showLife(lifeCount:Int)
     func showInputError(inputText: String)
+    func updateCollectionView()
     func showSuccess(opponentNumber: Int, lifeCount:Int)
     func showFail(opponentNumber: Int)
-    func updateCollectionView()
 }
 
 protocol MainViewPresenter {
     func game(userNumber : String)
+    func resultListInit()
 }

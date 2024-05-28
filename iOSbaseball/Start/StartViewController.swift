@@ -51,4 +51,3 @@ class StartViewController: UIViewController, StartView {
     }
     
 }
-

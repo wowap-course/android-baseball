@@ -23,6 +23,7 @@ class MainPresenter : MainViewPresenter{
         view.showLife(lifeCount: lifeCount.lifes)
     }
     
+    // MARK: - 게임 돌아가는 부분
     func game(userNumber: String) {
         do {
             let userNumbers = try UserBall(numbers: (userNumber.compactMap { Int(String($0)) })).numbers
@@ -54,12 +55,12 @@ class MainPresenter : MainViewPresenter{
         view.updateCollectionView()
     }
     
-    func decreaseLife() -> Bool {
-        return lifeCount.decrease()
-    }
-    
     func collectNumber(resultScore : Score) -> Bool {
         return resultScore.strike == 3
+    }
+    
+    func decreaseLife() -> Bool {
+        return lifeCount.decrease()
     }
     
     func endGame(){
@@ -67,14 +68,9 @@ class MainPresenter : MainViewPresenter{
         resultListInit()
     }
     
-    func resultGamePrint(){
-        view.showSuccess(opponentNumber: Int(opponentBall.numbers.map(String.init).joined())!, lifeCount: lifeCount.lifes)
-    }
-    
+    // MARK: - 게임 결과 리스트 초기화
     func resultListInit(){
         GameResult.list = []
     }
-    
-
     
 }
