@@ -49,12 +49,12 @@ class MainViewController: UIViewController, MainView {
     
     func showSuccess(opponentNumber: Int, lifeCount: Int) {
         lifeLabel.text = "남은 목숨 : \(lifeCount)"
-        makeAlertDialog(title: "성공", message: "정답\(123)")
+        makeAlertDialog(title: "성공", message: "정답 \(opponentNumber)")
     }
     
     func showFail(opponentNumber: Int) {
         lifeLabel.text = "남은 목숨 : \(0)"
-        makeAlertDialog(title: "실패", message: "정답\(123)")
+        makeAlertDialog(title: "실패", message: "정답 \(opponentNumber)")
     }
     
     func updateCollectionView(){
