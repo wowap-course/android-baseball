@@ -14,10 +14,10 @@ class GameResultCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var inputLabel: UILabel!
     
     func configure(_ GameResult: GameResult){
-        countLabel.text = String(GameResult.gameCount)
-        ballLabel.text = String(GameResult.ball)
-        strikeLabel.text = String(GameResult.strike)
-        inputLabel.text = String(GameResult.number)
+        countLabel.text = "\(String(GameResult.gameCount)) 번째 도전"
+        ballLabel.text = "볼 : \(String(GameResult.ball))"
+        strikeLabel.text = "스트라이크 : \(String(GameResult.strike))"
+        inputLabel.text = "입력 : \(String(GameResult.number))"
     }
     
 }
