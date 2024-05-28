@@ -2,13 +2,14 @@ package com.example.baseball.domain
 
 class Judgement() {
     fun judgeNumber(
+        tryCount : Int,
         opponentNumber: List<BaseballNumber>,
         answer: List<BaseballNumber>
-    ): Pair<Int, Int> {
+    ): BaseballScore {
         val strike = countStrikes(opponentNumber, answer)
         val allBall = countAllBall(opponentNumber, answer)
         val ball = allBall - strike
-        return ball to strike
+        return BaseballScore(tryCount, ball, strike, answer.joinToString(""))
     }
 
     private fun countAllBall(
