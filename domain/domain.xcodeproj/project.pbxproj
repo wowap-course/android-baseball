@@ -23,7 +23,7 @@
 		121CB7362BFDF90F00843CD8 /* UserBallTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121CB7302BFDF90F00843CD8 /* UserBallTest.swift */; };
 		121CB7372BFDF90F00843CD8 /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121CB7322BFDF90F00843CD8 /* ScoreTest.swift */; };
 		121CB7382BFDF90F00843CD8 /* RefereeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121CB7332BFDF90F00843CD8 /* RefereeTest.swift */; };
-		1262D10C2C04E67B0052C768 /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1262D10B2C04E67B0052C768 /* GameResult.swift */; };
+		122E1DAD2C05A9070082306F /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122E1DAC2C05A9070082306F /* GameResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,7 @@
 		121CB7302BFDF90F00843CD8 /* UserBallTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserBallTest.swift; sourceTree = "<group>"; };
 		121CB7322BFDF90F00843CD8 /* ScoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTest.swift; sourceTree = "<group>"; };
 		121CB7332BFDF90F00843CD8 /* RefereeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefereeTest.swift; sourceTree = "<group>"; };
-		1262D10B2C04E67B0052C768 /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameResult.swift; path = ../../iOSbaseball/Main/GameResult.swift; sourceTree = "<group>"; };
+		122E1DAC2C05A9070082306F /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +101,11 @@
 				121CB71E2BFDF8E600843CD8 /* Ball */,
 				121CB7232BFDF8E600843CD8 /* NumberGenerator */,
 				121CB71F2BFDF8E600843CD8 /* Referee.swift */,
+				122E1DAC2C05A9070082306F /* GameResult.swift */,
 				121CB7242BFDF8E600843CD8 /* LifeCount.swift */,
 				121CB7202BFDF8E600843CD8 /* Score.swift */,
 				121CB7042BFDF89800843CD8 /* domain.h */,
 				121CB7052BFDF89800843CD8 /* domain.docc */,
-				1262D10B2C04E67B0052C768 /* GameResult.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -264,8 +264,8 @@
 				121CB7282BFDF8E600843CD8 /* Referee.swift in Sources */,
 				121CB7252BFDF8E600843CD8 /* Ball.swift in Sources */,
 				121CB7062BFDF89800843CD8 /* domain.docc in Sources */,
+				122E1DAD2C05A9070082306F /* GameResult.swift in Sources */,
 				121CB7292BFDF8E600843CD8 /* Score.swift in Sources */,
-				1262D10C2C04E67B0052C768 /* GameResult.swift in Sources */,
 				121CB72C2BFDF8E600843CD8 /* LifeCount.swift in Sources */,
 				121CB72A2BFDF8E600843CD8 /* NumberGenerator.swift in Sources */,
 				121CB7272BFDF8E600843CD8 /* UserBall.swift in Sources */,

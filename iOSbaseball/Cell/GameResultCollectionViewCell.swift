@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import domain
 
 class GameResultCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var countLabel: UILabel!

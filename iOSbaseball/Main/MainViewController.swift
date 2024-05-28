@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import domain
 
 class MainViewController: UIViewController, MainView {
 
@@ -19,11 +20,11 @@ class MainViewController: UIViewController, MainView {
     
     
     let list: [GameResult] = GameResult.list
+    typealias Item = GameResult
     
     enum Section {
         case main
     }
-    typealias Item = GameResult
     
     var datasource: UICollectionViewDiffableDataSource<Section, Item>!
      
