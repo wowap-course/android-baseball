@@ -57,7 +57,7 @@ class MainViewController: UIViewController, MainView {
         makeAlertDialog(title: "실패", message: "정답\(123)")
     }
     
-    func showResult(){
+    func updateCollectionView(){
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
         snapshot.appendSections([.main])
         snapshot.appendItems(GameResult.list, toSection: .main)
@@ -119,11 +119,8 @@ class MainViewController: UIViewController, MainView {
             return cell
         })
         
-        // Data
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(list, toSection: .main)
-        datasource.apply(snapshot)
+        // Initial Data
+        updateCollectionView()
         
         // Layout
         collectionView.collectionViewLayout = layout()

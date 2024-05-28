@@ -70,9 +70,9 @@ class MainPresenter : MainViewPresenter{
             
         let newGameCount = GameResult.list.count + 1
         let newGameResult = GameResult(gameCount: newGameCount, strike: strike, ball: ball, number: number)
-        GameResult.list.append(newGameResult)
+        GameResult.list.insert(newGameResult, at: 0)
         
-        view.showResult()
+        view.updateCollectionView()
     }
     
 }
