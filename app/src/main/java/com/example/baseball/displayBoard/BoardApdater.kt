@@ -17,14 +17,14 @@ class BoardApdater(private val context: Context, private val boardList: MutableL
         val trytime = binding.txtViewTry
         val strike = binding.txtViewStrike
         val ball = binding.txtViewBall
-        val inputNumner = binding.txtViewInputNumber
+        val answer = binding.txtViewInputNumber
 
         val board = boardList[position]
 
         trytime.text = board.trytime.toString()
         strike.text = board.strike.toString()
         ball.text = board.ball.toString()
-        inputNumner.text = board.toString()
+        answer.text = board.answer.joinToString(" ")
 
 
         return mBinding!!.root
