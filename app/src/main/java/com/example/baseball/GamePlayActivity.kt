@@ -43,10 +43,10 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
         binding.txtLifeState.text = life.toString()
     }
 
-    override fun showGameStatus(strike: Int, ball: Int, answer: List<Int>) {
+    override fun showGameStatus(trytime: Int,strike: Int, ball: Int, answer: List<Int>) {
         setContentView(boardBinding.root)
 
-        boardItems.add(BoardItems(1, strike, ball, answer))
+        boardItems.add(BoardItems(trytime, strike, ball, answer))
 
         val adpter = BoardApdater(this, boardItems)
         boardBinding.displayBoard.adapter = adpter
