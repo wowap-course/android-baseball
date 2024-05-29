@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.example.baseball.databinding.DisplayBoardItemsBinding
 
-class BoardApdater(val context: Context, val BoardList: List<BoardItems>): BaseAdapter() {
+class BoardApdater(private val context: Context, private val boardList: MutableList<com.example.baseball.displayBoard.BoardItems>): BaseAdapter() {
     private var mBinding: DisplayBoardItemsBinding? = null
     private val binding get() = mBinding!!
 
@@ -19,7 +19,7 @@ class BoardApdater(val context: Context, val BoardList: List<BoardItems>): BaseA
         val ball = binding.txtViewBall
         val inputNumner = binding.txtViewInputNumber
 
-        val board = BoardList[position]
+        val board = boardList[position]
 
         trytime.text = board.trytime.toString()
         strike.text = board.strike.toString()
@@ -31,11 +31,11 @@ class BoardApdater(val context: Context, val BoardList: List<BoardItems>): BaseA
     }
 
     override fun getItem(p0: Int): Any {
-        return BoardList[p0]
+        return boardList[p0]
     }
 
     override fun getCount(): Int {
-        return BoardList.size
+        return boardList.size
     }
 
     override fun getItemId(p0: Int): Long {

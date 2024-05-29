@@ -2,12 +2,8 @@ package com.example.baseball
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Adapter
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.baseball.databinding.ActivityGamePlayBinding
 import com.example.baseball.displayBoard.BoardApdater
@@ -20,31 +16,14 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
 
     private lateinit var binding: ActivityGamePlayBinding
     private lateinit var presenter: GamePlayContract.Presenter
-
     private val boardBinding get() = binding
-    // Test code ==================
-    val BoardList = arrayListOf<BoardItems>(
-        BoardItems(1, 1, 0),
-        BoardItems(2, 2, 0)
-    )
-    // Test code ==================
+//    private lateinit var boardItems: List<com.example.baseball.domain.BoardItems>
+    private val boardItems = mutableListOf<BoardItems>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGamePlayBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // Test code ========================
-        binding = ActivityGamePlayBinding.inflate(layoutInflater)
-        setContentView(boardBinding.root)
-
-        val Adapter = BoardApdater(this, BoardList)
-        boardBinding.displayBoard.adapter = Adapter
-
-        boardBinding.displayBoard.onItemClickListener = AdapterView.OnItemClickListener {
-            parent, view, position, id -> val selectedItem = parent.getItemAtPosition(position) as BoardItems
-        }
-
-        // Test code ========================
 
         initPresenter()
         initGetLifeState()
@@ -66,6 +45,13 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
     }
 
     override fun showGameStatus(strike: Int, ball: Int) {
+        setContentView(boardBinding.root)
+
+        boardItems.add(BoardItems(1, strike, ball))
+
+        val adpter = BoardApdater(this, boardItems)
+        boardBinding.displayBoard.adapter = adpter
+
         Toast.makeText(this, "strike: $strike, ball: $ball", Toast.LENGTH_SHORT).show()
     }
 
@@ -94,9 +80,7 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
             .show()
     }
 
-    override fun showGameList(strike: Int, ball: Int, answer: List<Int>) {
 
-    }
 
     private fun initBtnStart() {
         binding.btnCheck.setOnClickListener {
