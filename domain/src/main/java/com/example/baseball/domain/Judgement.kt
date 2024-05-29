@@ -2,7 +2,7 @@ package com.example.baseball.domain
 
 class Judgement() {
     fun judgeNumber(
-        tryCount : Int,
+        tryCount: Int,
         opponentNumber: List<BaseballNumber>,
         answer: List<BaseballNumber>
     ): BaseballScore {

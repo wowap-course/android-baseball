@@ -13,6 +13,7 @@ import com.example.baseball.presentation.main.MainActivity
 class GameActivity : AppCompatActivity(), GameContract.View {
     private lateinit var binding: ActivityGameBinding
     private lateinit var presenter: GameContract.Presenter
+    private var rvAdapter: RecyclerViewAdapter? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
@@ -23,6 +24,7 @@ class GameActivity : AppCompatActivity(), GameContract.View {
         initTitleBar()
         initTextView()
         initButton()
+        initAdapter()
     }
 
     private fun initPresenter() {
@@ -42,18 +44,29 @@ class GameActivity : AppCompatActivity(), GameContract.View {
     private fun initButton() {
         binding.btnTry.setOnClickListener {
             val answer = binding.etReadBaseballNumbers.text.toString()
-            presenter.playOneRound(answer)
+            presenter.onTryBtnClicked(answer)
         }
     }
 
-    override fun showResultOfInning(ball: Int, strike: Int) {
+    private fun initAdapter() {
+        rvAdapter = RecyclerViewAdapter()
+        binding.recyclerView.adapter = rvAdapter
+    }
+
+    override fun showResultOfInning(tryCount: Int, ball: Int, strike: Int, answer: String) {
+        rvAdapter?.addData(arrayOf(
+            String.format(getString(R.string.count_try), tryCount),
+            String.format(getString(R.string.count_ball), ball),
+            String.format(getString(R.string.count_strike), strike),
+            String.format(getString(R.string.guessed_answer), answer)
+        ))
         Log.d("ResultOfInning", "ball : $ball, strike : $strike")
     }
 
     override fun showResultOfGame(resultOfGame: String, correctAnswer: Int) {
         val resultDialog = AlertDialog.Builder(this)
             .setTitle(resultOfGame)
-            .setMessage(String.format(getString(R.string.answer), correctAnswer))
+            .setMessage(String.format(getString(R.string.correct_answer), correctAnswer))
             .setPositiveButton(
                 getString(R.string.restart),
                 DialogInterface.OnClickListener { dialog, which ->
@@ -77,7 +90,7 @@ class GameActivity : AppCompatActivity(), GameContract.View {
         startActivity(intent)
     }
 
-    override fun restartGameActivity(life : Int) {
+    override fun restartGameActivity(life: Int) {
         val intent = Intent(this, GameActivity::class.java)
         intent.putExtra("lifeCount", life)
         startActivity(intent)

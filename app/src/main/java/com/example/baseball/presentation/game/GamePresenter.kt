@@ -1,32 +1,31 @@
 package com.example.baseball.presentation.game
 
 import android.util.Log
-import com.example.baseball.domain.BaseballNumber
-import com.example.baseball.domain.BaseballNumbers
-import com.example.baseball.domain.Judgement
-import com.example.baseball.domain.numbergenerator.RandomNumberGenerator
+import com.example.baseball.domain.numbergenerator.BaseballGame
 
 class GamePresenter(private val view: GameContract.View, private val life: Int) :
     GameContract.Presenter {
-    private val opponentNumber: List<BaseballNumber> =
-        BaseballNumbers(RandomNumberGenerator().generateNumber()).baseballNumbers
-    private val judgement = Judgement()
+    private val baseballGame = BaseballGame()
     private var remainingLife = life
 
     private fun isGameOver() = remainingLife == DEAD
-    override fun playOneRound(answer: String) {
-        val baseballNumberAnswer = BaseballNumbers(
-            answer.toList().map { it.toString().toInt() }).baseballNumbers // 올바른 값만 입력된다고 가정
-        val (ball, strike) = judgement.judgeNumber(opponentNumber, baseballNumberAnswer)
 
+    override fun onTryBtnClicked(answer: String) {
         remainingLife--
         view.showLifeCount(remainingLife)
 
-        if (strike == MAX_STRIKE)
-            view.showResultOfGame(SUCCESS, opponentNumber.joinToString("").toInt())
+        val score = baseballGame.playOnrRound(answer)
+
+        if (score.strike == MAX_STRIKE)
+            view.showResultOfGame(SUCCESS, baseballGame.opponentNumber.joinToString("").toInt())
         else if (isGameOver())
-            view.showResultOfGame(FAIL, opponentNumber.joinToString("").toInt())
-        else view.showResultOfInning(ball, strike)
+            view.showResultOfGame(FAIL, baseballGame.opponentNumber.joinToString("").toInt())
+        else view.showResultOfInning(
+            score.tryCount,
+            score.ball,
+            score.strike,
+            score.answerOfInning
+        )
     }
 
     override fun onRestartBtnClicked() {

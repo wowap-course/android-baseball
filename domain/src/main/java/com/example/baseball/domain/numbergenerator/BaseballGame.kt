@@ -8,10 +8,11 @@ import com.example.baseball.domain.Judgement
 class BaseballGame() {
     private var tryCount = INIT_TRY
     private val judgement = Judgement()
-    private val opponentNumber: List<BaseballNumber> =
-        BaseballNumbers(RandomNumberGenerator().generateNumber()).baseballNumbers
     private val _baseballScores = ArrayList<BaseballScore>()
+    val opponentNumber: List<BaseballNumber> =
+        BaseballNumbers(RandomNumberGenerator().generateNumber()).baseballNumbers
     val baseballScores get() = _baseballScores.toList()
+
     fun playOnrRound(answer: String): BaseballScore {
         val baseballNumberAnswer = BaseballNumbers(
             answer.toList().map { it.toString().toInt() }).baseballNumbers // 올바른 값만 입력된다고 가정
@@ -23,6 +24,6 @@ class BaseballGame() {
     }
 
     companion object {
-        private const val INIT_TRY = 0
+        private const val INIT_TRY = 1
     }
 }
