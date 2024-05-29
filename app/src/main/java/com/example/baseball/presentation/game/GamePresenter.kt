@@ -11,10 +11,15 @@ class GamePresenter(private val view: GameContract.View, private val life: Int) 
     private fun isGameOver() = remainingLife == DEAD
 
     override fun onTryBtnClicked(answer: String) {
-        if(answer == "") {
-            view.showRequests("숫자를 입력해주세요.")
+        if (answer == "") {
+            view.showRequests(REQUEST_INPUT)
             return
         }
+        if (answer.toSet().size != answer.length) {
+            view.showRequests(REQUEST_NO_DUPLICATE)
+            return
+        }
+
         remainingLife--
         view.showLifeCount(remainingLife)
 
@@ -45,5 +50,7 @@ class GamePresenter(private val view: GameContract.View, private val life: Int) 
         private const val SUCCESS = "성공"
         private const val FAIL = "실패"
         private const val DEAD = 0
+        private const val REQUEST_INPUT = "숫자를 입력해주세요."
+        private const val REQUEST_NO_DUPLICATE = "숫자는 중복될 수 없어요."
     }
 }
