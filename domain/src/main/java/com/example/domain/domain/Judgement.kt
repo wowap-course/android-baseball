@@ -10,7 +10,7 @@ class Judgement() {
 
 
     private fun getStrikeCount(answerNumbers: List<Int>, targetNumbers: List<Int>): Int {
-        var strikeCount = 0
+        var strikeCount = INIT_STRIKE_COUNT
 
         for (i in answerNumbers.indices) {
             strikeCount = checkStrike(targetNumbers, i, answerNumbers, strikeCount)
@@ -30,7 +30,7 @@ class Judgement() {
     }
 
     private fun getBallCount(answerNumbers: List<Int>, targetNumbers: List<Int>): Int {
-        var ballCount = 0
+        var ballCount = INIT_BALL_COUNT
 
         targetNumbers.forEach {
             ballCount = checkBall(it, answerNumbers, ballCount)
@@ -42,5 +42,10 @@ class Judgement() {
         var ballCount1 = ballCount
         if (it in answerNumbers) ballCount1++
         return ballCount1
+    }
+
+    companion object{
+        private const val INIT_STRIKE_COUNT = 0
+        private const val INIT_BALL_COUNT = 0
     }
 }

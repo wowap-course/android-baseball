@@ -29,9 +29,13 @@ class GamePresenter(private val view: GameContract.View, initialLife: Int) :
         counts.add(Count(referee.strikeCount, referee.ballCount, inputNumber))
 
         when {
-            referee.strikeCount == 3 -> view.showWinDialog(game.answerNumbers)
-            life.value == 0 -> view.showLoseDialog(game.answerNumbers)
+            referee.strikeCount == WIN_CONDITION -> view.showWinDialog(game.answerNumbers)
+            life.value == LOST_CONDITION -> view.showLoseDialog(game.answerNumbers)
             else -> view.showResult(counts)
         }
+    }
+    companion object{
+        private const val WIN_CONDITION = 3 // 승리 조건
+        private const val LOST_CONDITION = 0 // 패배 조건
     }
 }
