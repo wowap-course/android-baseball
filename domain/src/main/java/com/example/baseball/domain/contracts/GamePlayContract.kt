@@ -1,7 +1,5 @@
 package com.example.baseball.domain.contracts
 
-import com.example.baseball.domain.BoardItems
-
 interface GamePlayContract {
 
     interface View {
