@@ -1,11 +1,11 @@
-package baseball.domain
+package com.example.domain.domain
 
 class Judgement() {
 
-    fun correctCount(answerNumbers: List<Int>, targetNumbers: List<Int>): Referee {
+    fun correctCount(answerNumbers: List<Int>, targetNumbers: List<Int>): BaseballCount {
         val strikeCount = getStrikeCount(answerNumbers, targetNumbers)
         val ballCount = getBallCount(answerNumbers, targetNumbers) - strikeCount
-        return Referee(strikeCount,ballCount)
+        return BaseballCount(strikeCount,ballCount)
     }
 
 

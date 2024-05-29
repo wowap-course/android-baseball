@@ -41,7 +41,7 @@
 
 
     <Button
-        android:id="@+id/startGame"
+        android:id="@+id/btnChallenge"
         android:layout_width="57.45dp"
         android:layout_height="32dp"
         android:layout_marginEnd="13dp"

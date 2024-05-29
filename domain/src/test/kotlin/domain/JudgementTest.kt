@@ -1,7 +1,7 @@
 package domain
 
-import baseball.domain.Referee
-import baseball.domain.Judgement
+import com.example.domain.domain.BaseballCount
+import com.example.domain.domain.Judgement
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
@@ -13,7 +13,7 @@ class JudgementTest {
         val targetNumbers:List<Int> = listOf(5,1,2)
         val lifeCount = 1
         val count = Judgement().correctCount(answerNumbers, targetNumbers,lifeCount)
-        assertThat(count).isEqualTo(Referee(0,1,1))
+        assertThat(count).isEqualTo(BaseballCount(0,1,1))
     }
 
     @Test
@@ -22,6 +22,6 @@ class JudgementTest {
         val targetNumbers:List<Int> = listOf(3,1,6)
         val lifeCount = 1
         val count = Judgement().correctCount(answerNumbers, targetNumbers, lifeCount)
-        assertThat(count).isEqualTo(Referee(1,0,1))
+        assertThat(count).isEqualTo(BaseballCount(1,0,1))
     }
 }

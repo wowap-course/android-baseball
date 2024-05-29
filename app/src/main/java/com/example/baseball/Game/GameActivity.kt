@@ -1,7 +1,7 @@
 package com.example.baseball.Game
 
 import BaseballAdapter
-import Count
+import BaseballCountUiModel
 import android.content.DialogInterface
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -13,34 +13,48 @@ import com.example.baseball.databinding.ActivityGameBinding
 
 class GameActivity : AppCompatActivity(), GameContract.View {
 
-    private lateinit var binding: ActivityGameBinding
-    private lateinit var presenter: GameContract.Presenter
+    private val binding: ActivityGameBinding by lazy {
+        ActivityGameBinding.inflate(layoutInflater)
+    }
+    private val presenter: GameContract.Presenter by lazy {
+        GamePresenter(this, intent.getIntExtra(KEY_LIFE, 1))
+    }
     private lateinit var adapter: BaseballAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_game)
-        binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initPresenter()
-        val randomNumber = presenter.randomNumberGenerator()
+        initView()
+    }
+
+    private fun initView() {
         initBackBtn()
-        initBtn(randomNumber)
-
+        initStartGameBtn()
+        initAdapter()
     }
 
-    private fun initPresenter() {
-        presenter = GamePresenter(this, intent.getIntExtra("life", 1))
+    override fun showLife(lifeCount: Int) {
+        binding.tvLifeTitle.text = getString(R.string.remain_life, lifeCount)
     }
 
-    private fun initBtn(randomNumber: List<Int>) {
-        binding.startGame.setOnClickListener {
+    override fun showResult(baseballCountUiModels: List<BaseballCountUiModel>) {
+        adapter.submitList(baseballCountUiModels)
+    }
+
+
+    private fun initAdapter() {
+        adapter = BaseballAdapter()
+        binding.rvGameResult.adapter = adapter
+    }
+
+    private fun initStartGameBtn() {
+        binding.btnChallenge.setOnClickListener {
             val inputNumber =
                 binding.inputBox.text.toString().toList().map { it.toString().toInt() }
-            presenter.game(inputNumber)
+            presenter.challenge(inputNumber)
         }
     }
-
 
     private fun initBackBtn() {
         binding.toolbarGame.backBtn.setOnClickListener {
@@ -48,35 +62,16 @@ class GameActivity : AppCompatActivity(), GameContract.View {
         }
     }
 
-    override fun showLife(lifeCount: Int) {
-        binding.tvLifeTitle.text = getString(R.string.remain_life, lifeCount)
-    }
-
-
-    override fun showResult(counts: List<Count>) {
-        adapter = BaseballAdapter(counts)
-        binding.rvGameResult.adapter = adapter
-
-    }
-
     override fun showWinDialog(randomNumber: List<Int>) {
         val answer = randomNumber.joinToString("") { it.toString() }.toInt()
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.win))
             .setMessage(getString(R.string.answer, answer))
-            .setPositiveButton(
-                getString(R.string.restart),
-                object : DialogInterface.OnClickListener {
-                    override fun onClick(dialog: DialogInterface, which: Int) {
-                        finish()
-                        startActivity(intent)
-                    }
-                })
-            .setNegativeButton(getString(R.string.quit), object : DialogInterface.OnClickListener {
-                override fun onClick(dialog: DialogInterface, which: Int) {
-                    finish()
-                }
-            })
+            .setPositiveButton(getString(R.string.restart)) { dialog, which ->
+                finish()
+                startActivity(intent)
+            }
+            .setNegativeButton(getString(R.string.quit)) { dialog, which -> finish() }
             .create()
             .show()
     }
@@ -86,21 +81,16 @@ class GameActivity : AppCompatActivity(), GameContract.View {
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.lose))
             .setMessage(getString(R.string.answer, answer))
-            .setPositiveButton(
-                getString(R.string.restart),
-                object : DialogInterface.OnClickListener {
-                    override fun onClick(dialog: DialogInterface, which: Int) {
-                        finish()
-                        startActivity(intent)
-                    }
-                })
-            .setNegativeButton(getString(R.string.quit), object : DialogInterface.OnClickListener {
-                override fun onClick(dialog: DialogInterface, which: Int) {
-                    finish()
-                }
-            })
+            .setPositiveButton(getString(R.string.restart)) { dialog, which ->
+                finish()
+                startActivity(intent)
+            }
+            .setNegativeButton(getString(R.string.quit)) { dialog, which -> finish() }
             .create()
             .show()
     }
 
+    companion object {
+        const val KEY_LIFE = "life"
+    }
 }

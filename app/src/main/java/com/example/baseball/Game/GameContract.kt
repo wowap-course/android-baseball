@@ -1,11 +1,11 @@
 package com.example.baseball.Game
 
-import Count
+import BaseballCountUiModel
 
 interface GameContract {
     interface View {
 
-        fun showResult(counts: List<Count>)
+        fun showResult(baseballCountUiModels: List<BaseballCountUiModel>)
         fun showLife(lifeCount: Int)
         fun showWinDialog(randomNumber: List<Int>)
         fun showLoseDialog(randomNumber: List<Int>)
@@ -13,7 +13,6 @@ interface GameContract {
     }
 
     interface Presenter {
-        fun randomNumberGenerator(): List<Int>
-        fun game(inputNumber: List<Int>)
+        fun challenge(inputNumber: List<Int>)
     }
 }
