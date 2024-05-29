@@ -17,7 +17,6 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
     private lateinit var binding: ActivityGamePlayBinding
     private lateinit var presenter: GamePlayContract.Presenter
     private val boardBinding get() = binding
-//    private lateinit var boardItems: List<com.example.baseball.domain.BoardItems>
     private val boardItems = mutableListOf<BoardItems>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
