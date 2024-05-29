@@ -11,6 +11,10 @@ class GamePresenter(private val view: GameContract.View, private val life: Int) 
     private fun isGameOver() = remainingLife == DEAD
 
     override fun onTryBtnClicked(answer: String) {
+        if(answer == "") {
+            view.showRequests("숫자를 입력해주세요.")
+            return
+        }
         remainingLife--
         view.showLifeCount(remainingLife)
 

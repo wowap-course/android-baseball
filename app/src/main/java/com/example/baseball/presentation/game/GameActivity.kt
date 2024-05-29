@@ -4,6 +4,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.baseball.R
@@ -83,6 +84,10 @@ class GameActivity : AppCompatActivity(), GameContract.View {
 
     override fun showLifeCount(lifeCount: Int) {
         binding.tvRemainingLives.text = String.format(getString(R.string.remaining_life), lifeCount)
+    }
+
+    override fun showRequests(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 
     override fun navigateToMainActivity() {

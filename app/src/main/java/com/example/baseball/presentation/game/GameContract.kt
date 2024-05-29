@@ -5,6 +5,7 @@ interface GameContract {
         fun showResultOfInning(tryCount : Int, ball: Int, strike: Int, answer : String)
         fun showResultOfGame(resultOfGame: String, correctAnswer: Int)
         fun showLifeCount(lifeCount : Int)
+        fun showRequests(msg : String)
         fun navigateToMainActivity()
         fun restartGameActivity(life : Int)
     }
