@@ -61,5 +61,9 @@
 --- 
 
 < Step3 Commit >
-- [] recyclerView_item.xml 만들기 
-- 
+- [x] RecyclerView_item.xml 만들기
+- [x] RecyclerView adpter 구현
+- [x] ViewHolder 구현
+- [x] Count data class 구현
+- [x] presenter에 adapter 연결
+- [x] activity adapter에 연결
