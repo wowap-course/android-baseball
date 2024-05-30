@@ -11,17 +11,15 @@ class JudgementTest {
     fun `두 숫자를 비교했을 때, 값은 같고 자리만 다른 숫자가 하나라면 볼의 개수는 1 이다`(){
         val answerNumbers:List<Int> = listOf(4,5,6)
         val targetNumbers:List<Int> = listOf(5,1,2)
-        val lifeCount = 1
-        val count = Judgement().correctCount(answerNumbers, targetNumbers,lifeCount)
-        assertThat(count).isEqualTo(BaseballCount(0,1,1))
+        val count = Judgement().correctCount(answerNumbers, targetNumbers)
+        assertThat(count).isEqualTo(BaseballCount(0,1))
     }
 
     @Test
     fun `두 숫자를 비교했을 때, 값은 같고 자리도 같다면 스트라이크의 개수는 1 이다`(){
         val answerNumbers:List<Int> = listOf(4,5,6)
         val targetNumbers:List<Int> = listOf(3,1,6)
-        val lifeCount = 1
-        val count = Judgement().correctCount(answerNumbers, targetNumbers, lifeCount)
-        assertThat(count).isEqualTo(BaseballCount(1,0,1))
+        val count = Judgement().correctCount(answerNumbers, targetNumbers)
+        assertThat(count).isEqualTo(BaseballCount(1,0))
     }
 }

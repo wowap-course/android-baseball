@@ -1,4 +1,4 @@
-package com.example.baseball.Main
+package com.example.baseball.main
 
 interface MainContract {
     interface View{

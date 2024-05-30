@@ -1,10 +1,8 @@
-package com.example.baseball.Game
+package com.example.baseball.game
 
-import BaseballAdapter
-import BaseballCountUiModel
-import android.content.DialogInterface
+import com.example.baseball.game.baseballcounts.BaseballAdapter
+import com.example.baseball.game.baseballcounts.BaseballCountItem
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.baseball.R
@@ -23,7 +21,6 @@ class GameActivity : AppCompatActivity(), GameContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(binding.root)
         initView()
     }
@@ -38,10 +35,9 @@ class GameActivity : AppCompatActivity(), GameContract.View {
         binding.tvLifeTitle.text = getString(R.string.remain_life, lifeCount)
     }
 
-    override fun showResult(baseballCountUiModels: List<BaseballCountUiModel>) {
-        adapter.submitList(baseballCountUiModels)
+    override fun showResult(baseballCountItems: List<BaseballCountItem>) {
+        adapter.submitList(baseballCountItems)
     }
-
 
     private fun initAdapter() {
         adapter = BaseballAdapter()

@@ -1,12 +1,11 @@
-package com.example.baseball.Game
+package com.example.baseball.game
 
-import BaseballCountUiModel
-import com.example.domain.domain.BaseballGame
-import baseball.domain.numbergenerator.RandomNumberGenerator
+import com.example.baseball.game.baseballcounts.BaseballCountItem
+import com.example.domain.domain.numbergenerator.RandomNumberGenerator
 import com.example.baseball.domain.Life
 import com.example.domain.domain.BaseballCount
+import com.example.domain.domain.BaseballGame
 import com.example.domain.domain.GameResult
-
 
 class GamePresenter(
     private val view: GameContract.View, initialLife: Int
@@ -37,7 +36,8 @@ class GamePresenter(
         view.showLife(life.value)
     }
 
-    private fun List<BaseballCount>.toPresentation(inputNumber: List<Int>): List<BaseballCountUiModel> {
-        return map { BaseballCountUiModel(it.strikeCount, it.ballCount, inputNumber) }
+    private fun List<BaseballCount>.toPresentation(inputNumber: List<Int>): List<BaseballCountItem> {
+        return map { BaseballCountItem(it.strikeCount, it.ballCount, inputNumber) }
     }
 }
+

@@ -1,13 +1,11 @@
-package com.example.baseball.Main
+package com.example.baseball.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.baseball.Game.GameActivity
+import com.example.baseball.game.GameActivity
 import com.example.baseball.R
 import com.example.baseball.databinding.ActivityMainBinding
-import com.example.baseball.domain.Life
-import com.example.baseball.presentation.main.MainPresenter
 
 class MainActivity : AppCompatActivity(), MainContract.View {
 

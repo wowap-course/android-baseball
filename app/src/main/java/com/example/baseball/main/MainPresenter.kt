@@ -1,6 +1,5 @@
-package com.example.baseball.presentation.main
+package com.example.baseball.main
 
-import com.example.baseball.Main.MainContract
 import com.example.baseball.domain.Life
 
 class MainPresenter(private val view: MainContract.View) : MainContract.Presenter {

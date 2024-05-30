@@ -1,7 +1,7 @@
 package domain
 
 
-import baseball.domain.numbergenerator.RandomNumberGenerator
+import com.example.domain.domain.numbergenerator.RandomNumberGenerator
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 

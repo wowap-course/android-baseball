@@ -1,4 +1,4 @@
-package baseball.domain.numbergenerator
+package com.example.domain.domain.numbergenerator
 
 import com.example.baseball.domain.numbergenerator.NumberGenerator
 

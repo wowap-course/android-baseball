@@ -1,14 +1,15 @@
+package com.example.baseball.game.baseballcounts
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.baseball.RecyclerView.BaseballViewHolder
 import com.example.baseball.databinding.ItemRecyclerviewBinding
 
 class BaseballAdapter(
-    baseballCountUiModels: List<BaseballCountUiModel> = mutableListOf()
+    baseballCountItems: List<BaseballCountItem> = listOf()
 ) : RecyclerView.Adapter<BaseballViewHolder>() {
 
-    private val _baseballCountUiModels = baseballCountUiModels.toMutableList()
+    private val _baseballCountUiModels = baseballCountItems.toMutableList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseballViewHolder {
         val binding =
@@ -22,9 +23,9 @@ class BaseballAdapter(
 
     override fun getItemCount(): Int = _baseballCountUiModels.size
 
-    fun submitList(baseballCountUiModels: List<BaseballCountUiModel>) {
+    fun submitList(baseballCountItems: List<BaseballCountItem>) {
         _baseballCountUiModels.clear()
-        _baseballCountUiModels.addAll(baseballCountUiModels)
+        _baseballCountUiModels.addAll(baseballCountItems)
         notifyDataSetChanged()
     }
 }
