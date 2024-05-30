@@ -2,50 +2,65 @@ package com.example.baseball.presentation.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.baseball.databinding.ActivityMainBinding
 import com.example.baseball.presentation.GameActivity
 
-class MainActivity : AppCompatActivity(), MainContract.View {
+class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-
-    private lateinit var presenter: MainContract.Presenter
+    private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        presenter = MainPresenter(this)
         initPlusBtn()
         initMinusBtn()
         initGameStartBtn()
+        initObserve()
     }
 
-    override fun showLife(life: Int) {
-        binding.tvLife.text = life.toString()
+    private fun initObserve() {
+        viewModel.life.observe(this) { life ->
+            showLife(life.value)
+        }
+        viewModel.event.observe(this) { event ->
+            when (event) {
+                is Event.NavigateToGame -> navigateToGame(viewModel.life.value?.value ?: 1)
+                is Event.ShowErrorMessage -> Toast.makeText(
+                    baseContext,
+                    event.message,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
     }
 
     private fun initMinusBtn() {
         binding.btnMinus.setOnClickListener {
-            presenter.decreaseLife()
+            viewModel.decreaseLife()
         }
     }
 
     private fun initPlusBtn() {
         binding.btnPlus.setOnClickListener {
-            presenter.increaseLife()
+            viewModel.increaseLife()
         }
     }
 
     private fun initGameStartBtn() {
         binding.btnStartGame.setOnClickListener {
-            presenter.gameStart()
+            viewModel.gameStart()
         }
     }
 
-    override fun navigateToGame(life: Int) {
+    private fun showLife(life: Int) {
+        binding.tvLife.text = life.toString()
+    }
+
+    private fun navigateToGame(life: Int) {
         val intent = Intent(baseContext, GameActivity::class.java)
         intent.putExtra("life", life)
         startActivity(intent)

@@ -1,6 +1,6 @@
-import com.example.baseball.domain.model.Life
+import com.example.baseball.domain.Life
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.Test
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 
 class LifeTest {

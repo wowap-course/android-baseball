@@ -1,4 +1,4 @@
-package com.example.baseball.domain.model
+package com.example.baseball.domain
 
 @JvmInline
 value class Life(val value: Int) {
