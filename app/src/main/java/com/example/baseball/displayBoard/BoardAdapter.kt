@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.example.baseball.databinding.DisplayBoardItemsBinding
 
-class BoardApdater(private val context: Context, private val boardList: MutableList<com.example.baseball.displayBoard.BoardItems>): BaseAdapter() {
+class BoardAdapter(private val context: Context, private val boardList: MutableList<com.example.baseball.displayBoard.BoardItems>): BaseAdapter() {
     private var mBinding: DisplayBoardItemsBinding? = null
     private val binding get() = mBinding!!
 

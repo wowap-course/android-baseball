@@ -6,7 +6,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.baseball.databinding.ActivityGamePlayBinding
-import com.example.baseball.displayBoard.BoardApdater
+import com.example.baseball.displayBoard.BoardAdapter
 import com.example.baseball.displayBoard.BoardItems
 import com.example.baseball.domain.contracts.GamePlayContract
 import com.example.baseball.presentation.GamePlayPresenter
@@ -48,7 +48,7 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
 
         boardItems.add(BoardItems(trytime, strike, ball, answer))
 
-        val adpter = BoardApdater(this, boardItems)
+        val adpter = BoardAdapter(this, boardItems)
         boardBinding.displayBoard.adapter = adpter
 
         Toast.makeText(this, "strike: $strike, ball: $ball", Toast.LENGTH_SHORT).show()
