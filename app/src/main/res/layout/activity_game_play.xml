@@ -58,7 +58,7 @@
                 android:layout_weight="0"/>
         </LinearLayout>
 
-        <ListView
+        <view class="androidx.recyclerview.widget.RecyclerView"
             android:id="@+id/displayBoard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

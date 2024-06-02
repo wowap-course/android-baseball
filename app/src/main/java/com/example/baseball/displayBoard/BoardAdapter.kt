@@ -2,43 +2,30 @@ package com.example.baseball.displayBoard
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.example.baseball.databinding.DisplayBoardItemsBinding
 
-class BoardAdapter(private val context: Context, private val boardList: MutableList<com.example.baseball.displayBoard.BoardItems>): BaseAdapter() {
-    private var mBinding: DisplayBoardItemsBinding? = null
-    private val binding get() = mBinding!!
+class BoardAdapter(private val context: Context, private val boardList: MutableList<BoardItems>) : RecyclerView.Adapter<BoardAdapter.ViewHolder>() {
 
-    override fun getView(position: Int, covertView: View?, parent: ViewGroup?): View {
-        mBinding = DisplayBoardItemsBinding.inflate(LayoutInflater.from(context))
+    inner class ViewHolder(val binding: DisplayBoardItemsBinding) : RecyclerView.ViewHolder(binding.root)
 
-        val trytime = binding.txtViewTry
-        val strike = binding.txtViewStrike
-        val ball = binding.txtViewBall
-        val answer = binding.txtViewInputNumber
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val binding = DisplayBoardItemsBinding.inflate(LayoutInflater.from(context), parent, false)
+        return ViewHolder(binding)
+    }
 
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val board = boardList[position]
-
-        trytime.text = board.trytime.toString()
-        strike.text = board.strike.toString()
-        ball.text = board.ball.toString()
-        answer.text = board.answer.joinToString(" ")
-
-
-        return mBinding!!.root
+        holder.binding.apply {
+            txtViewTry.text = board.trytime.toString()
+            txtViewStrike.text = board.strike.toString()
+            txtViewBall.text = board.ball.toString()
+            txtViewInputNumber.text = board.answer.joinToString(" ")
+        }
     }
 
-    override fun getItem(p0: Int): Any {
-        return boardList[p0]
-    }
-
-    override fun getCount(): Int {
+    override fun getItemCount(): Int {
         return boardList.size
-    }
-
-    override fun getItemId(p0: Int): Long {
-        return 0
     }
 }

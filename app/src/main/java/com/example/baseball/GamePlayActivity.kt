@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.baseball.databinding.ActivityGamePlayBinding
 import com.example.baseball.displayBoard.BoardAdapter
 import com.example.baseball.displayBoard.BoardItems
@@ -48,8 +49,9 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
 
         boardItems.add(BoardItems(trytime, strike, ball, answer))
 
-        val adpter = BoardAdapter(this, boardItems)
-        boardBinding.displayBoard.adapter = adpter
+        val adapter = BoardAdapter(this, boardItems)
+        boardBinding.displayBoard.adapter = adapter
+        boardBinding.displayBoard.layoutManager= LinearLayoutManager(this)
 
         Toast.makeText(this, "strike: $strike, ball: $ball", Toast.LENGTH_SHORT).show()
     }
