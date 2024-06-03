@@ -17,8 +17,8 @@ class MainActivity : AppCompatActivity(){
         setContentView(binding.root)
 
         initObserve()
-//        initBtnPlus()
-//        initBtnMinus()
+        initBtnPlus()
+        initBtnMinus()
         initStartButton()
     }
 
@@ -32,13 +32,13 @@ class MainActivity : AppCompatActivity(){
         binding.txLife.text = life.toString()
     }
 
-//    private fun initBtnPlus() {
-//        binding.btnPlus.setOnClickListener { presenter.increaseLife() }
-//    }
-//
-//    private fun initBtnMinus() {
-//        binding.btnMinus.setOnClickListener { presenter.decreaseLife() }
-//    }
+    private fun initBtnPlus() {
+        binding.btnPlus.setOnClickListener { viewModel.increaseLife() }
+    }
+
+    private fun initBtnMinus() {
+        binding.btnMinus.setOnClickListener { viewModel.decreaseLife() }
+    }
 
     private fun initStartButton() {
         binding.btnStart.setOnClickListener {
