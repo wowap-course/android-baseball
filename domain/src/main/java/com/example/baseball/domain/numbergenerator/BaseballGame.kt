@@ -16,7 +16,7 @@ class BaseballGame() {
     fun playOnrRound(answer: String): BaseballScore {
         val baseballNumberAnswer = BaseballNumbers(
             answer.toList().map { it.toString().toInt() }).baseballNumbers // 올바른 값만 입력된다고 가정
-        val scoreOfInning = judgement.judgeNumber(tryCount++, opponentNumber, baseballNumberAnswer)
+        val scoreOfInning = judgement.judgeNumber(opponentNumber, baseballNumberAnswer)
 
         _baseballScores.add(0, scoreOfInning)
 
