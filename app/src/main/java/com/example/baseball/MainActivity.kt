@@ -3,42 +3,42 @@ package com.example.baseball
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.example.baseball.databinding.ActivityMainBinding
-import com.example.baseball.domain.contracts.MainContract
-import com.example.baseball.presentation.MainPresenter
+import com.example.baseball.presentation.MainViewModel
 
-class MainActivity : AppCompatActivity(), MainContract.View {
+class MainActivity : AppCompatActivity(){
 
-    private lateinit var binding: ActivityMainBinding
-
-    private lateinit var presenter: MainContract.Presenter
+    private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initPresenter()
-        initBtnPlus()
-        initBtnMinus()
+        initObserve()
+//        initBtnPlus()
+//        initBtnMinus()
         initStartButton()
     }
 
-    private fun initPresenter() {
-        presenter = MainPresenter(this)
+    private fun initObserve() {
+        viewModel.life.observe(this) {
+            life -> showLife(life.count)
+        }
     }
 
-    override fun showLife(life: Int) {
+    private fun showLife(life: Int) {
         binding.txLife.text = life.toString()
     }
 
-    private fun initBtnPlus() {
-        binding.btnPlus.setOnClickListener { presenter.increaseLife() }
-    }
-
-    private fun initBtnMinus() {
-        binding.btnMinus.setOnClickListener { presenter.decreaseLife() }
-    }
+//    private fun initBtnPlus() {
+//        binding.btnPlus.setOnClickListener { presenter.increaseLife() }
+//    }
+//
+//    private fun initBtnMinus() {
+//        binding.btnMinus.setOnClickListener { presenter.decreaseLife() }
+//    }
 
     private fun initStartButton() {
         binding.btnStart.setOnClickListener {
