@@ -1,6 +1,6 @@
 package com.example.baseball.domain
 
-data class Life(val value: Int) {
+data class Life(var value: Int) {
     init {
         require(value in MIN_LIFE_COUNT..MAX_LIFE_COUNT)
     }

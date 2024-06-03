@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showLife(life: Int) {
+    fun showLife(life: Int) {
         binding.tvLife.text = life.toString()
     }
 

@@ -33,4 +33,6 @@
     <string name="strike">스트라이크 : %d, 볼 : %d</string>
     <string name="answer">정답 : %d</string>
 
+    <string name="app_name">Baseball</string>
+    <string name="title_activity_game">GameActivity</string>
 </resources>
