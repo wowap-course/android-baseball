@@ -10,6 +10,9 @@ class MainViewModel: ViewModel() {
     private val _life: MutableLiveData<Life> = MutableLiveData(Life(MIN_LIFE))
     val life: LiveData<Life> = _life
 
+    private val _event: MutableLiveData<Event> = MutableLiveData()
+    val event: LiveData<Event> = _event
+
     fun decreaseLife() {
         _life.value = life.value?.decrease()
     }
@@ -17,8 +20,15 @@ class MainViewModel: ViewModel() {
     fun increaseLife() {
         _life.value = life.value?.increase()
     }
+
+    fun gameStart() {
+        _event.value = Event.NavigateToGame
+    }
 }
 
+sealed interface Event {
+    data object NavigateToGame: Event
+}
 //class MainPresenter(private val view: MainContract.View) : MainContract.Presenter {
 //    private var life = Life(MIN_LIFE)
 //

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.example.baseball.databinding.ActivityMainBinding
+import com.example.baseball.presentation.Event
 import com.example.baseball.presentation.MainViewModel
 
 class MainActivity : AppCompatActivity(){
@@ -26,6 +27,11 @@ class MainActivity : AppCompatActivity(){
         viewModel.life.observe(this) {
             life -> showLife(life.count)
         }
+        viewModel.event.observe(this) { event ->
+            when (event) {
+                is Event.NavigateToGame -> navigateToGame()
+            }
+        }
     }
 
     private fun showLife(life: Int) {
@@ -41,6 +47,12 @@ class MainActivity : AppCompatActivity(){
     }
 
     private fun initStartButton() {
+        binding.btnStart.setOnClickListener {
+            viewModel.gameStart()
+        }
+    }
+
+    private fun navigateToGame() {
         binding.btnStart.setOnClickListener {
             val txCountValue = binding.txLife.text.toString().toIntOrNull() ?: 0
             val intent = Intent(this, GamePlayActivity::class.java)
