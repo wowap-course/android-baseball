@@ -30,10 +30,9 @@ class GamePresenter(private val view: GameContract.View, private val life: Int) 
         else if (isGameOver())
             view.showResultOfGame(FAIL, baseballGame.opponentNumber.joinToString("").toInt())
         else view.showResultOfInning(
-            score.tryCount,
             score.ball,
             score.strike,
-            score.answerOfInning
+            score.answerOfInning.map { it.toInt() }
         )
     }
 
