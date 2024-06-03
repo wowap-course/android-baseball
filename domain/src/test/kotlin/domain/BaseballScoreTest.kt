@@ -12,28 +12,28 @@ class BaseballScoreTest {
     @Test
     fun `볼은 0보다 작을 수 없다`() {
         assertThrows<IllegalArgumentException> {
-            BaseballScore(-1, 1, answer)
+            BaseballScore(0, -1, 1, answer)
         }
     }
 
     @Test
     fun `볼은 3보다 클 수 없다`() {
         assertThrows<IllegalArgumentException> {
-            BaseballScore(4, 1, answer)
+            BaseballScore(0, 4, 1, answer)
         }
     }
 
     @Test
     fun `스트라이크은 0보다 작을 수 없다`() {
         assertThrows<IllegalArgumentException> {
-            BaseballScore(1, -1, answer)
+            BaseballScore(0, 1, -1, answer)
         }
     }
 
     @Test
     fun `스트라이크은 3보다 클 수 없다`() {
         assertThrows<IllegalArgumentException> {
-            BaseballScore(1, 4, answer)
+            BaseballScore(0, 1, 4, answer)
         }
     }
 
@@ -45,7 +45,7 @@ class BaseballScoreTest {
 
         //then
         assertThrows<IllegalArgumentException> {
-            BaseballScore(1, 4, underThreeDigitsAnswer)
+            BaseballScore(0, 1, 4, underThreeDigitsAnswer)
         }
     }
 
@@ -58,7 +58,7 @@ class BaseballScoreTest {
 
         //then
         assertThrows<IllegalArgumentException> {
-            BaseballScore(1, 4, moreThreeDigitsAnswer)
+            BaseballScore(0, 1, 4, moreThreeDigitsAnswer)
         }
     }
 
@@ -70,7 +70,7 @@ class BaseballScoreTest {
 
         //then
         assertThrows<IllegalArgumentException> {
-            BaseballScore(1, 4, duplicateAnswer)
+            BaseballScore(0, 1, 4, duplicateAnswer)
         }
     }
 }
