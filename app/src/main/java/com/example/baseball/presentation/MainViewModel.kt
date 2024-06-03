@@ -29,17 +29,3 @@ class MainViewModel: ViewModel() {
 sealed interface Event {
     data object NavigateToGame: Event
 }
-//class MainPresenter(private val view: MainContract.View) : MainContract.Presenter {
-//    private var life = Life(MIN_LIFE)
-//
-//    init {
-//        view.showLife(life.count)
-//    }
-//    override fun decreaseLife() {
-//        view.showLife(life.decrease())
-//    }
-//
-//    override fun increaseLife() {
-//        view.showLife(life.increase())
-//    }
-//}
