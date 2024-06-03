@@ -1,4 +1,4 @@
-package com.example.baseball.presentation.game
+package com.example.baseball.presentation.game.results
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,7 +7,7 @@ import com.example.baseball.databinding.ResultItemsBinding
 import com.example.baseball.domain.BaseballNumber
 import com.example.baseball.domain.BaseballScore
 
-class RecyclerViewAdapter : RecyclerView.Adapter<GameResultViewHolder>() {
+class GameResultAdapter : RecyclerView.Adapter<GameResultViewHolder>() {
     private val dataSet : ArrayList<BaseballScore> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GameResultViewHolder {

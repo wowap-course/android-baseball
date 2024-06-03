@@ -3,18 +3,18 @@ package com.example.baseball.presentation.game
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.baseball.R
 import com.example.baseball.databinding.ActivityGameBinding
+import com.example.baseball.presentation.game.results.GameResultAdapter
 import com.example.baseball.presentation.main.MainActivity
 
 class GameActivity : AppCompatActivity(), GameContract.View {
     private lateinit var binding: ActivityGameBinding
     private lateinit var presenter: GameContract.Presenter
-    private var rvAdapter: RecyclerViewAdapter? = null
+    private var rvAdapter: GameResultAdapter? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
@@ -50,7 +50,7 @@ class GameActivity : AppCompatActivity(), GameContract.View {
     }
 
     private fun initAdapter() {
-        rvAdapter = RecyclerViewAdapter()
+        rvAdapter = GameResultAdapter()
         binding.recyclerView.adapter = rvAdapter
     }
 

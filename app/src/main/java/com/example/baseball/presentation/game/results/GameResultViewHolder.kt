@@ -1,4 +1,4 @@
-package com.example.baseball.presentation.game
+package com.example.baseball.presentation.game.results
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.baseball.R
