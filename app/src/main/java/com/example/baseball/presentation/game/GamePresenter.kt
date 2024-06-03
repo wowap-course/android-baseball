@@ -1,7 +1,6 @@
 package com.example.baseball.presentation.game
 
-import android.util.Log
-import com.example.baseball.domain.numbergenerator.BaseballGame
+import com.example.baseball.domain.BaseballGame
 
 class GamePresenter(private val view: GameContract.View, private val life: Int) :
     GameContract.Presenter {

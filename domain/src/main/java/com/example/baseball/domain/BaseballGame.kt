@@ -1,12 +1,8 @@
-package com.example.baseball.domain.numbergenerator
+package com.example.baseball.domain
 
-import com.example.baseball.domain.BaseballNumber
-import com.example.baseball.domain.BaseballNumbers
-import com.example.baseball.domain.BaseballScore
-import com.example.baseball.domain.Judgement
+import com.example.baseball.domain.numbergenerator.RandomNumberGenerator
 
 class BaseballGame() {
-    private var tryCount = INIT_TRY
     private val judgement = Judgement()
     private val _baseballScores = ArrayList<BaseballScore>()
     val opponentNumber: List<BaseballNumber> =
@@ -21,9 +17,5 @@ class BaseballGame() {
         _baseballScores.add(0, scoreOfInning)
 
         return scoreOfInning
-    }
-
-    companion object {
-        private const val INIT_TRY = 1
     }
 }
