@@ -54,12 +54,8 @@ class GameActivity : AppCompatActivity(), GameContract.View {
         binding.recyclerView.adapter = rvAdapter
     }
 
-    override fun showResultOfInning(ball: Int, strike: Int, answer: List<Int>) {
-        rvAdapter?.addData(arrayOf(
-            ball,
-            strike,
-            answer.joinToString("").toInt()
-        ))
+    override fun showResultOfInning(tryCount : Int, ball: Int, strike: Int, answer: List<Int>) {
+        rvAdapter?.addData(tryCount, ball, strike, answer)
     }
 
     override fun showResultOfGame(resultOfGame: String, correctAnswer: Int) {

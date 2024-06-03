@@ -1,14 +1,15 @@
 package com.example.baseball.domain
 
-class Judgement() {
+class Judgement {
     fun judgeNumber(
         opponentNumber: List<BaseballNumber>,
-        answer: List<BaseballNumber>
+        answer: List<BaseballNumber>,
+        tryCount :Int = 0
     ): BaseballScore {
         val strike = countStrikes(opponentNumber, answer)
         val allBall = countAllBall(opponentNumber, answer)
         val ball = allBall - strike
-        return BaseballScore(ball, strike, answer)
+        return BaseballScore(tryCount, ball, strike, answer)
     }
 
     private fun countAllBall(
