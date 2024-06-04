@@ -7,47 +7,64 @@
 
 import UIKit
 
-class StartViewController: UIViewController, StartView {
+class StartViewController: UIViewController {
     
     @IBOutlet weak var lifeLabel: UILabel!
     
-    var presenter : StartPresenter!
+    var viewModel: StartViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         do {
-            self.presenter = try StartPresenter(view: self)
+            self.viewModel = try StartViewModel()
+            self.updateLifeLabel()
+            setupNotificationCenter()
         } catch {
             print("에러 발생: \(error)")
         }
     }
     
-    func showLife(lifeCount:Int) {
-        lifeLabel.text = String(lifeCount)
+    private func setupNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(lifeCountChanged), name: Notification.Name("LifeCountChanged"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(startGame(notification:)), name: Notification.Name("StartGame"), object: nil)
     }
     
-    func startGame(lifeCount:Int) {
-        let storyboard = UIStoryboard(name: "MainView", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-        
-        vc.lifeCount = lifeCount
-        
-        let navController = UINavigationController(rootViewController: vc)
-        
-        navController.modalPresentationStyle = .fullScreen
-        present(navController, animated: true)
+    @objc private func lifeCountChanged() {
+        updateLifeLabel()
+    }
+    
+    private func updateLifeLabel() {
+        lifeLabel.text = String(viewModel.getLifeCount())
+    }
+    
+    @objc private func startGame(notification: Notification) {
+        if let lifeCount = notification.object as? Int {
+            let storyboard = UIStoryboard(name: "MainView", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+            
+            vc.lifeCount = lifeCount
+            
+            let navController = UINavigationController(rootViewController: vc)
+            
+            navController.modalPresentationStyle = .fullScreen
+            present(navController, animated: true)
+        }
     }
     
     @IBAction func btnMinus(_ sender: Any) {
-        presenter.decreaseLifeCount()
+        viewModel.decreaseLifeCount()
     }
     
     @IBAction func btnPlus(_ sender: Any) {
-        presenter.increaseLifeCount()
+        viewModel.increaseLifeCount()
     }
     
     @IBAction func btnStart(_ sender: Any) {
-        presenter.startGame()
+        viewModel.startGame()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 }
