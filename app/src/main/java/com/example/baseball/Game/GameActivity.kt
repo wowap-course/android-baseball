@@ -14,8 +14,6 @@ import com.example.baseball.R
 import com.example.baseball.databinding.ActivityGameBinding
 
 
-
-
 class GameActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityGameBinding
@@ -30,9 +28,7 @@ class GameActivity : AppCompatActivity() {
         binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initObserve()
-//        val randomNumber = viewModel.randomNumberGenerator()
         initBackBtn()
-//        initBtn(randomNumber)
         initBtn()
     }
 
@@ -50,14 +46,10 @@ class GameActivity : AppCompatActivity() {
         }
     }
 
-    //    private fun initPresenter() {
-//        presenter = GamePresenter(this, intent.getIntExtra("life", 1))
-//    }
     private fun showLife(lifeCount: Int) {
         binding.tvLifeTitle.text = getString(R.string.remain_life, lifeCount)
     }
 
-    //    private fun initBtn(randomNumber: List<Int) {
     private fun initBtn() {
         binding.startGame.setOnClickListener {
             val inputNumber =

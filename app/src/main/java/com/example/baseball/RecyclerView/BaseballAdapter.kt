@@ -8,7 +8,8 @@ class BaseballAdapter(private val counts: List<Count> = mutableListOf()) :
     RecyclerView.Adapter<BaseballViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseballViewHolder {
-        val binding = ItemRecyclerviewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemRecyclerviewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return BaseballViewHolder(binding)
     }
 
