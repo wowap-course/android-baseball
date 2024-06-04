@@ -2,18 +2,18 @@ package com.example.baseball.domain
 
 class Life(var count: Int) {
 
-    fun decrease(): Int {
+    fun decrease(): Life {
         if (count > MIN_LIFE) {
             count--
         }
-        return count
+        return Life(count)
     }
 
-    fun increase(): Int {
+    fun increase(): Life {
         if (count < MAX_LIFE) {
             count++
         }
-        return count
+        return Life(count)
     }
 
     fun decreaseToZero(): Int {

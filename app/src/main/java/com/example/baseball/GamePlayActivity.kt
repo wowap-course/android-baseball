@@ -4,9 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.baseball.databinding.ActivityGamePlayBinding
+import com.example.baseball.displayBoard.BoardAdapter
+import com.example.baseball.displayBoard.BoardItems
 import com.example.baseball.domain.contracts.GamePlayContract
 import com.example.baseball.presentation.GamePlayPresenter
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -15,6 +17,8 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
 
     private lateinit var binding: ActivityGamePlayBinding
     private lateinit var presenter: GamePlayContract.Presenter
+    private val boardBinding get() = binding
+    private val boardItems = mutableListOf<BoardItems>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +44,15 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
         binding.txtLifeState.text = life.toString()
     }
 
-    override fun showGameStatus(strike: Int, ball: Int) {
+    override fun showGameStatus(trytime: Int,strike: Int, ball: Int, answer: List<Int>) {
+        setContentView(boardBinding.root)
+
+        boardItems.add(BoardItems(trytime, strike, ball, answer))
+
+        val adapter = BoardAdapter(this, boardItems)
+        boardBinding.displayBoard.adapter = adapter
+        boardBinding.displayBoard.layoutManager= LinearLayoutManager(this)
+
         Toast.makeText(this, "strike: $strike, ball: $ball", Toast.LENGTH_SHORT).show()
     }
 
@@ -68,6 +80,8 @@ class GamePlayActivity : AppCompatActivity(), GamePlayContract.View {
             }
             .show()
     }
+
+
 
     private fun initBtnStart() {
         binding.btnCheck.setOnClickListener {

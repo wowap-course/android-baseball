@@ -10,6 +10,7 @@ class GamePlayPresenter(private val view: GamePlayContract.View, initialLife: In
     private val referee = Referee()
     private val gameSetup = ThreeRandomNumberGenerator()
     private val computer = gameSetup.generateNumber()
+    private var trytime = 1
 
     override fun decreaseLife() {
         view.showLife(life.decreaseToZero())
@@ -24,7 +25,8 @@ class GamePlayPresenter(private val view: GamePlayContract.View, initialLife: In
             val validPlayerNumber = checkNumber(player)
             val (strike, ball) = referee.call(computer, validPlayerNumber)
             referee.reset()
-            view.showGameStatus(strike, ball)
+            view.showGameStatus(trytime, strike, ball, validPlayerNumber)
+            trytime++
             if (referee.isThreeStrike(strike)) {
                 view.showGameResult("성공", computer)
             } else {
