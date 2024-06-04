@@ -10,7 +10,7 @@ class GameTest {
     fun `start함수는 count를 리턴받는가?`(){
         val answerNumber:List<Int> = listOf(1,2,3)
         val game = Game(answerNumber)
-        val count = Game(answerNumber).resultCount(listOf(1,2,3),1)
-        assertThat(count).isEqualTo(Referee(3,0,1))
+        val count = Game(answerNumber).resultCount(listOf(1,2,3))
+        assertThat(count).isEqualTo(Referee(3,0))
     }
 }
