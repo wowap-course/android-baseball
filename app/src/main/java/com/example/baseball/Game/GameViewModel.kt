@@ -32,11 +32,13 @@ class GameViewModel(initialLife: Int) : ViewModel() {
 
         when {
             referee.strikeCount == WIN_CONDITION -> {
-                _event.value = Event.ShowWinDialog(answerNumber = game.answerNumbers)
+                _event.value = Event.ShowResultDialog(SUCCESS, answerNumber = game.answerNumbers)
+//                _event.value = Event.ShowWinDialog(answerNumber = game.answerNumbers)
             }
 
             life.value?.value == LOST_CONDITION -> {
-                _event.value = Event.ShowLoseDialog(answerNumber = game.answerNumbers)
+                _event.value = Event.ShowResultDialog(FAULT, answerNumber = game.answerNumbers)
+//                _event.value = Event.ShowLoseDialog(answerNumber = game.answerNumbers)
             }
 
             else -> {
@@ -49,6 +51,8 @@ class GameViewModel(initialLife: Int) : ViewModel() {
 
         private const val WIN_CONDITION = 3 // 승리 조건
         private const val LOST_CONDITION = 0 // 패배 조건
+        private const val SUCCESS = "승리"
+        private const val FAULT = "패배"
 
         class GameViewModelFactory(private val life: Int) : ViewModelProvider.Factory {
             override fun <T : ViewModel> create(modelClass: Class<T>): T {
@@ -64,7 +68,6 @@ class GameViewModel(initialLife: Int) : ViewModel() {
 
 
 sealed interface Event {
-    data class ShowWinDialog(val answerNumber: List<Int>) : Event
-    data class ShowLoseDialog(val answerNumber: List<Int>) : Event
+    data class ShowResultDialog(val message:String, val answerNumber: List<Int>):Event
     data class ShowResult(val counts: MutableList<Count>) : Event
 }

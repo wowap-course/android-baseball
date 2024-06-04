@@ -39,8 +39,7 @@ class GameActivity : AppCompatActivity() {
 
         viewModel.event.observe(this) { event ->
             when (event) {
-                is Event.ShowWinDialog -> showWinDialog(event.answerNumber)
-                is Event.ShowLoseDialog -> showLoseDialog(event.answerNumber)
+                is Event.ShowResultDialog -> showResultDialog(event.message, event.answerNumber)
                 is Event.ShowResult -> showResult(event.counts)
             }
         }
@@ -72,10 +71,10 @@ class GameActivity : AppCompatActivity() {
 
     }
 
-    fun showWinDialog(randomNumber: List<Int>) {
+    fun showResultDialog(message: String, randomNumber: List<Int>) {
         val answer = randomNumber.joinToString("") { it.toString() }.toInt()
         AlertDialog.Builder(this)
-            .setTitle(getString(R.string.win))
+            .setTitle(message)
             .setMessage(getString(R.string.answer, answer))
             .setPositiveButton(
                 getString(R.string.restart),
@@ -93,27 +92,4 @@ class GameActivity : AppCompatActivity() {
             .create()
             .show()
     }
-
-    fun showLoseDialog(randomNumber: List<Int>) {
-        val answer = randomNumber.joinToString("") { it.toString() }.toInt()
-        AlertDialog.Builder(this)
-            .setTitle(getString(R.string.lose))
-            .setMessage(getString(R.string.answer, answer))
-            .setPositiveButton(
-                getString(R.string.restart),
-                object : DialogInterface.OnClickListener {
-                    override fun onClick(dialog: DialogInterface, which: Int) {
-                        finish()
-                        startActivity(intent)
-                    }
-                })
-            .setNegativeButton(getString(R.string.quit), object : DialogInterface.OnClickListener {
-                override fun onClick(dialog: DialogInterface, which: Int) {
-                    finish()
-                }
-            })
-            .create()
-            .show()
-    }
-
 }
