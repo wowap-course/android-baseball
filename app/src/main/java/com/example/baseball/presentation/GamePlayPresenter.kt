@@ -1,6 +1,5 @@
 package com.example.baseball.presentation
 
-//import com.example.baseball.displayBoard.BoardItems
 import com.example.baseball.domain.Referee
 import com.example.baseball.domain.numberRules.ThreeRandomNumberGenerator
 import com.example.baseball.domain.Life
