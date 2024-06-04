@@ -33,12 +33,10 @@ class GameViewModel(initialLife: Int) : ViewModel() {
         when {
             referee.strikeCount == WIN_CONDITION -> {
                 _event.value = Event.ShowResultDialog(SUCCESS, answerNumber = game.answerNumbers)
-//                _event.value = Event.ShowWinDialog(answerNumber = game.answerNumbers)
             }
 
             life.value?.value == LOST_CONDITION -> {
                 _event.value = Event.ShowResultDialog(FAULT, answerNumber = game.answerNumbers)
-//                _event.value = Event.ShowLoseDialog(answerNumber = game.answerNumbers)
             }
 
             else -> {
