@@ -10,7 +10,11 @@
     <string name="restart">재시작</string>
     <string name="exit">나가기</string>
     <string name="success">성공</string>
-    <string name="answer">정답 : %d</string>
+    <string name="correct_answer">정답 : %d</string>
     <string name="etHint">세 자리 숫자를 입력해주세요.</string>
     <string name="challenges">도전</string>
+    <string name="count_try">%d 번째 도전</string>
+    <string name="count_ball">볼: %d</string>
+    <string name="count_strike">스트라이크 : %d</string>
+    <string name="guessed_answer">입력 : %s</string>
 </resources>

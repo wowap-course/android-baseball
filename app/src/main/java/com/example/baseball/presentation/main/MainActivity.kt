@@ -4,48 +4,59 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import com.example.baseball.presentation.game.GameActivity
-import com.example.baseball.R
 import com.example.baseball.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(), MainContract.View {
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var presenter: MainContract.Presenter
+class MainActivity : AppCompatActivity() {
+    private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    private val viewModel: MainViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initPresenter()
         initBtn()
-    }
-
-    private fun initPresenter() {
-        presenter = MainPresenter(this)
+        initObserver()
     }
 
     private fun initBtn() {
         binding.btnPlus.setOnClickListener {
-            presenter.increaseLife()
+            viewModel.increaseLife()
         }
         binding.btnMinus.setOnClickListener {
-            presenter.decreaseLife()
+            viewModel.decreaseLife()
         }
-
         binding.btnStart.setOnClickListener {
-            presenter.onGameStartBtnClicked()
+            viewModel.gameStart()
         }
     }
 
-    override fun showLife(life: Int) {
+    private fun initObserver() {
+        viewModel.lifeCount.observe(this) { life ->
+            showLife(life.count)
+        }
+
+        viewModel.event.observe(this) { event ->
+            when (event) {
+                is Event.NavigateToGame -> navigateToGameActivity(viewModel.lifeCount.value?.count ?: 1)
+                is Event.ShowErrorMessage -> Toast.makeText(
+                    baseContext,
+                    event.message,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+        }
+    }
+
+    private fun showLife(life: Int) {
         binding.tvLifeCount.text = life.toString()
     }
 
-
-    override fun navigateToGameActivity(life: Int) {
+    private fun navigateToGameActivity(life: Int) {
         val intent = Intent(this, GameActivity::class.java)
         intent.putExtra("lifeCount", life)
         startActivity(intent)
     }
 }
+

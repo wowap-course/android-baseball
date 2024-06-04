@@ -1,32 +1,39 @@
 package com.example.baseball.presentation.game
 
 import android.util.Log
-import com.example.baseball.domain.BaseballNumber
-import com.example.baseball.domain.BaseballNumbers
-import com.example.baseball.domain.Judgement
-import com.example.baseball.domain.numbergenerator.RandomNumberGenerator
+import com.example.baseball.domain.BaseballGame
 
 class GamePresenter(private val view: GameContract.View, private val life: Int) :
     GameContract.Presenter {
-    private val opponentNumber: List<BaseballNumber> =
-        BaseballNumbers(RandomNumberGenerator().generateNumber()).baseballNumbers
-    private val judgement = Judgement()
+    private val baseballGame = BaseballGame()
     private var remainingLife = life
 
-    fun isGameOver() = remainingLife == DEAD
-    override fun playOneRound(answer: String) {
-        val baseballNumberAnswer = BaseballNumbers(
-            answer.toList().map { it.toString().toInt() }).baseballNumbers // 올바른 값만 입력된다고 가정
-        val (ball, strike) = judgement.judgeNumber(opponentNumber, baseballNumberAnswer)
+    private fun isGameOver() = remainingLife == DEAD
 
-        remainingLife--
-        view.showLifeCount(remainingLife)
+    override fun onTryBtnClicked(answer: String) {
+        if (answer == "" || answer.length != INPUT_DIGITS) {
+            view.showRequests(REQUEST_INPUT)
+            return
+        }
+        if (answer.toSet().size != answer.length) {
+            view.showRequests(REQUEST_NO_DUPLICATE)
+            return
+        }
 
-        if (strike == MAX_STRIKE)
-            view.showResultOfGame(SUCCESS, opponentNumber.joinToString("").toInt())
+        view.showLifeCount(remainingLife--)
+
+        val score = baseballGame.playOnrRound(answer)
+        view.showResultOfInning(
+            score.tryCount,
+            score.ball,
+            score.strike,
+            score.answerOfInning.map { it.toInt() }
+        )
+
+        if (score.strike == MAX_STRIKE)
+            view.showResultOfGame(SUCCESS, baseballGame.opponentNumber.joinToString("").toInt())
         else if (isGameOver())
-            view.showResultOfGame(FAIL, opponentNumber.joinToString("").toInt())
-        else view.showResultOfInning(ball, strike)
+            view.showResultOfGame(FAIL, baseballGame.opponentNumber.joinToString("").toInt())
     }
 
     override fun onRestartBtnClicked() {
@@ -42,5 +49,8 @@ class GamePresenter(private val view: GameContract.View, private val life: Int) 
         private const val SUCCESS = "성공"
         private const val FAIL = "실패"
         private const val DEAD = 0
+        private const val REQUEST_INPUT = "세자리 숫자를 입력해주세요."
+        private const val REQUEST_NO_DUPLICATE = "숫자는 중복될 수 없어요."
+        private const val INPUT_DIGITS = 3
     }
 }
