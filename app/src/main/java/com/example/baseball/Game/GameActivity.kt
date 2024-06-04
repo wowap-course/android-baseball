@@ -8,8 +8,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import com.example.baseball.R
 import com.example.baseball.databinding.ActivityGameBinding
 
@@ -46,7 +44,7 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun showLife(lifeCount: Int) {
-        binding.tvLifeTitle.text = getString(R.string.remain_life, lifeCount)
+        binding.tvLifeTitle.text = getString(R.string.activity_game_remain_life, lifeCount)
     }
 
     private fun initBtn() {
@@ -75,16 +73,16 @@ class GameActivity : AppCompatActivity() {
         val answer = randomNumber.joinToString("") { it.toString() }.toInt()
         AlertDialog.Builder(this)
             .setTitle(message)
-            .setMessage(getString(R.string.answer, answer))
+            .setMessage(getString(R.string.dialog_answer, answer))
             .setPositiveButton(
-                getString(R.string.restart),
+                getString(R.string.dialog_restart_button),
                 object : DialogInterface.OnClickListener {
                     override fun onClick(dialog: DialogInterface, which: Int) {
                         finish()
                         startActivity(intent)
                     }
                 })
-            .setNegativeButton(getString(R.string.quit), object : DialogInterface.OnClickListener {
+            .setNegativeButton(getString(R.string.dialog_quit_button), object : DialogInterface.OnClickListener {
                 override fun onClick(dialog: DialogInterface, which: Int) {
                     finish()
                 }

@@ -10,15 +10,15 @@ class BaseballViewHolder(val binding: ItemRecyclerviewBinding) :
 
     fun bind(count: Count) {
         binding.tryTitle.text =
-            binding.root.context.getString(R.string.try_title, adapterPosition + 1)
+            binding.root.context.getString(R.string.recyclerview_try_title, adapterPosition + 1)
         binding.strikeCount.text =
-            binding.root.context.getString(R.string.strike_count, count.strikeCount)
+            binding.root.context.getString(R.string.recyclerview_strike_count, count.strikeCount)
         binding.ballCount.text =
-            binding.root.context.getString(R.string.ball_count, count.ballCount)
+            binding.root.context.getString(R.string.recyclerview_ball_count, count.ballCount)
 
         binding.inputNumber.text =
             binding.root.context.getString(
-                R.string.input_number,
+                R.string.recyclerview_input_number,
                 count.inputNumber.joinToString("").toInt()
             )
 
