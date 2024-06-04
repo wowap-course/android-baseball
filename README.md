@@ -67,3 +67,14 @@
 - [x] Count data class 구현
 - [x] presenter에 adapter 연결
 - [x] activity adapter에 연결
+
+---
+
+< Step4 Commit >
+- [x] MainActivity MVP -> MVVM
+  - [x] MainContract 삭제
+  - [x] MainPresenter -> MainViewModel Refactoring
+- [x] GameActivity MVP -> MVVM
+  - [x] GameContract 삭제
+  - [x] GamePresenter -> GameViewModel Refactoring
+자세한 내용 : **[[Notion]](https://x1nu.notion.site/Android-BaseBallGame-eaa2d2ab49ec4039910f67fa9e82008d)**
