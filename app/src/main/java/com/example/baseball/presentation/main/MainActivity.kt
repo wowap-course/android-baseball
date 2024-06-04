@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initBtn()
-        initObserve()
+        initObserver()
     }
 
     private fun initBtn() {
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun initObserve() {
+    private fun initObserver() {
         viewModel.lifeCount.observe(this) { life ->
             showLife(life.count)
         }

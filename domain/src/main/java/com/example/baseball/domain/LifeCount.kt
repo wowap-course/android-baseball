@@ -7,15 +7,15 @@ value class LifeCount(val count: Int = 1) {
     }
 
     operator fun inc(): LifeCount {
-        return if (count >= MAX_LIFE_COUNT) LifeCount(MAX_LIFE_COUNT) else LifeCount(count + 1)
+        return LifeCount(count + 1)
     }
 
     operator fun dec(): LifeCount {
-        return if (count <= MIN_LIFE_COUNT) LifeCount(MIN_LIFE_COUNT) else LifeCount(count - 1)
+        return LifeCount(count - 1)
     }
 
     companion object {
-        private const val MIN_LIFE_COUNT = 1
+        private const val MIN_LIFE_COUNT = 0
         private const val MAX_LIFE_COUNT = 10
     }
 }
